@@ -9,7 +9,7 @@ const App = () => {
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
       <View>
-        <Text>Testando123</Text>
+        <Text>Testando12345</Text>
       </View>
     </>
   );
