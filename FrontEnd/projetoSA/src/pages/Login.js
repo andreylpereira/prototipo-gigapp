@@ -1,15 +1,15 @@
 import React from 'react';
 
 import {StatusBar, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
-import Home from './components/Home';
 
-const App = () => {
+
+const Login = ({ navigation }) => {
   return (
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
       <View>
         <TouchableOpacity style={css.button} onPress={() => navigation.navigate('Home')}>
-        <Text style={css.buttonText}>Entrar</Text>
+        <Text style={css.buttonText}>Sobre</Text>
         </TouchableOpacity>
       </View>
     </>
@@ -41,4 +41,4 @@ const css = StyleSheet.create({
       }
 });
 
-export default App;
+export default Login;

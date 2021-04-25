@@ -1,8 +1,4 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import {createDrawerNavigator} from '@react-navigation/drawer';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 import {
   StatusBar,
@@ -11,13 +7,13 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
+import Routes from './src/Router';
 
-const Stack = createStackNavigator();
-
-const Routes = () => {
+const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
+      <Routes></Routes>
     </>
   );
 };
@@ -46,4 +42,4 @@ const css = StyleSheet.create({
   },
 });
 
-export default Routes;
+export default App;
