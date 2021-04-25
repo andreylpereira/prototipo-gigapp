@@ -21,7 +21,7 @@ const Routes = () => {
     <Stack.Navigator initialRouteName={Login}>
       <Stack.Screen name="Login" component={Login} />
       {/* <Stack.Screen name="Teste" component={Tabs} /> */}
-      <Stack.Screen name="Home" component={Drawers} options={{headerLeft: false}} />
+      <Stack.Screen name="Home do Aplicativo" component={Drawers} options={{headerLeft: false}} />
     </Stack.Navigator>
     </NavigationContainer>
   );
