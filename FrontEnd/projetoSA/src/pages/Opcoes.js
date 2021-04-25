@@ -8,13 +8,13 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-const Sobre = ({navigation}) => {
+const Opcoes = ({navigation}) => {
   return (
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
       <View>
         <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-          <Text>Sobre</Text>
+          <Text>Opções</Text>
         </TouchableOpacity>
       </View>
     </>
@@ -28,4 +28,4 @@ const css = StyleSheet.create({
   //   },
 });
 
-export default Sobre;
+export default Opcoes;
