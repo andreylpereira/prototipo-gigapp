@@ -13,7 +13,7 @@ const Negocio = ({navigation}) => {
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
       <View>
-        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
           <Text>Negocio</Text>
         </TouchableOpacity>
       </View>

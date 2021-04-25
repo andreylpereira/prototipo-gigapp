@@ -13,7 +13,7 @@ const Sobre = ({navigation}) => {
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
       <View>
-        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
           <Text>Sobre</Text>
         </TouchableOpacity>
       </View>

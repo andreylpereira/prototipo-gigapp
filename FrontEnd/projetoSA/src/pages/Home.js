@@ -13,7 +13,7 @@ const Home = ({navigation}) => {
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
       <View>
-        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
           <Text>Home</Text>
         </TouchableOpacity>
       </View>
