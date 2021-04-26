@@ -102,8 +102,6 @@ const Drawers = () => {
       }}
     >
       <Drawer.Screen name="Home" component={Tabs} />
-      <Drawer.Screen name="Perfil" component={Perfil} />
-      <Drawer.Screen name="Negocio" component={Negocio} />
       <Drawer.Screen name="Sobre" component={Sobre} />
       <Drawer.Screen name="Opções" component={Opcoes} />
     </Drawer.Navigator>
