@@ -25,7 +25,14 @@ const Routes = () => {
         <Stack.Screen
           name="Home"
           component={Drawers}
-          options={{headerLeft: false, title: 'Nome do App'}}
+          options={{headerLeft: false, title: 'Nome do App', headerTitleAlign: 'center',headerTintColor: '#EDEDE9',
+
+          headerStyle: {
+            backgroundColor: '#410CF5',
+            borderBottomWidth: 1,
+            borderBottomColor: 'red',
+          }
+        }}
         />
         <Stack.Screen name="Cadastro"
           component={Cadastro}
@@ -37,17 +44,63 @@ const Routes = () => {
 
 const Tabs = () => {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Perfil" component={Perfil} />
-      <Tab.Screen name="Negocio" component={Negocio} />
+    <Tab.Navigator
+    tabBarOptions={{
+      activeTintColor: 'dodgerblue',
+      inactiveTintColor: 'white',
+
+      labelStyle: {
+        fontSize: 15,
+        fontWeight: 'bold',
+        fontFamily: 'Montserrat-SemiBold',
+      },
+      style: {
+        borderTopWidth: 1,
+        // borderBottomWidth: 2,
+        // borderTopColor: 'red',
+        // borderBottomColor: '#410CF5',
+        backgroundColor: 'orange',
+      },
+    }}
+    >
+      <Tab.Screen name="Home" component={Home} 
+      options={{
+        tabBarLabel: 'HOME',
+        // tabBarIcon: ({color, size}) => (
+        //   <Icon name="home" color={color} size={size} />
+        // ),
+      }}/>
+      <Tab.Screen name="Perfil" component={Perfil}  options={{
+        tabBarLabel: 'PERFIL',
+        // tabBarIcon: ({color, size}) => (
+        //   <Icon name="home" color={color} size={size} />
+        // ),
+      }}/>
+      <Tab.Screen name="Negocio" component={Negocio}  options={{
+        tabBarLabel: 'NEGOCIO',
+        // tabBarIcon: ({color, size}) => (
+        //   <Icon name="home" color={color} size={size} />
+        // ),
+      }}/>
     </Tab.Navigator>
   );
 };
 
 const Drawers = () => {
   return (
-    <Drawer.Navigator>
+    <Drawer.Navigator
+    drawerPosition='left'
+    drawerType='front'
+    drawerStyle={{
+      backgroundColor: '#000'
+      }}
+      drawerContentOptions={{
+        activeTintColor: '#FFF',
+        inactiveTintColor: 'red',
+        activeBackgroundColor: 'blue',
+        inactiveBackgroundColor: 'yellow',
+      }}
+    >
       <Drawer.Screen name="Home" component={Tabs} />
       <Drawer.Screen name="Perfil" component={Perfil} />
       <Drawer.Screen name="Negocio" component={Negocio} />

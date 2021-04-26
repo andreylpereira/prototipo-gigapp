@@ -36,7 +36,6 @@ const css = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '90%',
-    marginTop: '65%',
   },
   button: {
     borderWidth: 2,

@@ -50,7 +50,7 @@ const css = StyleSheet.create({
     backgroundColor: 'dodgerblue',
     alignSelf: 'center',
     marginTop: 20,
-    marginLeft: '15%', //Deletar depois
+    marginLeft: '10%', //Deletar depois
   },
   buttonText: {
     textAlign: 'center',
@@ -68,14 +68,14 @@ const css = StyleSheet.create({
     borderRadius: 7,
     borderColor: '#000',
     padding: 10,
-    marginLeft: '15%', //Deletar depois
+    marginLeft: '10%', //Deletar depois
     marginTop: 15,
     fontSize: 17
   },
   cadastrar: {
     color: 'dodgerblue',
     fontWeight: 'bold',
-    marginLeft: 50,
+    marginLeft: 40,
     marginTop: 5,
   }
 });
