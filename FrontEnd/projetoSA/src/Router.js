@@ -136,7 +136,7 @@ const Content = () => {
           name="person-circle"
           color={'tomato'}
           size={75}
-          
+          style={{marginLeft: 5}}
         />
         <View style={css.personDescription}>
           <Text style={{color: '#ffffff', fontSize: 22, fontWeight:'bold', marginBottom: 2.5}}>Dazaranha</Text>
