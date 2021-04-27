@@ -1,18 +1,15 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {createDrawerNavigator} from '@react-navigation/drawer';
+import {createDrawerNavigator, DrawerItemList} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import {
-  StatusBar,
   StyleSheet,
   Text,
-  TextInput,
   View,
-  TouchableOpacity,
 } from 'react-native';
 
 import Home from './pages/Home';
@@ -22,7 +19,6 @@ import Sobre from './pages/Sobre';
 import Perfil from './pages/Perfil';
 import Negocio from './pages/Negocio';
 import Opcoes from './pages/Opcoes';
-import { color } from 'react-native-reanimated';
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -45,12 +41,20 @@ const Routes = () => {
           component={Drawers}
           options={{
             headerLeft: () => (
+              <View
+                style={{display: 'flex', flexDirection: 'row', marginLeft: 1}}>
+                <Icon name={'menu'} size={37} color={'white'} 
+                onPress={() => navigation.openDrawer()}
+                />
+              </View>
+            ),
+            headerRight: () => (
               <View>
                 <Icon
                   name={'musical-notes'}
                   size={37}
                   color={'white'}
-                  style={css.container}
+                  style={css.imageLogo}
                 />
               </View>
             ),
@@ -128,9 +132,10 @@ const Tabs = () => {
   );
 };
 
-const Content = () => {
+const Content = ({...props}) => {
   return (
-    <View style={css.personcontainer}>
+    <View>
+    <View>
       <View style={css.personLogo}>
         <Icon
           name="person-circle"
@@ -139,11 +144,33 @@ const Content = () => {
           style={{marginLeft: 5}}
         />
         <View style={css.personDescription}>
-          <Text style={{color: '#ffffff', fontSize: 22, fontWeight:'bold', marginBottom: 2.5}}>Dazaranha</Text>
-          <Text style={{color: '#ffffff', fontSize: 15 , marginBottom: 2.5}}>banda</Text>
-          <Text style={{color: '#ffffff', fontSize: 13, fontStyle:'italic', marginBottom: 10}}>fulano@gmail.com</Text>
+          <Text
+            style={{
+              color: '#ffffff',
+              fontSize: 22,
+              fontWeight: 'bold',
+              marginBottom: 2.5,
+            }}>
+            Dazaranha
+          </Text>
+          <Text style={{color: '#CDCCCE', fontSize: 15, marginBottom: 2.5}}>
+            banda
+          </Text>
+          <Text
+            style={{
+              color: '#CDCCCE',
+              fontSize: 13,
+              fontStyle: 'italic',
+              marginBottom: 10,
+            }}>
+            fulano@gmail.com
+          </Text>
         </View>
       </View>
+    </View>
+    <View style={{marginTop: 10}}>
+    <DrawerItemList {...props} />
+    </View>
     </View>
   );
 };
@@ -158,10 +185,10 @@ const Drawers = () => {
         backgroundColor: '#131313',
       }}
       drawerContentOptions={{
-        activeTintColor: 'purple',
-        inactiveTintColor: 'red',
-        activeBackgroundColor: 'blue',
-        inactiveBackgroundColor: 'yellow',
+        activeTintColor: 'white',
+        inactiveTintColor: '#131313',
+        activeBackgroundColor: 'tomato',
+        inactiveBackgroundColor: '#CDCCCE',
       }}>
       <Drawer.Screen name="Home" component={Tabs} />
       <Drawer.Screen name="Sobre" component={Sobre} />
@@ -171,17 +198,12 @@ const Drawers = () => {
 };
 
 const css = StyleSheet.create({
-  container: {
-    marginLeft: 105,
+  imageLogo: {
+    marginRight: 100,
     borderWidth: 1,
     borderRadius: 9.5,
     backgroundColor: '#131313',
     // color: '#F5D100',
-  },
-  personContainer: {
-    height: '100%',
-    borderBottomWidth: 1.5,
-    borderBottomColor: '#FFF',
   },
   personLogo: {
     marginTop: 5,
@@ -189,12 +211,11 @@ const css = StyleSheet.create({
     borderBottomColor: '#CDCCCE',
     display: 'flex',
     flexDirection: 'row',
-    
   },
   personDescription: {
     marginLeft: 5,
-    color: '#fff'
-  }
+    color: '#fff',
+  },
 });
 
 export default Routes;
