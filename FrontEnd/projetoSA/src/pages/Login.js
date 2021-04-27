@@ -36,27 +36,27 @@ const Login = ({navigation}) => {
 
 const css = StyleSheet.create({
   container: {
+    backgroundColor: '#131313',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '90%',
-    marginTop: '65%',
+    width: '100%',
+    height:'100%',
   },
   button: {
-    borderWidth: 2,
+    borderWidth: 1,
     borderRadius: 5,
-    borderColor: 'grey',
+    borderColor: '#CDCCCE',
     width: '70%',
     height: 40,
-    backgroundColor: 'dodgerblue',
+    backgroundColor: 'tomato',
     alignSelf: 'center',
     marginTop: 20,
-    marginLeft: '10%', //Deletar depois
   },
   buttonText: {
     textAlign: 'center',
     color: 'white',
-    marginTop: 6,
-    fontSize: 17,
+    marginTop: 3,
+    fontSize: 21,
     fontWeight: 'bold',
     
   },
@@ -64,18 +64,17 @@ const css = StyleSheet.create({
     alignSelf: 'center',
     backgroundColor: '#FFF',
     width: '90%',
-    borderWidth: 2, //Deletar depois
+    height: 40,
     borderRadius: 7,
     borderColor: '#000',
     padding: 10,
-    marginLeft: '10%', //Deletar depois
+
     marginTop: 15,
     fontSize: 17
   },
   cadastrar: {
-    color: 'dodgerblue',
+    color: '#CDCCCE',
     fontWeight: 'bold',
-    marginLeft: 40,
     marginTop: 5,
   }
 });

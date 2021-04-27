@@ -15,10 +15,10 @@ const Cadastro = ({navigation}) => {
       <StatusBar barStyle="dark-content" hidden={true} />
       <View style={css.container}>
         
-        <TextInput style={css.input}placeholder="Digite seu E-mail" textContentType={'emailAddress'} autoCorrect={false}></TextInput>
-        <TextInput style={css.input} placeholder="Digite sua senha" textContentType={'password'} secureTextEntry={true} autoCorrect={false}></TextInput>
-        <TextInput style={css.input} placeholder="Repita sua senha" textContentType={'password'} secureTextEntry={true} autoCorrect={false}></TextInput>
-        <TextInput style={css.input} placeholder="Digite palavra de segurança" textContentType={'password'} secureTextEntry={true} autoCorrect={false}></TextInput>
+        <TextInput style={css.input} placeholder="Digite seu E-mail" textContentType={'emailAddress'} autoCorrect={false}></TextInput>
+        <TextInput style={css.input} placeholder="Senha" textContentType={'password'} secureTextEntry={true} autoCorrect={false}></TextInput>
+        <TextInput style={css.input} placeholder="Senha" textContentType={'password'} secureTextEntry={true} autoCorrect={false}></TextInput>
+
 
         <TouchableOpacity
           style={css.button}
@@ -33,26 +33,27 @@ const Cadastro = ({navigation}) => {
 
 const css = StyleSheet.create({
   container: {
+    backgroundColor: '#131313',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '90%',
+    width: '100%',
+    height:'100%',
   },
   button: {
-    borderWidth: 2,
+    borderWidth: 1,
     borderRadius: 5,
-    borderColor: 'grey',
+    borderColor: '#CDCCCE',
     width: '70%',
     height: 40,
-    backgroundColor: 'dodgerblue',
+    backgroundColor: 'tomato',
     alignSelf: 'center',
     marginTop: 20,
-    marginLeft: '15%', //Deletar depois
   },
   buttonText: {
     textAlign: 'center',
     color: 'white',
-    marginTop: 6,
-    fontSize: 17,
+    marginTop: 3,
+    fontSize: 21,
     fontWeight: 'bold',
     
   },
@@ -60,18 +61,16 @@ const css = StyleSheet.create({
     alignSelf: 'center',
     backgroundColor: '#FFF',
     width: '90%',
-    borderWidth: 2, //Deletar depois
+    height: 40,
     borderRadius: 7,
     borderColor: '#000',
     padding: 10,
-    marginLeft: '15%', //Deletar depois
     marginTop: 15,
     fontSize: 17
   },
   cadastrar: {
-    color: 'dodgerblue',
+    color: '#CDCCCE',
     fontWeight: 'bold',
-    marginLeft: 50,
     marginTop: 5,
   }
 });

@@ -29,13 +29,16 @@ const Routes = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName={Login}>
-        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Login" component={Login} 
+        options={{
+          headerShown: false
+        }}
+        />
         {/* <Stack.Screen name="Teste" component={Tabs} /> */}
         <Stack.Screen
           name="Home"
           component={Drawers}
           options={{headerLeft: false, title: 'Nome do App', headerTitleAlign: 'center',headerTintColor: 'white',
-
           headerStyle: {
             backgroundColor: 'tomato',
             borderBottomWidth: 1,
@@ -45,6 +48,7 @@ const Routes = () => {
         />
         <Stack.Screen name="Cadastro"
           component={Cadastro}
+          options={{headerStyle:{backgroundColor: 'tomato'}, headerTintColor: 'white'}}
 />
       </Stack.Navigator>
     </NavigationContainer>
@@ -68,7 +72,7 @@ const Tabs = () => {
         // borderBottomWidth: 2,
         // borderTopColor: 'red',
         // borderBottomColor: '#410CF5',
-        backgroundColor: 'white',
+        backgroundColor: '#131313',
       },
     }}
     >
@@ -110,7 +114,7 @@ const Drawers = () => {
     drawerPosition='left'
     drawerType='front'
     drawerStyle={{
-      backgroundColor: '#FFF'
+      backgroundColor: '#131313'
       }}
       drawerContentOptions={{
         activeTintColor: 'purple',
