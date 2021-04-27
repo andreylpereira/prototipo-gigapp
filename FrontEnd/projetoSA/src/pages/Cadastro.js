@@ -15,7 +15,7 @@ const Cadastro = ({navigation}) => {
       <StatusBar barStyle="dark-content" hidden={true} />
       <View style={css.container}>
         
-        <TextInput style={css.input} placeholder="Digite seu E-mail" textContentType={'emailAddress'} autoCorrect={false}></TextInput>
+        <TextInput style={css.input} placeholder="E-mail" textContentType={'emailAddress'} autoCorrect={false}></TextInput>
         <TextInput style={css.input} placeholder="Senha" textContentType={'password'} secureTextEntry={true} autoCorrect={false}></TextInput>
         <TextInput style={css.input} placeholder="Senha" textContentType={'password'} secureTextEntry={true} autoCorrect={false}></TextInput>
 
