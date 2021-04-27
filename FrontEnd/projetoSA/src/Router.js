@@ -114,8 +114,10 @@ const Tabs = () => {
 
 const Content = () => {
   return(
-    <View>
-      <Text> Olá content </Text>
+    <View style={css.personcontainer}>
+    <View style={css.personLogo}>
+      <Icon name="person-circle" color={'tomato'} size={75} style={css.personLogo} />
+    </View>
     </View>
   )
 }
@@ -151,6 +153,15 @@ const css = StyleSheet.create({
       borderRadius: 9.5,
       backgroundColor: '#131313'
       // color: '#F5D100',
+    },
+    personContainer: {
+      height: '100%',
+      borderBottomWidth: 1.5,
+      borderBottomColor: '#FFF',
+    },
+    personLogo: {
+      borderBottomWidth: 1,
+      borderBottomColor: '#CDCCCE',
     },
 });
 
