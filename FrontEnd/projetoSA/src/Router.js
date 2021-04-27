@@ -4,6 +4,15 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
+import {
+  StatusBar,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+  TouchableOpacity,
+} from 'react-native';
+
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Cadastro from './pages/Cadastro';
@@ -25,10 +34,10 @@ const Routes = () => {
         <Stack.Screen
           name="Home"
           component={Drawers}
-          options={{headerLeft: false, title: 'Nome do App', headerTitleAlign: 'center',headerTintColor: '#EDEDE9',
+          options={{headerLeft: false, title: 'Nome do App', headerTitleAlign: 'center',headerTintColor: 'white',
 
           headerStyle: {
-            backgroundColor: '#410CF5',
+            backgroundColor: 'tomato',
             borderBottomWidth: 1,
             borderBottomColor: 'red',
           }
@@ -46,20 +55,20 @@ const Tabs = () => {
   return (
     <Tab.Navigator
     tabBarOptions={{
-      activeTintColor: 'dodgerblue',
-      inactiveTintColor: 'white',
+      activeTintColor: 'tomato',
+      inactiveTintColor: '#CDCCCE',
 
       labelStyle: {
         fontSize: 15,
         fontWeight: 'bold',
-        fontFamily: 'Montserrat-SemiBold',
+        // fontFamily: 'Montserrat-SemiBold',
       },
       style: {
         borderTopWidth: 1,
         // borderBottomWidth: 2,
         // borderTopColor: 'red',
         // borderBottomColor: '#410CF5',
-        backgroundColor: 'orange',
+        backgroundColor: 'white',
       },
     }}
     >
@@ -86,26 +95,43 @@ const Tabs = () => {
   );
 };
 
+const Content = () => {
+  return(
+    <View>
+      <Text> Olá content </Text>
+    </View>
+  )
+}
+
 const Drawers = () => {
   return (
     <Drawer.Navigator
+    drawerContent={Content}
     drawerPosition='left'
     drawerType='front'
     drawerStyle={{
-      backgroundColor: '#000'
+      backgroundColor: '#FFF'
       }}
       drawerContentOptions={{
-        activeTintColor: '#FFF',
+        activeTintColor: 'purple',
         inactiveTintColor: 'red',
         activeBackgroundColor: 'blue',
         inactiveBackgroundColor: 'yellow',
       }}
     >
+      
       <Drawer.Screen name="Home" component={Tabs} />
       <Drawer.Screen name="Sobre" component={Sobre} />
       <Drawer.Screen name="Opções" component={Opcoes} />
     </Drawer.Navigator>
   );
 };
+
+const css = StyleSheet.create({
+  //   container: {
+  //     marginLeft: 130,
+  //     color: '#F5D100',
+  //   },
+});
 
 export default Routes;
