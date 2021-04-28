@@ -22,7 +22,7 @@ const Login = ({navigation}) => {
             color={'#FFF'}
             style={css.logo}
           />
-          <Text style={css.subtitle}>Encontre sua banda!</Text>
+          <Text style={css.subtitle}>make your gig!</Text>
         </View>
 
         <TextInput

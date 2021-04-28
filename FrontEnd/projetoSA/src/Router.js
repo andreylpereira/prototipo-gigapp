@@ -54,7 +54,7 @@ const Routes = () => {
                 />
               </View>
             ),
-            title: 'Nome do App',
+            title: 'GigApp',
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
@@ -158,7 +158,7 @@ const Content = ({...props}) => {
                 fontStyle: 'italic',
                 marginBottom: 10,
               }}>
-              fulano@gmail.com
+              thefulanodetal@yahoo.com.br
             </Text>
           </View>
         </View>
@@ -250,7 +250,7 @@ const Drawers = () => {
 
 const css = StyleSheet.create({
   imageLogo: {
-    marginRight: 100,
+    marginRight: 130,
     borderWidth: 2,
     borderBottomColor: '#131313',
     borderRadius: 180,
