@@ -19,7 +19,7 @@ const Login = ({navigation}) => {
           <Icon
             name={'musical-notes'}
             size={250}
-            color={'white'}
+            color={'#FFF'}
             style={css.logo}
           />
           <Text style={css.subtitle}>Encontre sua banda!</Text>
@@ -60,11 +60,11 @@ const css = StyleSheet.create({
     height: '100%',
   },
   button: {
-    borderWidth: 1,
-    borderRadius: 5,
+    borderWidth: 2,
+    borderRadius: 21,
     borderColor: '#CDCCCE',
     width: '70%',
-    height: 40,
+    height: 45,
     backgroundColor: 'tomato',
     alignSelf: 'center',
     marginTop: 20,
@@ -73,7 +73,7 @@ const css = StyleSheet.create({
     textAlign: 'center',
     color: 'white',
     marginTop: 3,
-    fontSize: 21,
+    fontSize: 25,
     fontWeight: 'bold',
   },
   input: {
@@ -81,7 +81,7 @@ const css = StyleSheet.create({
     backgroundColor: '#FFF',
     width: '90%',
     height: 40,
-    borderRadius: 7,
+    borderRadius: 21,
     borderColor: '#000',
     padding: 10,
     marginTop: 15,
@@ -91,20 +91,21 @@ const css = StyleSheet.create({
     color: '#CDCCCE',
     fontWeight: 'bold',
     marginTop: 5,
+    fontSize: 18,
   },
   logo: {
+    width: 275,
     marginBottom: 7.5,
-    borderWidth: 1,
-    borderRadius: 25,
+    borderWidth: 3,
+    borderRadius: 180,
+    borderColor: '#CDCCCE',
     backgroundColor: 'tomato',
-    shadowColor: 'white',
-    elevation: 4.5,
   },
   subtitle: {
-    marginBottom: 65,
+    marginBottom: 25,
     color: 'white',
     fontWeight: '100',
-    fontSize: 21,
+    fontSize: 23,
     fontStyle: 'italic',
     alignSelf: 'center'
   },

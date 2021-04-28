@@ -1,16 +1,12 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, DrawerActions} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator, DrawerItemList} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import {
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -35,25 +31,27 @@ const Routes = () => {
             headerShown: false,
           }}
         />
-        {/* <Stack.Screen name="Teste" component={Tabs} /> */}
         <Stack.Screen
           name="Home"
           component={Drawers}
-          options={{
+          options={({navigation}) => ({
             headerLeft: () => (
               <View
                 style={{display: 'flex', flexDirection: 'row', marginLeft: 1}}>
-                <Icon name={'menu'} size={37} color={'white'} 
-                onPress={() => navigation.openDrawer()}
-                />
+                <TouchableOpacity
+                  onPress={() =>
+                    navigation.dispatch(DrawerActions.toggleDrawer())
+                  }>
+                  <Icon name={'menu'} size={37} color={'white'} />
+                </TouchableOpacity>
               </View>
             ),
             headerRight: () => (
               <View>
                 <Icon
                   name={'musical-notes'}
-                  size={37}
-                  color={'white'}
+                  size={40}
+                  color={'#CDCCCE'}
                   style={css.imageLogo}
                 />
               </View>
@@ -64,9 +62,9 @@ const Routes = () => {
             headerStyle: {
               backgroundColor: 'tomato',
               borderBottomWidth: 1,
-              borderBottomColor: 'red',
+              borderBottomColor: '#CDCCCE',
             },
-          }}
+          })}
         />
         <Stack.Screen
           name="Cadastro"
@@ -88,13 +86,12 @@ const Tabs = () => {
         labelStyle: {
           fontSize: 15,
           fontWeight: 'bold',
-          // fontFamily: 'Montserrat-SemiBold',
         },
         style: {
-          borderTopWidth: 1,
-          // borderBottomWidth: 2,
-          // borderTopColor: 'red',
-          // borderBottomColor: '#410CF5',
+          borderTopWidth: 2,
+          borderBottomWidth: 2,
+          borderTopColor: '#CDCCCE',
+          borderBottomColor: '#131313',
           backgroundColor: '#131313',
         },
       }}>
@@ -124,7 +121,7 @@ const Tabs = () => {
         options={{
           tabBarLabel: 'NEGOCIO',
           tabBarIcon: ({color, size}) => (
-            <Icon name="list-outline" color={color} size={35} />
+            <Icon name="list-outline" color={color} size={38} />
           ),
         }}
       />
@@ -135,42 +132,42 @@ const Tabs = () => {
 const Content = ({...props}) => {
   return (
     <View>
-    <View>
-      <View style={css.personLogo}>
-        <Icon
-          name="person-circle"
-          color={'tomato'}
-          size={75}
-          style={{marginLeft: 5}}
-        />
-        <View style={css.personDescription}>
-          <Text
-            style={{
-              color: '#ffffff',
-              fontSize: 22,
-              fontWeight: 'bold',
-              marginBottom: 2.5,
-            }}>
-            Dazaranha
-          </Text>
-          <Text style={{color: '#CDCCCE', fontSize: 15, marginBottom: 2.5}}>
-            banda
-          </Text>
-          <Text
-            style={{
-              color: '#CDCCCE',
-              fontSize: 13,
-              fontStyle: 'italic',
-              marginBottom: 10,
-            }}>
-            fulano@gmail.com
-          </Text>
+      <View>
+        <View style={css.personLogo}>
+          <Icon
+            name="person-circle"
+            color={'tomato'}
+            size={75}
+            style={{marginLeft: 5}}
+          />
+          <View style={css.personDescription}>
+            <Text
+              style={{
+                color: '#ffffff',
+                fontSize: 22,
+                fontWeight: 'bold',
+                marginBottom: 2.5,
+              }}>
+              Dazaranha
+            </Text>
+            <Text style={{color: '#CDCCCE', fontSize: 15, marginBottom: 2.5}}>
+              banda
+            </Text>
+            <Text
+              style={{
+                color: '#CDCCCE',
+                fontSize: 13,
+                fontStyle: 'italic',
+                marginBottom: 10,
+              }}>
+              fulano@gmail.com
+            </Text>
+          </View>
         </View>
       </View>
-    </View>
-    <View style={{marginTop: 10}}>
-    <DrawerItemList {...props} />
-    </View>
+      <View style={{marginTop: 10}}>
+        <DrawerItemList {...props} />
+      </View>
     </View>
   );
 };
@@ -190,9 +187,50 @@ const Drawers = () => {
         activeBackgroundColor: 'tomato',
         inactiveBackgroundColor: '#CDCCCE',
       }}>
-      <Drawer.Screen name="Home" component={Tabs} />
-      <Drawer.Screen name="Sobre" component={Sobre} />
-      <Drawer.Screen name="Opções" component={Opcoes} />
+      <Drawer.Screen
+        name="Home"
+        component={Tabs}
+        style={css.styleDrawers}
+        options={{
+          title: 'Home',
+          drawerIcon: ({focused, size}) => (
+            <Icon
+              name="home-outline"
+              size={size}
+              color={focused ? '#CDCCCE' : '#131313'}
+            />
+          ),
+        }}
+      />
+
+      <Drawer.Screen
+        name="Sobre"
+        component={Sobre}
+        options={{
+          title: 'Sobre',
+          drawerIcon: ({focused, size}) => (
+            <Icon
+              name="home-outline"
+              size={size}
+              color={focused ? '#CDCCCE' : '#131313'}
+            />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Opções"
+        component={Opcoes}
+        options={{
+          title: 'Opções',
+          drawerIcon: ({focused, size}) => (
+            <Icon
+              name="home-outline"
+              size={size}
+              color={focused ? '#CDCCCE' : '#131313'}
+            />
+          ),
+        }}
+      />
     </Drawer.Navigator>
   );
 };
@@ -200,10 +238,10 @@ const Drawers = () => {
 const css = StyleSheet.create({
   imageLogo: {
     marginRight: 100,
-    borderWidth: 1,
-    borderRadius: 9.5,
+    borderWidth: 2,
+    borderBottomColor: '#131313',
+    borderRadius: 180,
     backgroundColor: '#131313',
-    // color: '#F5D100',
   },
   personLogo: {
     marginTop: 5,

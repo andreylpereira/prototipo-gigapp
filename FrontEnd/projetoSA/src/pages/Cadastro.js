@@ -40,11 +40,11 @@ const css = StyleSheet.create({
     height:'100%',
   },
   button: {
-    borderWidth: 1,
-    borderRadius: 5,
+    borderWidth: 2,
+    borderRadius: 21,
     borderColor: '#CDCCCE',
     width: '70%',
-    height: 40,
+    height: 45,
     backgroundColor: 'tomato',
     alignSelf: 'center',
     marginTop: 20,
@@ -53,26 +53,20 @@ const css = StyleSheet.create({
     textAlign: 'center',
     color: 'white',
     marginTop: 3,
-    fontSize: 21,
+    fontSize: 25,
     fontWeight: 'bold',
-    
   },
   input: {
     alignSelf: 'center',
     backgroundColor: '#FFF',
     width: '90%',
     height: 40,
-    borderRadius: 7,
+    borderRadius: 21,
     borderColor: '#000',
     padding: 10,
     marginTop: 15,
-    fontSize: 17
+    fontSize: 17,
   },
-  cadastrar: {
-    color: '#CDCCCE',
-    fontWeight: 'bold',
-    marginTop: 5,
-  }
 });
 
 export default Cadastro;
