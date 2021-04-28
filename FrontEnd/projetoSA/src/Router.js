@@ -3,9 +3,7 @@ import {NavigationContainer, DrawerActions} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator, DrawerItemList} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-
 import Icon from 'react-native-vector-icons/Ionicons';
-
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
 import Home from './pages/Home';
@@ -186,6 +184,7 @@ const Drawers = () => {
         inactiveTintColor: '#131313',
         activeBackgroundColor: 'tomato',
         inactiveBackgroundColor: '#CDCCCE',
+        labelStyle: {fontSize: 16, fontWeight: 'bold', marginLeft: -20},
       }}>
       <Drawer.Screen
         name="Home"
@@ -195,8 +194,8 @@ const Drawers = () => {
           title: 'Home',
           drawerIcon: ({focused, size}) => (
             <Icon
-              name="home-outline"
-              size={size}
+              name="home-sharp"
+              size={28}
               color={focused ? '#CDCCCE' : '#131313'}
             />
           ),
@@ -210,8 +209,8 @@ const Drawers = () => {
           title: 'Sobre',
           drawerIcon: ({focused, size}) => (
             <Icon
-              name="home-outline"
-              size={size}
+              name="information-circle"
+              size={30}
               color={focused ? '#CDCCCE' : '#131313'}
             />
           ),
@@ -224,8 +223,22 @@ const Drawers = () => {
           title: 'Opções',
           drawerIcon: ({focused, size}) => (
             <Icon
-              name="home-outline"
-              size={size}
+              name="settings-sharp"
+              size={28}
+              color={focused ? '#CDCCCE' : '#131313'}
+            />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Sair"
+        component={Login}
+        options={{
+          title: 'Sair',
+          drawerIcon: ({focused, size}) => (
+            <Icon
+              name="log-out"
+              size={28}
               color={focused ? '#CDCCCE' : '#131313'}
             />
           ),
