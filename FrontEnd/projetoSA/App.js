@@ -1,25 +1,45 @@
 import React from 'react';
 
-
-import {StatusBar, StyleSheet, Text, View} from 'react-native';
-
+import {
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+} from 'react-native';
+import Routes from './src/Router';
 
 const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
-      <View>
-        <Text>Testando123</Text>
-      </View>
+      <Routes></Routes>
     </>
   );
 };
 
-// const css = StyleSheet.create({
-//   container: {
-//     marginLeft: 130,
-//     color: '#F5D100',
-//   },
-// });
+const css = StyleSheet.create({
+  //   container: {
+  //     marginLeft: 130,
+  //     color: '#F5D100',
+  //   },
+  button: {
+    borderWidth: 2,
+    borderRadius: 5,
+    borderColor: 'blue',
+    width: 100,
+    height: 40,
+    backgroundColor: 'dodgerblue',
+    alignSelf: 'center',
+    marginTop: '80%',
+  },
+  buttonText: {
+    textAlign: 'center',
+    color: 'white',
+    marginTop: 6,
+    fontSize: 15,
+    fontWeight: 'bold',
+  },
+});
 
 export default App;
