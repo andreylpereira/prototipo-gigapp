@@ -104,8 +104,8 @@ const css = StyleSheet.create({
   subtitle: {
     marginBottom: 25,
     color: 'white',
-    fontSize: 23,
-    fontFamily: 'Montserrat-Medium',
+    fontSize: 38,
+    fontFamily: 'DancingScript-Bold',
     alignSelf: 'center'
   },
 });

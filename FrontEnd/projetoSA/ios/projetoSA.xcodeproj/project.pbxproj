@@ -28,6 +28,11 @@
 		6E68A0DAFA064056947983FF /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8D49E40A89245B29A220774 /* Octicons.ttf */; };
 		BEE1AFB8588D4468A8377AE0 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD747702984F417195EB83D1 /* SimpleLineIcons.ttf */; };
 		4DB90F92D7E74D17BC13BF6D /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B5D7A2A99CB44488A49C7E3 /* Zocial.ttf */; };
+		63800D20C5D74CCE9B520E04 /* DancingScript-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD66C6E429374DF3974AE59C /* DancingScript-Bold.ttf */; };
+		96F8BF711E2845C58826116E /* DancingScript-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40C8BB0EB5B347AEA4188472 /* DancingScript-Medium.ttf */; };
+		08A902BC0AF64539943EECC4 /* DancingScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7343C8025324C3582D8F41D /* DancingScript-Regular.ttf */; };
+		3D7953D849DE488AB6B00E07 /* DancingScript-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A048E9E5D1C46799A2B92BD /* DancingScript-SemiBold.ttf */; };
+		C1FE7A6367C9419CABC31497 /* DancingScript-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9375CEE7CA014657AA6C1F4D /* DancingScript-VariableFont_wght.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +73,11 @@
 		B8D49E40A89245B29A220774 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		AD747702984F417195EB83D1 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		2B5D7A2A99CB44488A49C7E3 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CD66C6E429374DF3974AE59C /* DancingScript-Bold.ttf */ = {isa = PBXFileReference; name = "DancingScript-Bold.ttf"; path = "../assets/fonts/DancingScript-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		40C8BB0EB5B347AEA4188472 /* DancingScript-Medium.ttf */ = {isa = PBXFileReference; name = "DancingScript-Medium.ttf"; path = "../assets/fonts/DancingScript-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B7343C8025324C3582D8F41D /* DancingScript-Regular.ttf */ = {isa = PBXFileReference; name = "DancingScript-Regular.ttf"; path = "../assets/fonts/DancingScript-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0A048E9E5D1C46799A2B92BD /* DancingScript-SemiBold.ttf */ = {isa = PBXFileReference; name = "DancingScript-SemiBold.ttf"; path = "../assets/fonts/DancingScript-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9375CEE7CA014657AA6C1F4D /* DancingScript-VariableFont_wght.ttf */ = {isa = PBXFileReference; name = "DancingScript-VariableFont_wght.ttf"; path = "../assets/fonts/DancingScript-VariableFont_wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +186,11 @@
 				B8D49E40A89245B29A220774 /* Octicons.ttf */,
 				AD747702984F417195EB83D1 /* SimpleLineIcons.ttf */,
 				2B5D7A2A99CB44488A49C7E3 /* Zocial.ttf */,
+				CD66C6E429374DF3974AE59C /* DancingScript-Bold.ttf */,
+				40C8BB0EB5B347AEA4188472 /* DancingScript-Medium.ttf */,
+				B7343C8025324C3582D8F41D /* DancingScript-Regular.ttf */,
+				0A048E9E5D1C46799A2B92BD /* DancingScript-SemiBold.ttf */,
+				9375CEE7CA014657AA6C1F4D /* DancingScript-VariableFont_wght.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -287,6 +302,11 @@
 				6E68A0DAFA064056947983FF /* Octicons.ttf in Resources */,
 				BEE1AFB8588D4468A8377AE0 /* SimpleLineIcons.ttf in Resources */,
 				4DB90F92D7E74D17BC13BF6D /* Zocial.ttf in Resources */,
+				63800D20C5D74CCE9B520E04 /* DancingScript-Bold.ttf in Resources */,
+				96F8BF711E2845C58826116E /* DancingScript-Medium.ttf in Resources */,
+				08A902BC0AF64539943EECC4 /* DancingScript-Regular.ttf in Resources */,
+				3D7953D849DE488AB6B00E07 /* DancingScript-SemiBold.ttf in Resources */,
+				C1FE7A6367C9419CABC31497 /* DancingScript-VariableFont_wght.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
