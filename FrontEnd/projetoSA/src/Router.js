@@ -55,11 +55,6 @@ const Routes = () => {
                 />
               </View>
             ),
-            title: 'GigApp',
-            headerTitleStyle: {
-              fontFamily: "DancingScript-Bold",
-              fontSize: 30,
-            },
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
@@ -86,10 +81,10 @@ const Tabs = () => {
         activeTintColor: 'tomato',
         inactiveTintColor: 'white',
         showLabel: false,
-        labelStyle: {
-          fontSize: 15,
-          fontWeight: 'bold',
-        },
+        // labelStyle: {
+        //   fontSize: 15,
+        //   fontFamily: 'Nunito-Bold',
+        // },
         style: {
           borderTopWidth: 2,
           borderBottomWidth: 2,
@@ -147,24 +142,23 @@ const Content = ({...props}) => {
             <Text
               style={{
                 color: '#ffffff',
-                fontSize: 22,
-                fontWeight: 'bold',
-                marginBottom: 2.5,
+                fontSize: 15,
+                fontFamily:'Nunito-Black',
               }}>
-              Dazaranha
+              The Strokes
             </Text>
-            <Text style={{color: '#CDCCCE', fontSize: 15, marginBottom: 2.5}}>
-              banda
+            <Text style={{color: '#CDCCCE', fontSize: 13, fontFamily:'Nunito-Bold', marginBottom: 2.5}}>
+              Banda
             </Text>
-            <Text
+            {/* <Text
               style={{
                 color: '#CDCCCE',
-                fontSize: 13,
-                fontStyle: 'italic',
+                fontSize: 10,
+                fontFamily:'Nunito-BoldItalic',
                 marginBottom: 10,
               }}>
-              thefulanodetal@yahoo.com.br
-            </Text>
+              thefulanodetaldajamaica@yahoo.com.br
+            </Text> */}
           </View>
         </View>
       </View>
@@ -186,10 +180,10 @@ const Drawers = () => {
       }}
       drawerContentOptions={{
         activeTintColor: 'white',
-        inactiveTintColor: '#131313',
+        inactiveTintColor: 'tomato',
         activeBackgroundColor: 'tomato',
-        inactiveBackgroundColor: '#CDCCCE',
-        labelStyle: {fontSize: 16, fontWeight: 'bold', marginLeft: -20},
+        inactiveBackgroundColor: 'white',
+        labelStyle: {fontSize: 15, fontFamily:'Nunito-Black' ,  marginLeft: -20},
       }}>
       <Drawer.Screen
         name="Home"
@@ -201,7 +195,7 @@ const Drawers = () => {
             <Icon
               name="home-sharp"
               size={28}
-              color={focused ? '#CDCCCE' : '#131313'}
+              color={focused ? 'white' : 'tomato'}
             />
           ),
         }}
@@ -216,7 +210,7 @@ const Drawers = () => {
             <Icon
               name="information-circle"
               size={30}
-              color={focused ? '#CDCCCE' : '#131313'}
+              color={focused ? 'white' : 'tomato'}
             />
           ),
         }}
@@ -230,7 +224,7 @@ const Drawers = () => {
             <Icon
               name="settings-sharp"
               size={28}
-              color={focused ? '#CDCCCE' : '#131313'}
+              color={focused ? 'white' : 'tomato'}
             />
           ),
         }}
@@ -244,7 +238,7 @@ const Drawers = () => {
             <Icon
               name="log-out"
               size={28}
-              color={focused ? '#CDCCCE' : '#131313'}
+              color={focused ? 'white' : 'tomato'}
             />
           ),
         }}
@@ -271,6 +265,7 @@ const css = StyleSheet.create({
   },
   personDescription: {
     marginLeft: 5,
+    marginTop: 20,
     color: '#fff',
   },
 });

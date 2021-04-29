@@ -22,7 +22,7 @@ const Login = ({navigation}) => {
             color={'#FFF'}
             style={css.logo}
           />
-          <Text style={css.subtitle}>make your gig!</Text>
+          <Text style={css.subtitle}>GigApp</Text>
         </View>
 
         <TextInput
@@ -74,7 +74,7 @@ const css = StyleSheet.create({
     color: 'white',
     marginTop: 3,
     fontSize: 25,
-    fontWeight: 'bold',
+    fontFamily: 'Nunito-Black',
   },
   input: {
     alignSelf: 'center',
@@ -86,23 +86,24 @@ const css = StyleSheet.create({
     padding: 10,
     marginTop: 15,
     fontSize: 17,
+    fontFamily: 'Nunito-Bold',
   },
   cadastrar: {
     color: '#CDCCCE',
-    fontWeight: 'bold',
+    fontFamily: 'Nunito-Bold',
     marginTop: 5,
-    fontSize: 18,
+    fontSize: 16,
   },
   logo: {
     width: 275,
-    marginBottom: 7.5,
+    marginBottom: 5,
     borderWidth: 3,
     borderRadius: 180,
     borderColor: '#CDCCCE',
     backgroundColor: 'tomato',
   },
   subtitle: {
-    marginBottom: 25,
+    marginBottom: 10,
     color: 'white',
     fontSize: 38,
     fontFamily: 'DancingScript-Bold',

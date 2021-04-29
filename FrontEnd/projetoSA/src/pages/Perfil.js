@@ -12,7 +12,7 @@ const Perfil = ({navigation}) => {
   return (
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
-      <View>
+      <View style={css.container}>
         <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
           <Text>Perfil</Text>
         </TouchableOpacity>
@@ -22,10 +22,11 @@ const Perfil = ({navigation}) => {
 };
 
 const css = StyleSheet.create({
-  //   container: {
-  //     marginLeft: 130,
-  //     color: '#F5D100',
-  //   },
+  container: {
+    width: '100%',
+    height: '100%',
+    // backgroundColor: 'white',
+  },
 });
 
 export default Perfil;
