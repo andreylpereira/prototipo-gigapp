@@ -134,7 +134,7 @@ const Tabs = () => {
     <Tab.Navigator
       tabBarOptions={{
         activeTintColor: 'tomato',
-        inactiveTintColor: 'white',
+        inactiveTintColor: '#CDCCCE',
         showLabel: false,
         // labelStyle: {
         //   fontSize: 15,
@@ -240,10 +240,10 @@ const Drawers = () => {
         backgroundColor: '#131313',
       }}
       drawerContentOptions={{
-        activeTintColor: 'white',
+        activeTintColor: '#CDCCCE',
         inactiveTintColor: 'tomato',
         activeBackgroundColor: 'tomato',
-        inactiveBackgroundColor: 'white',
+        inactiveBackgroundColor: '#CDCCCE',
         labelStyle: {fontSize: 15, fontFamily: 'Nunito-Black', marginLeft: -20},
       }}>
       <Drawer.Screen
@@ -256,7 +256,7 @@ const Drawers = () => {
             <Icon
               name="home-sharp"
               size={28}
-              color={focused ? 'white' : 'tomato'}
+              color={focused ? '#CDCCCE' : 'tomato'}
             />
           ),
         }}
@@ -271,7 +271,7 @@ const Drawers = () => {
             <Icon
               name="information-circle"
               size={30}
-              color={focused ? 'white' : 'tomato'}
+              color={focused ? '#CDCCCE' : 'tomato'}
             />
           ),
         }}
@@ -285,7 +285,7 @@ const Drawers = () => {
             <Icon
               name="settings-sharp"
               size={28}
-              color={focused ? 'white' : 'tomato'}
+              color={focused ? '#CDCCCE' : 'tomato'}
             />
           ),
         }}
@@ -299,7 +299,7 @@ const Drawers = () => {
             <Icon
               name="log-out"
               size={28}
-              color={focused ? 'white' : 'tomato'}
+              color={focused ? '#CDCCCE' : 'tomato'}
             />
           ),
         }}
