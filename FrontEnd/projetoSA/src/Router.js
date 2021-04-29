@@ -57,7 +57,7 @@ const Routes = () => {
               <View style={{display: 'flex', flexDirection: 'row'}}>
                 <Text
                   style={{
-                    color: '#FFF',
+                    color: 'white',
                     fontFamily: 'DancingScript-Bold',
                     fontSize: 30,
                   }}>
@@ -66,7 +66,7 @@ const Routes = () => {
                 <Icon
                   name={'musical-notes'}
                   size={32}
-                  color={'#FFF'}
+                  color={'#CDCCCE'}
                   style={css.imageLogo}
                 />
               </View>
