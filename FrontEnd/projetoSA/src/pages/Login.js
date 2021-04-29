@@ -96,7 +96,6 @@ const css = StyleSheet.create({
   },
   logo: {
     width: 275,
-    marginBottom: 5,
     borderWidth: 3,
     borderRadius: 180,
     borderColor: '#CDCCCE',
@@ -104,7 +103,7 @@ const css = StyleSheet.create({
   },
   subtitle: {
     marginBottom: 10,
-    color: 'white',
+    color: '#CDCCCE',
     fontSize: 38,
     fontFamily: 'DancingScript-Bold',
     alignSelf: 'center'
