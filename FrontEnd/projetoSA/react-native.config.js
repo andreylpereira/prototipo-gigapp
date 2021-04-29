@@ -4,6 +4,7 @@ module.exports = {
       android: {},
     },
     assets: [
-      './node_modules/react-native-vector-icons/Ionicons.js',
+      './assets/fonts',
+      './node_modules/react-native-vector-icons/Ionicons.js'
     ]
   };

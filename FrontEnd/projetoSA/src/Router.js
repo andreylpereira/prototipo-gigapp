@@ -35,26 +35,31 @@ const Routes = () => {
           options={({navigation}) => ({
             headerLeft: () => (
               <View
-                style={{display: 'flex', flexDirection: 'row', marginLeft: 1}}>
+                style={{display: 'flex', flexDirection: 'row', marginLeft: 1, marginTop: 5}}>
                 <TouchableOpacity
                   onPress={() =>
                     navigation.dispatch(DrawerActions.toggleDrawer())
                   }>
-                  <Icon name={'menu'} size={37} color={'white'} />
+                  <Icon name={'menu'} size={40} color={'white'} />
                 </TouchableOpacity>
               </View>
             ),
-            headerRight: () => (
-              <View>
+            headerTitle: () => (
+              <View style={{display: 'flex', flexDirection: 'row'}}>
+                <Text style={{color: '#FFF', fontFamily: "DancingScript-Bold", fontSize: 30}}>GigApp</Text>
                 <Icon
                   name={'musical-notes'}
-                  size={40}
-                  color={'#CDCCCE'}
+                  size={32}
+                  color={'#FFF'}
                   style={css.imageLogo}
                 />
               </View>
             ),
             title: 'GigApp',
+            headerTitleStyle: {
+              fontFamily: "DancingScript-Bold",
+              fontSize: 30,
+            },
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
@@ -250,7 +255,8 @@ const Drawers = () => {
 
 const css = StyleSheet.create({
   imageLogo: {
-    marginRight: 130,
+    marginTop: 5,
+    marginLeft: 5,
     borderWidth: 2,
     borderBottomColor: '#131313',
     borderRadius: 180,
