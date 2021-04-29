@@ -9,10 +9,14 @@ import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Cadastro from './pages/Cadastro';
+import CadastroBanda from './pages/CadastroBanda';
+import CadastroLocal from './pages/CadastroEstabelecimento';
 import Sobre from './pages/Sobre';
 import Perfil from './pages/Perfil';
 import Negocio from './pages/Negocio';
 import Opcoes from './pages/Opcoes';
+import CadastroEstabelecimento from './pages/CadastroEstabelecimento';
+
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -35,7 +39,12 @@ const Routes = () => {
           options={({navigation}) => ({
             headerLeft: () => (
               <View
-                style={{display: 'flex', flexDirection: 'row', marginLeft: 1, marginTop: 5}}>
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  marginLeft: 1,
+                  marginTop: 5,
+                }}>
                 <TouchableOpacity
                   onPress={() =>
                     navigation.dispatch(DrawerActions.toggleDrawer())
@@ -46,7 +55,14 @@ const Routes = () => {
             ),
             headerTitle: () => (
               <View style={{display: 'flex', flexDirection: 'row'}}>
-                <Text style={{color: '#FFF', fontFamily: "DancingScript-Bold", fontSize: 30}}>GigApp</Text>
+                <Text
+                  style={{
+                    color: '#FFF',
+                    fontFamily: 'DancingScript-Bold',
+                    fontSize: 30,
+                  }}>
+                  GigApp
+                </Text>
                 <Icon
                   name={'musical-notes'}
                   size={32}
@@ -67,7 +83,46 @@ const Routes = () => {
         <Stack.Screen
           name="Cadastro"
           component={Cadastro}
-          options={{headerStyle: {backgroundColor: 'tomato'}}}
+          options={{
+            headerTitleStyle: {fontFamily: 'Nunito-Bold'},
+            headerTitleAlign: 'center',
+            headerTintColor: 'white',
+            headerStyle: {
+              backgroundColor: 'tomato',
+              borderBottomWidth: 1,
+              borderBottomColor: '#CDCCCE',
+            },
+          }}
+        />
+        <Stack.Screen
+          name="CadastroBanda"
+          component={CadastroBanda}
+          options={{
+            title: 'Banda',
+            headerTitleStyle: {fontFamily: 'Nunito-Bold'},
+            headerTitleAlign: 'center',
+            headerTintColor: 'white',
+            headerStyle: {
+              backgroundColor: 'tomato',
+              borderBottomWidth: 1,
+              borderBottomColor: '#CDCCCE',
+            },
+          }}
+        />
+        <Stack.Screen
+          name="CadastroEstabelecimento"
+          component={CadastroEstabelecimento}
+          options={{
+            title: 'Estabelecimento',
+            headerTitleStyle: {fontFamily: 'Nunito-Bold'},
+            headerTitleAlign: 'center',
+            headerTintColor: 'white',
+            headerStyle: {
+              backgroundColor: 'tomato',
+              borderBottomWidth: 1,
+              borderBottomColor: '#CDCCCE',
+            },
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
@@ -143,11 +198,17 @@ const Content = ({...props}) => {
               style={{
                 color: '#ffffff',
                 fontSize: 15,
-                fontFamily:'Nunito-Black',
+                fontFamily: 'Nunito-Black',
               }}>
               The Strokes
             </Text>
-            <Text style={{color: '#CDCCCE', fontSize: 13, fontFamily:'Nunito-Bold', marginBottom: 2.5}}>
+            <Text
+              style={{
+                color: '#CDCCCE',
+                fontSize: 13,
+                fontFamily: 'Nunito-Bold',
+                marginBottom: 2.5,
+              }}>
               Banda
             </Text>
             {/* <Text
@@ -183,7 +244,7 @@ const Drawers = () => {
         inactiveTintColor: 'tomato',
         activeBackgroundColor: 'tomato',
         inactiveBackgroundColor: 'white',
-        labelStyle: {fontSize: 15, fontFamily:'Nunito-Black' ,  marginLeft: -20},
+        labelStyle: {fontSize: 15, fontFamily: 'Nunito-Black', marginLeft: -20},
       }}>
       <Drawer.Screen
         name="Home"

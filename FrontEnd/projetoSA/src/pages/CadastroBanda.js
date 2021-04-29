@@ -9,22 +9,24 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-const Cadastro = ({navigation}) => {
+const CadastroBanda = ({navigation}) => {
   return (
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
       <View style={css.container}>
         
-        <TouchableOpacity
-          style={css.button}
-          onPress={() => navigation.navigate('CadastroBanda')}>
-          <Text style={css.buttonText}>Banda</Text>
-        </TouchableOpacity>
+      <TextInput style={css.input} placeholder="Nome" textContentType={'name'} autoCorrect={false}></TextInput>
+        <TextInput style={css.input} placeholder="E-mail" textContentType={'emailAddress'} autoCorrect={false}></TextInput>
+        <TextInput style={css.input} placeholder="Senha" textContentType={'password'} secureTextEntry={true} autoCorrect={false}></TextInput>
+        <TextInput style={css.input} placeholder="Senha" textContentType={'password'} secureTextEntry={true} autoCorrect={false}></TextInput>
+        <TextInput style={css.input} placeholder="Telefone" textContentType={'telephoneNumber'} autoCorrect={false}></TextInput>
+        <TextInput style={css.input} placeholder="Estilo musical" textContentType={'name'} autoCorrect={false}></TextInput>
+        <TextInput style={css.input} placeholder="Descrição" textContentType={'name'} autoCorrect={false}></TextInput>
 
         <TouchableOpacity
           style={css.button}
-          onPress={() => navigation.navigate('CadastroEstabelecimento')}>
-          <Text style={css.buttonText}>Estabelecimento</Text>
+          onPress={() => navigation.navigate('Login')}>
+          <Text style={css.buttonText}>Cadastrar</Text>
         </TouchableOpacity>
 
       </View>
@@ -71,4 +73,4 @@ const css = StyleSheet.create({
   },
 });
 
-export default Cadastro;
+export default CadastroBanda;

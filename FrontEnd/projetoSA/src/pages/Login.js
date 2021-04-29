@@ -73,8 +73,8 @@ const css = StyleSheet.create({
     textAlign: 'center',
     color: 'white',
     marginTop: 3,
-    fontSize: 25,
-    fontFamily: 'Nunito-Black',
+    fontSize: 23,
+    fontFamily: 'Nunito-Black'
   },
   input: {
     alignSelf: 'center',
@@ -85,7 +85,7 @@ const css = StyleSheet.create({
     borderColor: '#000',
     padding: 10,
     marginTop: 15,
-    fontSize: 17,
+    fontSize: 15,
     fontFamily: 'Nunito-Bold',
   },
   cadastrar: {
