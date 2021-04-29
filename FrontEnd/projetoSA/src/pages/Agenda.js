@@ -8,13 +8,13 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-const Negocio = ({navigation}) => {
+const Agenda = ({navigation}) => {
   return (
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
       <View>
         <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
-          <Text>Negocio</Text>
+          <Text>Agenda</Text>
         </TouchableOpacity>
       </View>
     </>
@@ -28,4 +28,4 @@ const css = StyleSheet.create({
   //   },
 });
 
-export default Negocio;
+export default Agenda;

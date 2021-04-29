@@ -14,21 +14,46 @@ const CadastroBanda = ({navigation}) => {
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
       <View style={css.container}>
-        
-      <TextInput style={css.input} placeholder="Nome" textContentType={'name'} autoCorrect={false}></TextInput>
-        <TextInput style={css.input} placeholder="E-mail" textContentType={'emailAddress'} autoCorrect={false}></TextInput>
-        <TextInput style={css.input} placeholder="Senha" textContentType={'password'} secureTextEntry={true} autoCorrect={false}></TextInput>
-        <TextInput style={css.input} placeholder="Senha" textContentType={'password'} secureTextEntry={true} autoCorrect={false}></TextInput>
-        <TextInput style={css.input} placeholder="Telefone" textContentType={'telephoneNumber'} autoCorrect={false}></TextInput>
-        <TextInput style={css.input} placeholder="Estilo musical" textContentType={'name'} autoCorrect={false}></TextInput>
-        <TextInput style={css.input} placeholder="Descrição" textContentType={'name'} autoCorrect={false}></TextInput>
+        <TextInput
+          style={css.input}
+          placeholder="Nome"
+          autoCorrect={false}></TextInput>
+        <TextInput
+          style={css.input}
+          placeholder="E-mail"
+          autoCorrect={false}></TextInput>
+        <TextInput
+          style={css.input}
+          placeholder="Senha"
+          secureTextEntry={true}
+          autoCorrect={false}></TextInput>
+        <TextInput
+          style={css.input}
+          placeholder="Confirmar senha"
+          secureTextEntry={true}
+          autoCorrect={false}></TextInput>
+        <TextInput
+          style={css.input}
+          placeholder="Telefone"
+          autoCorrect={false}></TextInput>
+        <TextInput
+          style={css.input}
+          placeholder="Estilo musical"
+          autoCorrect={false}></TextInput>
+        <TextInput
+          style={css.input}
+          placeholder="Descrição"
+          autoCorrect={false}></TextInput>
+        <TextInput
+          style={css.input}
+          placeholder="Nº integrantes"
+          autoCorrect={false}></TextInput>
 
         <TouchableOpacity
           style={css.button}
           onPress={() => navigation.navigate('Login')}>
           <Text style={css.buttonText}>Cadastrar</Text>
         </TouchableOpacity>
-
       </View>
     </>
   );
@@ -40,7 +65,7 @@ const css = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    height:'100%',
+    height: '100%',
   },
   button: {
     borderWidth: 2,
@@ -57,7 +82,7 @@ const css = StyleSheet.create({
     color: 'white',
     marginTop: 3,
     fontSize: 23,
-    fontFamily: 'Nunito-Black'
+    fontFamily: 'Nunito-Black',
   },
   input: {
     alignSelf: 'center',

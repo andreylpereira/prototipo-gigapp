@@ -74,7 +74,7 @@ const css = StyleSheet.create({
     color: 'white',
     marginTop: 3,
     fontSize: 23,
-    fontFamily: 'Nunito-Black'
+    fontFamily: 'Nunito-Black',
   },
   input: {
     alignSelf: 'center',
@@ -106,7 +106,7 @@ const css = StyleSheet.create({
     color: '#CDCCCE',
     fontSize: 38,
     fontFamily: 'DancingScript-Bold',
-    alignSelf: 'center'
+    alignSelf: 'center',
   },
 });
 

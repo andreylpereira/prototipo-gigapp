@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 import {
   StatusBar,
   StyleSheet,
@@ -9,22 +10,40 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-const Cadastro = ({navigation}) => {
+const EditarPerfil = ({navigation}) => {
   return (
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
       <View style={css.container}>
-        <TouchableOpacity
-          style={css.button}
-          onPress={() => navigation.navigate('CadastroBanda')}>
-          <Text style={css.buttonText}>Banda</Text>
-        </TouchableOpacity>
-
+      <TextInput
+          style={css.input}
+          placeholder="Nome"
+          autoCorrect={false}></TextInput>
+        <TextInput
+          style={css.input}
+          placeholder="E-mail"
+          autoCorrect={false}></TextInput>
+        <TextInput
+          style={css.input}
+          placeholder="Senha"
+          secureTextEntry={true}
+          autoCorrect={false}></TextInput>
+        <TextInput
+          style={css.input}
+          placeholder="Senha"
+          secureTextEntry={true}
+          autoCorrect={false}></TextInput>
+        <TextInput
+          style={css.input}
+          placeholder="Telefone"
+          autoCorrect={false}></TextInput>
         <TouchableOpacity
           style={css.button}
           onPress={() => navigation.navigate('CadastroEstabelecimento')}>
-          <Text style={css.buttonText}>Estabelecimento</Text>
+          <Text style={css.buttonText}>Editar</Text>
         </TouchableOpacity>
+
+
       </View>
     </>
   );
@@ -69,4 +88,4 @@ const css = StyleSheet.create({
   },
 });
 
-export default Cadastro;
+export default EditarPerfil;
