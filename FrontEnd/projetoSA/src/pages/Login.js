@@ -18,7 +18,7 @@ const Login = ({navigation}) => {
         <View>
           <Icon
             name={'musical-notes'}
-            size={250}
+            size={200}
             color={'#FFF'}
             style={css.logo}
           />
@@ -95,7 +95,7 @@ const css = StyleSheet.create({
     fontSize: 16,
   },
   logo: {
-    width: 275,
+    width: 220,
     borderWidth: 3,
     borderRadius: 180,
     borderColor: '#CDCCCE',
