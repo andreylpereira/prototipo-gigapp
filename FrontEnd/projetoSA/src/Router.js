@@ -199,7 +199,7 @@ const Tabs = () => {
 
 const Content = ({...props}) => {
   function Perfils(perfil) {
-    if (perfil == 1) {
+    if (perfil == 'Banda') {
       return (
         <View>
           <View>
@@ -246,7 +246,7 @@ const Content = ({...props}) => {
         </View>
       );
     }
-    if (perfil == 2) {
+    if (perfil == 'Estabelecimento') {
       return (
         <View>
           <View>
@@ -300,7 +300,7 @@ const Content = ({...props}) => {
       );
     }
   }
-  return <>{Perfils(1)}</>;
+  return <>{Perfils('Banda')}</>;
 };
 
 const Drawers = () => {
@@ -313,7 +313,7 @@ const Drawers = () => {
         backgroundColor: '#131313',
       }}
       drawerContentOptions={{
-        activeTintColor: '#CDCCCE',
+        activeTintColor: '#FFF',
         inactiveTintColor: 'tomato',
         activeBackgroundColor: 'tomato',
         inactiveBackgroundColor: '#CDCCCE',
@@ -329,7 +329,7 @@ const Drawers = () => {
             <Icon
               name="home-sharp"
               size={28}
-              color={focused ? '#CDCCCE' : 'tomato'}
+              color={focused ? '#FFF' : 'tomato'}
             />
           ),
         }}
@@ -343,7 +343,7 @@ const Drawers = () => {
             <Icon
               name="person-sharp"
               size={28}
-              color={focused ? '#CDCCCE' : 'tomato'}
+              color={focused ? '#FFF' : 'tomato'}
             />
           ),
         }}
@@ -357,7 +357,7 @@ const Drawers = () => {
             <Icon
               name="information-circle"
               size={30}
-              color={focused ? '#CDCCCE' : 'tomato'}
+              color={focused ? '#FFF' : 'tomato'}
             />
           ),
         }}
@@ -372,7 +372,7 @@ const Drawers = () => {
             <Icon
               name="log-out"
               size={28}
-              color={focused ? '#CDCCCE' : 'tomato'}
+              color={focused ? '#FFF' : 'tomato'}
             />
           ),
         }}

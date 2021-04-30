@@ -14,13 +14,13 @@ const Perfil = ({navigation}) => {
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
       <View style={css.container}>
-        <View style={css.containerDados}>
+        <View style={css.card}>
         <Icon name="person-circle" color={'tomato'} size={90}
         style={css.logo} />
 
         <Text style={css.text}>Dazaranha</Text>
         <Text style={css.text}>Banda</Text>
-        <Text style={css.text}>thedazaranha@yahoo.com.br</Text>
+        <Text style={css.textEmail}>thedazaranha@yahoo.com.br</Text>
         <Text style={{marginBottom: 25}, css.text}>48-9696-6969</Text>
         </View>
         <TouchableOpacity
@@ -40,13 +40,13 @@ const css = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-  containerDados: {
-    backgroundColor: '#131313',
-    borderWidth: 1,
-    borderColor: 'tomato',
+  card: {
+    backgroundColor: '#FFF',
     borderRadius: 12.5,
     width: '70%',
-    elevation: 7.5
+    elevation: 7.5,
+    paddingBottom: 15,
+    marginBottom:25
   },
   button: {
     borderWidth: 2,
@@ -69,24 +69,30 @@ const css = StyleSheet.create({
   text: {
     alignSelf: 'center',
     backgroundColor: '#FFF',
-    width: '70%',
+    width: '80%',
     height: 40,
-    borderRadius: 21,
-    borderWidth:1,
-    borderColor: 'tomato',
     padding: 10,
     marginBottom: 15,
-    
+    borderBottomWidth: 1,
     fontFamily: 'Nunito-Bold',
-    elevation: 7.5
+  },
+  textEmail: {
+    alignSelf: 'center',
+    backgroundColor: '#FFF',
+    width: '80%',
+    height: 40,
+    padding: 10,
+    marginBottom: 15,
+    borderBottomWidth: 1,
+    fontFamily: 'Nunito-BoldItalic',
+    fontSize: 10
   },
   logo: {
     alignSelf: 'center',
-    backgroundColor: '#131313',
+    backgroundColor: '#FFF',
     borderRadius: 180,
     width: 85,
     height: 95,
-    marginBottom: 15,
     marginTop: 15,
     
   }
