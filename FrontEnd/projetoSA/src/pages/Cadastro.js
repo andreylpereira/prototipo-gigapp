@@ -52,7 +52,7 @@ const css = StyleSheet.create({
     textAlign: 'center',
     color: 'white',
     marginTop: 3,
-    fontSize: 23,
+    fontSize: 21,
     fontFamily: 'Nunito-Black',
   },
   input: {

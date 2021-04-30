@@ -41,11 +41,11 @@ const css = StyleSheet.create({
     height: '100%',
   },
   containerDados: {
-    backgroundColor: '#FFF',
+    backgroundColor: '#131313',
     borderWidth: 1,
     borderColor: 'tomato',
     borderRadius: 12.5,
-    width: '90%',
+    width: '70%',
     elevation: 7.5
   },
   button: {
@@ -63,12 +63,12 @@ const css = StyleSheet.create({
     textAlign: 'center',
     color: 'white',
     marginTop: 3,
-    fontSize: 23,
+    fontSize: 21,
     fontFamily: 'Nunito-Black',
   },
   text: {
     alignSelf: 'center',
-    backgroundColor: '#f9f6f7',
+    backgroundColor: '#FFF',
     width: '70%',
     height: 40,
     borderRadius: 21,
@@ -76,13 +76,13 @@ const css = StyleSheet.create({
     borderColor: 'tomato',
     padding: 10,
     marginBottom: 15,
-    fontSize: 15,
+    
     fontFamily: 'Nunito-Bold',
     elevation: 7.5
   },
   logo: {
     alignSelf: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#131313',
     borderRadius: 180,
     width: 85,
     height: 95,
