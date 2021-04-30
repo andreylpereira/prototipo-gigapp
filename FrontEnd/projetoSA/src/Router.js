@@ -198,35 +198,84 @@ const Tabs = () => {
 };
 
 const Content = ({...props}) => {
-  return (
-    <View>
-      <View>
-        <View style={css.personLogo}>
-          <Icon
-            name="person-circle"
-            color={'tomato'}
-            size={75}
-            style={{marginLeft: 5}}
-          />
-          <View style={css.personDescription}>
-            <Text
-              style={{
-                color: '#ffffff',
-                fontSize: 15,
-                fontFamily: 'Nunito-Black',
-              }}>
-              Dazaranha
-            </Text>
-            <Text
-              style={{
-                color: '#CDCCCE',
-                fontSize: 13,
-                fontFamily: 'Nunito-Bold',
-                marginBottom: 2.5,
-              }}>
-              Banda
-            </Text>
-            {/* <Text
+  function Perfils(perfil) {
+    if (perfil == 1) {
+      return (
+        <View>
+          <View>
+            <View style={css.personLogo}>
+              <Icon
+                name="person-circle"
+                color={'tomato'}
+                size={75}
+                style={{marginLeft: 5}}
+              />
+              <View style={css.personDescription}>
+                <Text
+                  style={{
+                    color: '#ffffff',
+                    fontSize: 15,
+                    fontFamily: 'Nunito-Black',
+                  }}>
+                  Dazaranha
+                </Text>
+                <Text
+                  style={{
+                    color: '#CDCCCE',
+                    fontSize: 13,
+                    fontFamily: 'Nunito-Bold',
+                    marginBottom: 2.5,
+                  }}>
+                  Banda
+                </Text>
+                {/* <Text
+                style={{
+                  color: '#CDCCCE',
+                  fontSize: 10,
+                  fontFamily:'Nunito-BoldItalic',
+                  marginBottom: 10,
+                }}>
+                thefulanodetaldajamaica@yahoo.com.br
+              </Text> */}
+              </View>
+            </View>
+          </View>
+          <View style={{marginTop: 10}}>
+            <DrawerItemList {...props} />
+          </View>
+        </View>
+      );
+    }
+    if (perfil == 2) {
+      return (
+        <View>
+          <View>
+            <View style={css.personLogo}>
+              <Icon
+                name="person-circle"
+                color={'tomato'}
+                size={75}
+                style={{marginLeft: 5}}
+              />
+              <View style={css.personDescription}>
+                <Text
+                  style={{
+                    color: '#ffffff',
+                    fontSize: 15,
+                    fontFamily: 'Nunito-Black',
+                  }}>
+                  Dona Benta
+                </Text>
+                <Text
+                  style={{
+                    color: '#CDCCCE',
+                    fontSize: 13,
+                    fontFamily: 'Nunito-Bold',
+                    marginBottom: 2.5,
+                  }}>
+                  Estabelecimento
+                </Text>
+                {/* <Text
               style={{
                 color: '#CDCCCE',
                 fontSize: 10,
@@ -235,14 +284,23 @@ const Content = ({...props}) => {
               }}>
               thefulanodetaldajamaica@yahoo.com.br
             </Text> */}
+              </View>
+            </View>
+          </View>
+          <View style={{marginTop: 10}}>
+            <DrawerItemList {...props} />
           </View>
         </View>
-      </View>
-      <View style={{marginTop: 10}}>
-        <DrawerItemList {...props} />
-      </View>
-    </View>
-  );
+      );
+    } else {
+      return (
+        <View>
+          <Text style={{color: '#fff', marginTop: '90%', textAlign: 'center', fontFamily: 'Nunito-Black', fontSize: 17}}>Error ao carregar</Text>
+        </View>
+      );
+    }
+  }
+  return <>{Perfils(1)}</>;
 };
 
 const Drawers = () => {
@@ -259,7 +317,7 @@ const Drawers = () => {
         inactiveTintColor: 'tomato',
         activeBackgroundColor: 'tomato',
         inactiveBackgroundColor: '#CDCCCE',
-        labelStyle: {fontSize: 15, fontFamily: 'Nunito-Black', marginLeft: -20},
+        labelStyle: {fontSize: 15, fontFamily: 'Nunito-Black', marginLeft: -10},
       }}>
       <Drawer.Screen
         name="Home"
@@ -276,7 +334,7 @@ const Drawers = () => {
           ),
         }}
       />
-            <Drawer.Screen
+      <Drawer.Screen
         name="Perfil"
         component={Perfil}
         options={{
