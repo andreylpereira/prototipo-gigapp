@@ -26,7 +26,7 @@ const Perfil = ({navigation}) => {
         <TouchableOpacity
           style={css.button}
           onPress={() => navigation.navigate('EditarPerfil')}>
-          <Text style={css.buttonText}>Cadastrar</Text>
+          <Text style={css.buttonText}>Editar</Text>
         </TouchableOpacity>
       </View>
     </>

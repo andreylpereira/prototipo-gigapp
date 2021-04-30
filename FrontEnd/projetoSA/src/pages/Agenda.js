@@ -39,11 +39,11 @@ const Agenda = ({navigation}) => {
           <Text style={css.title}>Agenda:</Text>
           
           <View style={css.card}>
-          <FlatList
+          {/* <FlatList
           data={DATA}
           renderItem={renderItem}
           keyExtractor={item => item.id}
-          />
+          /> */}
           </View>
       </View>
     </>

@@ -66,7 +66,7 @@ const Routes = () => {
                 <Icon
                   name={'musical-notes'}
                   size={32}
-                  color={'#CDCCCE'}
+                  color={'#FFF'}
                   style={css.imageLogo}
                 />
               </View>
