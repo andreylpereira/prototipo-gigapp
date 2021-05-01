@@ -17,8 +17,6 @@ const Home = ({navigation}) => {
           <Text style={css.text}> App desenvolvido por alunos no curso de Análise e Desenvolvimento de Sistema do Senai/SC com o objetivo de por em pratica o conhecimento desenvolvido durante o semestre através de uma situação de aprendizagem.
           </Text>
           <Text/>
-          <Text style={css.text, {fontFamily: 'Nunito-Bold'}}> Desenvolvido por: Andrey, Marzeu, Raphael e Renan.
-          </Text>
         </View>
         <View style={css.containerMap}>
           <MapView
