@@ -15,7 +15,6 @@ const EditarPerfil = ({navigation}) => {
       return (
         <View>
           <StatusBar barStyle="dark-content" hidden={true} />
-
           <View style={css.container}>
             <TextInput
               style={css.input}
@@ -52,7 +51,6 @@ const EditarPerfil = ({navigation}) => {
       return (
         <View>
           <StatusBar barStyle="dark-content" hidden={true} />
-
           <View style={css.container}>
             <TextInput
               style={css.input}
@@ -113,7 +111,7 @@ const EditarPerfil = ({navigation}) => {
       );
     }
   }
-  return <>{Perfils('Banda')}</>;
+  return <>{Perfils('Estabelecimento')}</>;
 };
 
 const css = StyleSheet.create({

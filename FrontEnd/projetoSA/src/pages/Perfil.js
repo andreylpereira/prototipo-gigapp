@@ -85,7 +85,7 @@ const Perfil = ({navigation}) => {
 
               <View style={css.text}>
                 <Icon name={'at'} size={15} color={'tomato'} />
-                <Text style={css.perfilLabelEmail}>choppdogus@bol.com.net</Text>
+                <Text style={css.perfilLabelEmail}>andrey_l_pereira@estudante.sc.senai.br</Text>
               </View>
 
               <View style={css.text}>
@@ -196,7 +196,7 @@ const css = StyleSheet.create({
   },
   perfilLabelEmail: {
     fontFamily: 'Nunito-Bold',
-    fontSize: 10,
+    fontSize: 10.5,
     marginLeft: 5,
   },
 });
