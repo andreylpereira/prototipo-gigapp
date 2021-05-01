@@ -43,7 +43,7 @@ const css = StyleSheet.create({
     alignSelf: 'center',
     backgroundColor: '#fff',
     marginBottom: 15,
-    width: '90%',
+    width: '95%',
     padding: 10,
     elevation: 9.5,
     borderRadius: 7.5,
