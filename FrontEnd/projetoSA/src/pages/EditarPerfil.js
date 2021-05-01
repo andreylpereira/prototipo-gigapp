@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 import {
   StatusBar,
   StyleSheet,
@@ -11,42 +10,110 @@ import {
 } from 'react-native';
 
 const EditarPerfil = ({navigation}) => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" hidden={true} />
-      <View style={css.container}>
-      <TextInput
-          style={css.input}
-          placeholder="Nome"
-          autoCorrect={false}></TextInput>
-        <TextInput
-          style={css.input}
-          placeholder="E-mail"
-          autoCorrect={false}></TextInput>
-        <TextInput
-          style={css.input}
-          placeholder="Senha"
-          secureTextEntry={true}
-          autoCorrect={false}></TextInput>
-        <TextInput
-          style={css.input}
-          placeholder="Senha"
-          secureTextEntry={true}
-          autoCorrect={false}></TextInput>
-        <TextInput
-          style={css.input}
-          placeholder="Telefone"
-          autoCorrect={false}></TextInput>
-        <TouchableOpacity
-          style={css.button}
-          onPress={() => navigation.navigate('CadastroEstabelecimento')}>
-          <Text style={css.buttonText}>Editar</Text>
-        </TouchableOpacity>
+  function Perfils(perfil) {
+    if (perfil == 'Banda') {
+      return (
+        <View>
+          <StatusBar barStyle="dark-content" hidden={true} />
 
+          <View style={css.container}>
+            <TextInput
+              style={css.input}
+              placeholder="Nome"
+              autoCorrect={false}></TextInput>
+            <TextInput
+              style={css.input}
+              placeholder="E-mail"
+              autoCorrect={false}></TextInput>
+            <TextInput
+              style={css.input}
+              placeholder="Senha"
+              secureTextEntry={true}
+              autoCorrect={false}></TextInput>
+            <TextInput
+              style={css.input}
+              placeholder="Senha"
+              secureTextEntry={true}
+              autoCorrect={false}></TextInput>
+            <TextInput
+              style={css.input}
+              placeholder="Telefone"
+              autoCorrect={false}></TextInput>
+            <TouchableOpacity
+              style={css.button}
+              onPress={() => navigation.navigate('CadastroEstabelecimento')}>
+              <Text style={css.buttonText}>Editar</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      );
+    }
+    if (perfil == 'Estabelecimento') {
+      return (
+        <View>
+          <StatusBar barStyle="dark-content" hidden={true} />
 
-      </View>
-    </>
-  );
+          <View style={css.container}>
+            <TextInput
+              style={css.input}
+              placeholder="Nome"
+              autoCorrect={false}></TextInput>
+            <TextInput
+              style={css.input}
+              placeholder="E-mail"
+              autoCorrect={false}></TextInput>
+            <TextInput
+              style={css.input}
+              placeholder="Senha"
+              secureTextEntry={true}
+              autoCorrect={false}></TextInput>
+            <TextInput
+              style={css.input}
+              placeholder="Senha"
+              secureTextEntry={true}
+              autoCorrect={false}></TextInput>
+            <TextInput
+              style={css.input}
+              placeholder="Telefone"
+              autoCorrect={false}></TextInput>
+            <TextInput
+              style={css.input}
+              placeholder="Endereço"
+              autoCorrect={false}></TextInput>
+            <TextInput
+              style={css.input}
+              placeholder="Cidade"
+              autoCorrect={false}></TextInput>
+            <TextInput
+              style={css.input}
+              placeholder="Estado"
+              autoCorrect={false}></TextInput>
+            <TouchableOpacity
+              style={css.button}
+              onPress={() => navigation.navigate('CadastroEstabelecimento')}>
+              <Text style={css.buttonText}>Editar</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      );
+    } else {
+      return (
+        <View>
+          <Text
+            style={{
+              color: '#fff',
+              marginTop: '90%',
+              textAlign: 'center',
+              fontFamily: 'Nunito-Black',
+              fontSize: 17,
+            }}>
+            Error ao carregar
+          </Text>
+        </View>
+      );
+    }
+  }
+  return <>{Perfils('Banda')}</>;
 };
 
 const css = StyleSheet.create({

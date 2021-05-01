@@ -10,13 +10,12 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Cadastro from './pages/Cadastro';
 import CadastroBanda from './pages/CadastroBanda';
-import CadastroLocal from './pages/CadastroEstabelecimento';
+import CadastroEstabelecimento from './pages/CadastroEstabelecimento';
 import Sobre from './pages/Sobre';
 import EditarPerfil from './pages/EditarPerfil';
 import Perfil from './pages/Perfil';
-import Opcoes from './pages/Opcoes';
+import Opcoes from './pages/Opcoes'; //Utilizar para cadastro de show
 import Agenda from './pages/Agenda';
-import CadastroEstabelecimento from './pages/CadastroEstabelecimento';
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -151,10 +150,6 @@ const Tabs = () => {
         activeTintColor: 'tomato',
         inactiveTintColor: '#CDCCCE',
         showLabel: false,
-        // labelStyle: {
-        //   fontSize: 15,
-        //   fontFamily: 'Nunito-Bold',
-        // },
         style: {
           borderTopWidth: 2,
           borderBottomWidth: 2,
@@ -173,16 +168,6 @@ const Tabs = () => {
           ),
         }}
       />
-      {/* <Tab.Screen
-        name="Perfil"
-        component={Perfil}
-        options={{
-          tabBarLabel: 'PERFIL',
-          tabBarIcon: ({color, size}) => (
-            <Icon name="calendar-outline" color={color} size={32} />
-          ),
-        }}
-      /> */}
       <Tab.Screen
         name="Agenda"
         component={Agenda}
@@ -228,15 +213,6 @@ const Content = ({...props}) => {
                   }}>
                   Banda
                 </Text>
-                {/* <Text
-                style={{
-                  color: '#CDCCCE',
-                  fontSize: 10,
-                  fontFamily:'Nunito-BoldItalic',
-                  marginBottom: 10,
-                }}>
-                thefulanodetaldajamaica@yahoo.com.br
-              </Text> */}
               </View>
             </View>
           </View>
@@ -275,15 +251,6 @@ const Content = ({...props}) => {
                   }}>
                   Estabelecimento
                 </Text>
-                {/* <Text
-              style={{
-                color: '#CDCCCE',
-                fontSize: 10,
-                fontFamily:'Nunito-BoldItalic',
-                marginBottom: 10,
-              }}>
-              thefulanodetaldajamaica@yahoo.com.br
-            </Text> */}
               </View>
             </View>
           </View>
@@ -295,7 +262,16 @@ const Content = ({...props}) => {
     } else {
       return (
         <View>
-          <Text style={{color: '#fff', marginTop: '90%', textAlign: 'center', fontFamily: 'Nunito-Black', fontSize: 17}}>Error ao carregar</Text>
+          <Text
+            style={{
+              color: '#fff',
+              marginTop: '90%',
+              textAlign: 'center',
+              fontFamily: 'Nunito-Black',
+              fontSize: 17,
+            }}>
+            Error ao carregar
+          </Text>
         </View>
       );
     }
@@ -362,7 +338,6 @@ const Drawers = () => {
           ),
         }}
       />
-
       <Drawer.Screen
         name="Sair"
         component={Login}

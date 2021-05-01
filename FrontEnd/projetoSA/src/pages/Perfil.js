@@ -10,27 +10,131 @@ import {
 } from 'react-native';
 
 const Perfil = ({navigation}) => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" hidden={true} />
-      <View style={css.container}>
-        <View style={css.card}>
-        <Icon name="person-circle" color={'tomato'} size={90}
-        style={css.logo} />
+  function Perfils(perfil) {
+    if (perfil == 'Banda') {
+      return (
+        <View>
+          <StatusBar barStyle="dark-content" hidden={true} />
+          <View style={css.container}>
+            <View style={css.card}>
+              <Icon
+                name="person-circle"
+                color={'tomato'}
+                size={90}
+                style={css.logo}
+              />
 
-        <Text style={css.text}>Dazaranha</Text>
-        <Text style={css.text}>Banda</Text>
-        <Text style={css.textEmail}>thedazaranha@yahoo.com.br</Text>
-        <Text style={{marginBottom: 25}, css.text}>48-9696-6969</Text>
+              <View style={css.text}>
+                <Icon name={'headset-outline'} size={15} color={'tomato'} />
+                <Text style={css.perfilLabel}>Dazaranha</Text>
+              </View>
+
+              <View style={css.text}>
+                <Icon
+                  name={'musical-notes-outline'}
+                  size={15}
+                  color={'tomato'}
+                />
+                <Text style={css.perfilLabel}>Banda</Text>
+              </View>
+
+              <View style={css.text}>
+                <Icon name={'at'} size={15} color={'tomato'} />
+                <Text style={css.perfilLabelEmail}>
+                  andrey_lpereira@estudante.senai.sc.br
+                </Text>
+              </View>
+
+              <View style={css.text}>
+                <Icon name={'call-outline'} size={15} color={'tomato'} />
+                <Text style={css.perfilLabel}>48-9696-6969</Text>
+              </View>
+              <View style={{marginBottom: 15}} />
+            </View>
+            <TouchableOpacity
+              style={css.button}
+              onPress={() => navigation.navigate('EditarPerfil')}>
+              <Text style={css.buttonText}>Editar</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-        <TouchableOpacity
-          style={css.button}
-          onPress={() => navigation.navigate('EditarPerfil')}>
-          <Text style={css.buttonText}>Editar</Text>
-        </TouchableOpacity>
-      </View>
-    </>
-  );
+      );
+    }
+    if (perfil == 'Estabelecimento') {
+      return (
+        <View>
+          <StatusBar barStyle="dark-content" hidden={true} />
+          <View style={css.container}>
+            <View style={css.card}>
+              <Icon
+                name="person-circle"
+                color={'tomato'}
+                size={90}
+                style={css.logo}
+              />
+
+              <View style={css.text}>
+                <Icon name={'beer-outline'} size={15} color={'tomato'} />
+                <Text style={css.perfilLabel}>Chopp do Gus</Text>
+              </View>
+
+              <View style={css.text}>
+                <Icon name={'business-outline'} size={15} color={'tomato'} />
+                <Text style={css.perfilLabel}>Estabelecimento</Text>
+              </View>
+
+              <View style={css.text}>
+                <Icon name={'at'} size={15} color={'tomato'} />
+                <Text style={css.perfilLabelEmail}>choppdogus@bol.com.net</Text>
+              </View>
+
+              <View style={css.text}>
+                <Icon name={'call-outline'} size={15} color={'tomato'} />
+                <Text style={css.perfilLabel}>48-9696-6969</Text>
+              </View>
+
+              <View style={css.text}>
+                <Icon name={'pin-outline'} size={15} color={'tomato'} />
+                <Text style={css.perfilLabelEmail}>
+                  Rua: XV de novembro, 24
+                </Text>
+              </View>
+
+              <View style={css.text}>
+                <Icon name={'location-outline'} size={15} color={'tomato'} />
+                <Text style={css.perfilLabelEmail}>
+                  Florianópolis, Santa Catarina
+                </Text>
+              </View>
+
+              <View style={{marginBottom: 15}} />
+            </View>
+            <TouchableOpacity
+              style={css.button}
+              onPress={() => navigation.navigate('EditarPerfil')}>
+              <Text style={css.buttonText}>Editar</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      );
+    } else {
+      return (
+        <View>
+          <Text
+            style={{
+              color: '#fff',
+              marginTop: '90%',
+              textAlign: 'center',
+              fontFamily: 'Nunito-Black',
+              fontSize: 17,
+            }}>
+            Error ao carregar
+          </Text>
+        </View>
+      );
+    }
+  }
+  return <>{Perfils('Estabelecimento')}</>;
 };
 
 const css = StyleSheet.create({
@@ -46,7 +150,7 @@ const css = StyleSheet.create({
     width: '70%',
     elevation: 7.5,
     paddingBottom: 15,
-    marginBottom:25
+    marginBottom: 25,
   },
   button: {
     borderWidth: 2,
@@ -57,7 +161,7 @@ const css = StyleSheet.create({
     backgroundColor: 'tomato',
     alignSelf: 'center',
     marginTop: 20,
-    elevation: 7.5
+    elevation: 7.5,
   },
   buttonText: {
     textAlign: 'center',
@@ -67,25 +171,16 @@ const css = StyleSheet.create({
     fontFamily: 'Nunito-Black',
   },
   text: {
+    display: 'flex',
+    flexDirection: 'row',
     alignSelf: 'center',
     backgroundColor: '#FFF',
-    width: '80%',
+    width: '90%',
     height: 40,
     padding: 10,
-    marginBottom: 15,
+    marginBottom: 7.5,
     borderBottomWidth: 1,
-    fontFamily: 'Nunito-Bold',
-  },
-  textEmail: {
-    alignSelf: 'center',
-    backgroundColor: '#FFF',
-    width: '80%',
-    height: 40,
-    padding: 10,
-    marginBottom: 15,
-    borderBottomWidth: 1,
-    fontFamily: 'Nunito-BoldItalic',
-    fontSize: 10
+    borderBottomColor: '#CDCCCE',
   },
   logo: {
     alignSelf: 'center',
@@ -94,9 +189,16 @@ const css = StyleSheet.create({
     width: 85,
     height: 95,
     marginTop: 15,
-    
-  }
- 
+  },
+  perfilLabel: {
+    fontFamily: 'Nunito-Bold',
+    marginLeft: 5,
+  },
+  perfilLabelEmail: {
+    fontFamily: 'Nunito-Bold',
+    fontSize: 10,
+    marginLeft: 5,
+  },
 });
 
 export default Perfil;

@@ -29,8 +29,6 @@ const DATA = [
 
 const Agenda = ({navigation}) => {
 
-
-
   return (
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
@@ -71,7 +69,6 @@ const css = StyleSheet.create({
       height: 100,
       elevation: 9.5,
       borderRadius: 7.5,
-      
     }
 });
 
