@@ -276,7 +276,7 @@ const Content = ({...props}) => {
       );
     }
   }
-  return <>{Perfils('Banda')}</>;
+  return <>{Perfils('Estabelecimento')}</>;
 };
 
 const Drawers = () => {

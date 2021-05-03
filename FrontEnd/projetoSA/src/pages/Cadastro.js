@@ -40,7 +40,7 @@ const css = StyleSheet.create({
   button: {
     borderWidth: 2,
     borderRadius: 21,
-    borderColor: '#CDCCCE',
+    borderColor: '#FF8069',
     width: '70%',
     height: 45,
     backgroundColor: 'tomato',
