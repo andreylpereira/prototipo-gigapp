@@ -1,5 +1,4 @@
 import React from 'react';
-import Icon from 'react-native-vector-icons/Ionicons';
 
 import {
   StatusBar,
@@ -10,41 +9,50 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-const Login = ({navigation}) => {
+const CadastroBanda = ({navigation}) => {
   return (
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
       <View style={css.container}>
-        <View>
-          <Icon
-            name={'musical-notes'}
-            size={200}
-            color={'#FFF'}
-            style={css.logo}
-          />
-          <Text style={css.subtitle}>GigApp</Text>
-        </View>
-
+        <TextInput
+          style={css.input}
+          placeholder="Nome"
+          autoCorrect={false}></TextInput>
         <TextInput
           style={css.input}
           placeholder="E-mail"
-          textContentType={'emailAddress'}
           autoCorrect={false}></TextInput>
         <TextInput
           style={css.input}
           placeholder="Senha"
-          textContentType={'password'}
           secureTextEntry={true}
           autoCorrect={false}></TextInput>
-
-        <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
-          <Text style={css.cadastrar}>Cadastrar-se</Text>
-        </TouchableOpacity>
+        <TextInput
+          style={css.input}
+          placeholder="Confirmar senha"
+          secureTextEntry={true}
+          autoCorrect={false}></TextInput>
+        <TextInput
+          style={css.input}
+          placeholder="Telefone"
+          autoCorrect={false}></TextInput>
+        <TextInput
+          style={css.input}
+          placeholder="Estilo musical"
+          autoCorrect={false}></TextInput>
+        <TextInput
+          style={css.input}
+          placeholder="Descrição"
+          autoCorrect={false}></TextInput>
+        <TextInput
+          style={css.input}
+          placeholder="Nº integrantes"
+          autoCorrect={false}></TextInput>
 
         <TouchableOpacity
           style={css.button}
-          onPress={() => navigation.navigate('Home')}>
-          <Text style={css.buttonText}>Entrar</Text>
+          onPress={() => navigation.navigate('Login')}>
+          <Text style={css.buttonText}>Cadastrar</Text>
         </TouchableOpacity>
       </View>
     </>
@@ -88,26 +96,6 @@ const css = StyleSheet.create({
     fontSize: 15,
     fontFamily: 'Nunito-Bold',
   },
-  cadastrar: {
-    color: '#CDCCCE',
-    fontFamily: 'Nunito-Bold',
-    marginTop: 5,
-    fontSize: 16,
-  },
-  logo: {
-    width: 220,
-    borderWidth: 3,
-    borderRadius: 180,
-    borderColor: '#CDCCCE',
-    backgroundColor: 'tomato',
-  },
-  subtitle: {
-    marginBottom: 10,
-    color: '#CDCCCE',
-    fontSize: 38,
-    fontFamily: 'DancingScript-Bold',
-    alignSelf: 'center',
-  },
 });
 
-export default Login;
+export default CadastroBanda;
