@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from 'react-native-vector-icons/Ionicons';
 import MapView, {PROVIDER_GOOGLE, Marker, Callout} from 'react-native-maps';
 import {
   StatusBar,
@@ -111,7 +112,8 @@ const mapLightStyle = [  {
   "elementType": "labels.text.fill",
   "stylers": [
     {
-      "color": "#B5B5B5"
+      "color": "#588ca4"
+      //"color": "#B5B5B5"
     }
   ]
 },
@@ -243,7 +245,7 @@ const mapLightStyle = [  {
   "elementType": "geometry.fill",
   "stylers": [
     {
-      "color": "#131313"
+      "color": "#939294"
     }
   ]
 },
@@ -252,7 +254,7 @@ const mapLightStyle = [  {
   "elementType": "labels.text.fill",
   "stylers": [
     {
-      "color": "#131313"
+      "color": "#939294"
     }
   ]
 },
@@ -315,7 +317,31 @@ const Home = ({navigation}) => {
                 latitude: -27.558764,
                 longitude: -48.493178,
               }}
-              // image={requestAnimationFrame('...assets/maps/map_marker.png')}
+              image={require('../assets/maps/drink.png')}
+              title="teste"
+              description="Teste"
+              >
+                <Callout tooltip>
+                  <View>
+                    <View style={css.bubble}>
+                    <Text style={css.mapText}>
+                      TESTE
+                    </Text>
+                    <Text style={css.mapText}>
+                      TESTE2
+                    </Text>
+                    </View>
+                    <View style={css.arrowBorder}/>
+                    <View style={css.arrow}/>
+                  </View>
+                </Callout>
+              </Marker>
+              <Marker
+              coordinate={{
+                latitude: -27.601728,
+                longitude: -48.525906,
+              }}
+              image={require('../assets/maps/band.png')}
               title="teste"
               description="Teste"
               >
