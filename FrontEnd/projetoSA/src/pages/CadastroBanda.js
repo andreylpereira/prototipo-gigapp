@@ -41,8 +41,10 @@ const CadastroBanda = ({navigation}) => {
           placeholder="Estilo musical"
           autoCorrect={false}></TextInput>
         <TextInput
-          style={css.input}
+          style={css.description}
           placeholder="Descrição"
+          multiline={true}
+          numberOfLines={5}
           autoCorrect={false}></TextInput>
         <TextInput
           style={css.input}
@@ -96,6 +98,18 @@ const css = StyleSheet.create({
     fontSize: 15,
     fontFamily: 'Nunito-Bold',
   },
+  description: {
+    alignSelf: 'center',
+    backgroundColor: '#FFF',
+    width: '90%',
+    height: 100,
+    borderRadius: 21,
+    borderColor: '#000',
+    padding: 10,
+    marginTop: 15,
+    fontSize: 15,
+    fontFamily: 'Nunito-Bold',
+  }
 });
 
 export default CadastroBanda;
