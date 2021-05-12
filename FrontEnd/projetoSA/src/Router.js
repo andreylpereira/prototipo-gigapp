@@ -163,8 +163,8 @@ const Tabs = () => {
         component={Home}
         options={{
           tabBarLabel: 'HOME',
-          tabBarIcon: ({color, size}) => (
-            <Icon name="home-outline" color={color} size={32} />
+          tabBarIcon: ({color, focused}) => (
+            <Icon name="home-outline" color={color} size={focused ? 32 : 28} />
           ),
         }}
       />
@@ -173,8 +173,8 @@ const Tabs = () => {
         component={Agenda}
         options={{
           tabBarLabel: 'Agenda',
-          tabBarIcon: ({color, size}) => (
-            <Icon name="calendar-outline" color={color} size={38} />
+          tabBarIcon: ({color, focused}) => (
+            <Icon name="calendar-outline" color={color} size={focused ? 32 : 28} />
           ),
         }}
       />
