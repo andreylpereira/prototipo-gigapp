@@ -25,11 +25,13 @@ const CadastroEstabelecimento = ({navigation}) => {
         <TextInput
           style={css.input}
           placeholder="Senha"
+          textContentType={'password'}
           secureTextEntry={true}
           autoCorrect={false}></TextInput>
         <TextInput
           style={css.input}
-          placeholder="Senha"
+          placeholder="Confirmar senha"
+          textContentType={'password'}
           secureTextEntry={true}
           autoCorrect={false}></TextInput>
         <TextInput

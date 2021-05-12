@@ -25,11 +25,13 @@ const CadastroBanda = ({navigation}) => {
         <TextInput
           style={css.input}
           placeholder="Senha"
+          textContentType={'password'}
           secureTextEntry={true}
           autoCorrect={false}></TextInput>
         <TextInput
           style={css.input}
           placeholder="Confirmar senha"
+          textContentType={'password'}
           secureTextEntry={true}
           autoCorrect={false}></TextInput>
         <TextInput
