@@ -16,6 +16,7 @@ import EditarPerfil from './pages/EditarPerfil';
 import Perfil from './pages/Perfil';
 import Opcoes from './pages/Opcoes'; //Utilizar para cadastro de show
 import Agenda from './pages/Agenda';
+import Agendamento from './pages/Agendamento';
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -128,6 +129,21 @@ const Routes = () => {
           component={EditarPerfil}
           options={{
             title: 'Editar Perfil',
+            headerTitleStyle: {fontFamily: 'Nunito-Bold'},
+            headerTitleAlign: 'center',
+            headerTintColor: 'white',
+            headerStyle: {
+              backgroundColor: 'tomato',
+              borderBottomWidth: 1,
+              borderBottomColor: '#CDCCCE',
+            },
+          }}
+        />
+        <Stack.Screen
+          name="Agendamento"
+          component={Agendamento}
+          options={{
+            title: 'Agendamento',
             headerTitleStyle: {fontFamily: 'Nunito-Bold'},
             headerTitleAlign: 'center',
             headerTintColor: 'white',
