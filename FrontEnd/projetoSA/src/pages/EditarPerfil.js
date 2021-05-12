@@ -98,20 +98,14 @@ const EditarPerfil = ({navigation}) => {
       return (
         <View>
           <Text
-            style={{
-              color: '#fff',
-              marginTop: '90%',
-              textAlign: 'center',
-              fontFamily: 'Nunito-Black',
-              fontSize: 17,
-            }}>
+            style={css.error}>
             Error ao carregar
           </Text>
         </View>
       );
     }
   }
-  return <>{Perfils('Estabelecimento')}</>;
+  return <>{Perfils('Banda')}</>;
 };
 
 const css = StyleSheet.create({
@@ -151,6 +145,13 @@ const css = StyleSheet.create({
     fontSize: 15,
     fontFamily: 'Nunito-Bold',
   },
+  error: {
+    color: '#fff',
+    marginTop: '90%',
+    textAlign: 'center',
+    fontFamily: 'Nunito-Black',
+    fontSize: 17
+  }
 });
 
 export default EditarPerfil;

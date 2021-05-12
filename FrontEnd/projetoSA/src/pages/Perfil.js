@@ -24,9 +24,25 @@ const Perfil = ({navigation}) => {
                 style={css.logo}
               />
 
-              <View style={css.text}>
+              {/* <View style={css.text}>
                 <Icon name={'headset-outline'} size={15} color={'tomato'} />
                 <Text style={css.perfilLabel}>Dazaranha</Text>
+              </View> */}
+              <View>
+                <Text style={css.tittle}>Dazaranha</Text>
+                <View
+                  style={css.starLine}>
+                  <Text
+                    style={css.note}>
+                    10,0
+                  </Text>
+                  <Icon
+                    name="star"
+                    color={'yellow'}
+                    size={11}
+                    style={{marginLeft: 3, marginTop: 2}}
+                  />
+                </View>
               </View>
 
               <View style={css.text}>
@@ -49,6 +65,7 @@ const Perfil = ({navigation}) => {
                 <Icon name={'call-outline'} size={15} color={'tomato'} />
                 <Text style={css.perfilLabel}>48-9696-6969</Text>
               </View>
+              
               <View style={{marginBottom: 15}} />
             </View>
             <TouchableOpacity
@@ -73,10 +90,27 @@ const Perfil = ({navigation}) => {
                 style={css.logo}
               />
 
-              <View style={css.text}>
+              <View>
+                <Text style={css.tittle}>Chopp do Gus</Text>
+                <View
+                  style={css.starLine}>
+                  <Text
+                    style={css.note}>
+                    10,0
+                  </Text>
+                  <Icon
+                    name="star"
+                    color={'yellow'}
+                    size={11}
+                    style={{marginLeft: 3, marginTop: 2}}
+                  />
+                </View>
+              </View>
+
+              {/* <View style={css.text}>
                 <Icon name={'beer-outline'} size={15} color={'tomato'} />
                 <Text style={css.perfilLabel}>Chopp do Gus</Text>
-              </View>
+              </View> */}
 
               <View style={css.text}>
                 <Icon name={'business-outline'} size={15} color={'tomato'} />
@@ -85,7 +119,9 @@ const Perfil = ({navigation}) => {
 
               <View style={css.text}>
                 <Icon name={'at'} size={15} color={'tomato'} />
-                <Text style={css.perfilLabelEmail}>andrey_l_pereira@estudante.sc.senai.br</Text>
+                <Text style={css.perfilLabelEmail}>
+                  andrey_l_pereira@estudante.sc.senai.br
+                </Text>
               </View>
 
               <View style={css.text}>
@@ -134,7 +170,7 @@ const Perfil = ({navigation}) => {
       );
     }
   }
-  return <>{Perfils('Estabelecimento')}</>;
+  return <>{Perfils('Banda')}</>;
 };
 
 const css = StyleSheet.create({
@@ -151,6 +187,23 @@ const css = StyleSheet.create({
     elevation: 7.5,
     paddingBottom: 15,
     marginBottom: 25,
+  },
+  tittle: {
+    fontFamily: 'Nunito-Black',
+    color: '#131313',
+    fontSize: 15,
+    alignSelf: 'center',
+  },
+  note: {
+    color: '#CDCCCE',
+    fontSize: 12,
+    fontFamily: 'Nunito-Black'
+  },
+  starLine: {
+    marginBottom: 5,
+    display: 'flex',
+    flexDirection: 'row',
+    alignSelf: 'center',
   },
   button: {
     borderWidth: 2,
@@ -187,7 +240,7 @@ const css = StyleSheet.create({
     backgroundColor: '#FFF',
     borderRadius: 180,
     width: 85,
-    height: 95,
+    height: 85,
     marginTop: 15,
   },
   perfilLabel: {

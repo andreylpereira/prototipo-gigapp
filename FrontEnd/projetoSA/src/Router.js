@@ -163,8 +163,8 @@ const Tabs = () => {
         component={Home}
         options={{
           tabBarLabel: 'HOME',
-          tabBarIcon: ({color, size}) => (
-            <Icon name="home-outline" color={color} size={32} />
+          tabBarIcon: ({color, focused}) => (
+            <Icon name="home-outline" color={color} size={focused ? 32 : 28} />
           ),
         }}
       />
@@ -173,8 +173,8 @@ const Tabs = () => {
         component={Agenda}
         options={{
           tabBarLabel: 'Agenda',
-          tabBarIcon: ({color, size}) => (
-            <Icon name="calendar-outline" color={color} size={38} />
+          tabBarIcon: ({color, focused}) => (
+            <Icon name="calendar-outline" color={color} size={focused ? 32 : 28} />
           ),
         }}
       />
@@ -196,23 +196,17 @@ const Content = ({...props}) => {
                 style={{marginLeft: 5}}
               />
               <View style={css.personDescription}>
-                <Text
-                  style={{
-                    color: '#ffffff',
-                    fontSize: 15,
-                    fontFamily: 'Nunito-Black',
-                  }}>
-                  Dazaranha
-                </Text>
-                <Text
-                  style={{
-                    color: '#CDCCCE',
-                    fontSize: 13,
-                    fontFamily: 'Nunito-Bold',
-                    marginBottom: 2.5,
-                  }}>
-                  Banda
-                </Text>
+                <Text style={css.personName}>Dazaranha</Text>
+                <Text style={css.personType}>Banda</Text>
+                <View style={css.starLine}>
+                  <Text style={css.starLineText}>10,0</Text>
+                  <Icon
+                    name="star"
+                    color={'yellow'}
+                    size={11}
+                    style={css.star}
+                  />
+                </View>
               </View>
             </View>
           </View>
@@ -234,23 +228,20 @@ const Content = ({...props}) => {
                 style={{marginLeft: 5}}
               />
               <View style={css.personDescription}>
+                <Text style={css.personName}>Dona Benta</Text>
                 <Text
-                  style={{
-                    color: '#ffffff',
-                    fontSize: 15,
-                    fontFamily: 'Nunito-Black',
-                  }}>
-                  Dona Benta
-                </Text>
-                <Text
-                  style={{
-                    color: '#CDCCCE',
-                    fontSize: 13,
-                    fontFamily: 'Nunito-Bold',
-                    marginBottom: 2.5,
-                  }}>
+                  style={css.personType}>
                   Estabelecimento
                 </Text>
+                <View style={css.starLine}>
+                  <Text style={css.starLineText}>10,0</Text>
+                  <Icon
+                    name="star"
+                    color={'yellow'}
+                    size={11}
+                    style={css.star}
+                  />
+                </View>
               </View>
             </View>
           </View>
@@ -262,21 +253,12 @@ const Content = ({...props}) => {
     } else {
       return (
         <View>
-          <Text
-            style={{
-              color: '#fff',
-              marginTop: '90%',
-              textAlign: 'center',
-              fontFamily: 'Nunito-Black',
-              fontSize: 17,
-            }}>
-            Error ao carregar
-          </Text>
+          <Text style={css.error}>Error ao carregar</Text>
         </View>
       );
     }
   }
-  return <>{Perfils('Estabelecimento')}</>;
+  return <>{Perfils('Banda')}</>;
 };
 
 const Drawers = () => {
@@ -375,8 +357,41 @@ const css = StyleSheet.create({
   },
   personDescription: {
     marginLeft: 5,
-    marginTop: 20,
+    marginTop: 10,
     color: '#fff',
+  },
+  personName: {
+    color: '#ffffff',
+    fontSize: 15,
+    fontFamily: 'Nunito-Black',
+  },
+  personType: {
+    color: '#CDCCCE',
+    fontSize: 13,
+    fontFamily: 'Nunito-Bold',
+    marginBottom: 2.5,
+  },
+  star: {
+    marginLeft: 3,
+    marginTop: 2,
+    marginBottom: 5,
+  },
+  starLine: {
+    marginBottom: 5,
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  starLineText: {
+    color: '#ffffff',
+    fontSize: 12,
+    fontFamily: 'Nunito-Black',
+  },
+  error: {
+    color: '#fff',
+    marginTop: '90%',
+    textAlign: 'center',
+    fontFamily: 'Nunito-Black',
+    fontSize: 17,
   },
 });
 
