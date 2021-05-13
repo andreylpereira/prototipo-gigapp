@@ -57,6 +57,8 @@ const css = StyleSheet.create({
   input: {
     alignSelf: 'center',
     backgroundColor: '#FFF',
+    color: 'black',
+    opacity: 0.95,
     width: '90%',
     height: 40,
     borderRadius: 21,

@@ -14,44 +14,39 @@ const CadastroBanda = ({navigation}) => {
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
       <View style={css.container}>
-        <TextInput
-          style={css.input}
-          placeholder="Nome"
-          autoCorrect={false}></TextInput>
-        <TextInput
-          style={css.input}
-          placeholder="E-mail"
-          autoCorrect={false}></TextInput>
+        <TextInput style={css.input} placeholder="Nome" autoCorrect={false} />
+        <TextInput style={css.input} placeholder="E-mail" autoCorrect={false} />
         <TextInput
           style={css.input}
           placeholder="Senha"
           textContentType={'password'}
           secureTextEntry={true}
-          autoCorrect={false}></TextInput>
+          autoCorrect={false}
+        />
         <TextInput
           style={css.input}
           placeholder="Confirmar senha"
           textContentType={'password'}
           secureTextEntry={true}
-          autoCorrect={false}></TextInput>
+          autoCorrect={false}
+        />
         <TextInput
           style={css.input}
           placeholder="Telefone"
-          autoCorrect={false}></TextInput>
+          autoCorrect={false}
+        />
         <TextInput
           style={css.input}
           placeholder="Estilo musical"
-          autoCorrect={false}></TextInput>
+          autoCorrect={false}
+        />
         <TextInput
           style={css.description}
           placeholder="Descrição"
           multiline={true}
           numberOfLines={5}
-          autoCorrect={false}></TextInput>
-        <TextInput
-          style={css.input}
-          placeholder="Nº integrantes"
-          autoCorrect={false}></TextInput>
+          autoCorrect={false}
+        />
 
         <TouchableOpacity
           style={css.button}
@@ -91,6 +86,8 @@ const css = StyleSheet.create({
   input: {
     alignSelf: 'center',
     backgroundColor: '#FFF',
+    color: 'black',
+    opacity: 0.95,
     width: '90%',
     height: 40,
     borderRadius: 21,
@@ -103,6 +100,8 @@ const css = StyleSheet.create({
   description: {
     alignSelf: 'center',
     backgroundColor: '#FFF',
+    color: 'black',
+    opacity: 0.95,
     width: '90%',
     height: 100,
     borderRadius: 21,
@@ -111,7 +110,7 @@ const css = StyleSheet.create({
     marginTop: 15,
     fontSize: 15,
     fontFamily: 'Nunito-Bold',
-  }
+  },
 });
 
 export default CadastroBanda;

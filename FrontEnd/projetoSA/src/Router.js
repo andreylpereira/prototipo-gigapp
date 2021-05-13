@@ -14,7 +14,6 @@ import CadastroEstabelecimento from './pages/CadastroEstabelecimento';
 import Sobre from './pages/Sobre';
 import EditarPerfil from './pages/EditarPerfil';
 import Perfil from './pages/Perfil';
-import Opcoes from './pages/Opcoes'; //Utilizar para cadastro de show
 import Agenda from './pages/Agenda';
 import Agendamento from './pages/Agendamento';
 
@@ -190,7 +189,11 @@ const Tabs = () => {
         options={{
           tabBarLabel: 'Agenda',
           tabBarIcon: ({color, focused}) => (
-            <Icon name="calendar-outline" color={color} size={focused ? 32 : 28} />
+            <Icon
+              name="calendar-outline"
+              color={color}
+              size={focused ? 32 : 28}
+            />
           ),
         }}
       />
@@ -212,13 +215,17 @@ const Content = ({...props}) => {
                 style={{marginLeft: 5}}
               />
               <View style={css.personDescription}>
-                <Text style={css.personName}>Dazaranha</Text>
-                <Text style={css.personType}>Banda</Text>
+                <Text numberOfLines={1} style={css.personName}>
+                  Dazaranha
+                </Text>
+                <Text numberOfLines={1} style={css.personType}>
+                  Banda
+                </Text>
                 <View style={css.starLine}>
                   <Text style={css.starLineText}>10,0</Text>
                   <Icon
                     name="star"
-                    color={'yellow'}
+                    color={'#FCC51C'}
                     size={11}
                     style={css.star}
                   />
@@ -244,16 +251,17 @@ const Content = ({...props}) => {
                 style={{marginLeft: 5}}
               />
               <View style={css.personDescription}>
-                <Text style={css.personName}>Dona Benta</Text>
-                <Text
-                  style={css.personType}>
+                <Text numberOfLines={1} style={css.personName}>
+                  Chopp do Gus
+                </Text>
+                <Text numberOfLines={1} style={css.personType}>
                   Estabelecimento
                 </Text>
                 <View style={css.starLine}>
                   <Text style={css.starLineText}>10,0</Text>
                   <Icon
                     name="star"
-                    color={'yellow'}
+                    color={'#FCC51C'}
                     size={11}
                     style={css.star}
                   />
@@ -274,7 +282,7 @@ const Content = ({...props}) => {
       );
     }
   }
-  return <>{Perfils('Banda')}</>;
+  return <>{Perfils('Estabelecimento')}</>;
 };
 
 const Drawers = () => {
@@ -389,8 +397,9 @@ const css = StyleSheet.create({
   },
   star: {
     marginLeft: 3,
-    marginTop: 2,
+    marginTop: 1,
     marginBottom: 5,
+    opacity: 0.5,
   },
   starLine: {
     marginBottom: 5,
@@ -399,8 +408,9 @@ const css = StyleSheet.create({
   },
   starLineText: {
     color: '#ffffff',
-    fontSize: 12,
-    fontFamily: 'Nunito-Black',
+    fontSize: 11,
+    fontFamily: 'Nunito-Regular',
+    opacity: 0.5,
   },
   error: {
     color: '#fff',

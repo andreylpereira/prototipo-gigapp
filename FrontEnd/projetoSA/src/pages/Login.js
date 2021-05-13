@@ -29,13 +29,15 @@ const Login = ({navigation}) => {
           style={css.input}
           placeholder="E-mail"
           textContentType={'emailAddress'}
-          autoCorrect={false}></TextInput>
+          autoCorrect={false}
+        />
         <TextInput
           style={css.input}
           placeholder="Senha"
           textContentType={'password'}
           secureTextEntry={true}
-          autoCorrect={false}></TextInput>
+          autoCorrect={false}
+        />
 
         <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
           <Text style={css.cadastrar}>Cadastrar-se</Text>
@@ -79,6 +81,8 @@ const css = StyleSheet.create({
   input: {
     alignSelf: 'center',
     backgroundColor: '#FFF',
+    color: 'black',
+    opacity: 0.95,
     width: '90%',
     height: 40,
     borderRadius: 21,
