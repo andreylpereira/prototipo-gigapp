@@ -30,17 +30,13 @@ const Perfil = ({navigation}) => {
               </View> */}
               <View>
                 <Text style={css.tittle}>Dazaranha</Text>
-                <View
-                  style={css.starLine}>
-                  <Text
-                    style={css.note}>
-                    10,0
-                  </Text>
+                <View style={css.starLine}>
+                  <Text style={css.note}>10,0</Text>
                   <Icon
                     name="star"
-                    color={'yellow'}
-                    size={11}
-                    style={{marginLeft: 3, marginTop: 2}}
+                    color={'#FCC51C'}
+                    size={12.5}
+                    style={{marginLeft: 3, marginTop: 1, opacity: 0.5}}
                   />
                 </View>
               </View>
@@ -48,25 +44,44 @@ const Perfil = ({navigation}) => {
               <View style={css.text}>
                 <Icon
                   name={'musical-notes-outline'}
-                  size={15}
+                  size={18}
                   color={'tomato'}
                 />
-                <Text style={css.perfilLabel}>Banda</Text>
+                <Text numberOfLines={1} style={css.perfilLabel}>
+                  Banda
+                </Text>
               </View>
 
               <View style={css.text}>
-                <Icon name={'at'} size={15} color={'tomato'} />
-                <Text style={css.perfilLabelEmail}>
+                <Icon name={'headset-outline'} size={18} color={'tomato'} />
+                <Text numberOfLines={1} style={css.perfilLabel}>
+                  Rock
+                </Text>
+              </View>
+
+              <View style={css.text}>
+                <Icon name={'at'} size={18} color={'tomato'} />
+                <Text numberOfLines={1} style={css.perfilLabel}>
                   andrey_lpereira@estudante.senai.sc.br
                 </Text>
               </View>
 
               <View style={css.text}>
-                <Icon name={'call-outline'} size={15} color={'tomato'} />
+                <Icon name={'call-outline'} size={18} color={'tomato'} />
                 <Text style={css.perfilLabel}>48-9696-6969</Text>
               </View>
-              
-              <View style={{marginBottom: 15}} />
+
+              <View style={css.textDescription}>
+                <Icon name={'reader-outline'} size={18} color={'tomato'} />
+                <Text numberOfLines={3} style={css.perfilLabel}>
+                  Lorem Ipsum is simply dummy text of the printing
+                  andtypesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the asd ext ever since the
+                  since the since they the asd.
+                </Text>
+              </View>
+
+              <View style={{marginBottom: 25}} />
             </View>
             <TouchableOpacity
               style={css.button}
@@ -92,58 +107,49 @@ const Perfil = ({navigation}) => {
 
               <View>
                 <Text style={css.tittle}>Chopp do Gus</Text>
-                <View
-                  style={css.starLine}>
-                  <Text
-                    style={css.note}>
-                    10,0
-                  </Text>
+                <View style={css.starLine}>
+                  <Text style={css.note}>10,0</Text>
                   <Icon
                     name="star"
-                    color={'yellow'}
-                    size={11}
-                    style={{marginLeft: 3, marginTop: 2}}
+                    color={'#FCC51C'}
+                    size={12.5}
+                    style={{marginLeft: 3, marginTop: 1, opacity: 0.5}}
                   />
                 </View>
               </View>
 
-              {/* <View style={css.text}>
-                <Icon name={'beer-outline'} size={15} color={'tomato'} />
-                <Text style={css.perfilLabel}>Chopp do Gus</Text>
-              </View> */}
-
               <View style={css.text}>
-                <Icon name={'business-outline'} size={15} color={'tomato'} />
+                <Icon name={'business-outline'} size={18} color={'tomato'} />
                 <Text style={css.perfilLabel}>Estabelecimento</Text>
               </View>
 
               <View style={css.text}>
-                <Icon name={'at'} size={15} color={'tomato'} />
-                <Text style={css.perfilLabelEmail}>
+                <Icon name={'at'} size={18} color={'tomato'} />
+                <Text numberOfLines={1} style={css.perfilLabel}>
                   andrey_l_pereira@estudante.sc.senai.br
                 </Text>
               </View>
 
               <View style={css.text}>
-                <Icon name={'call-outline'} size={15} color={'tomato'} />
+                <Icon name={'call-outline'} size={18} color={'tomato'} />
                 <Text style={css.perfilLabel}>48-9696-6969</Text>
               </View>
 
               <View style={css.text}>
-                <Icon name={'pin-outline'} size={15} color={'tomato'} />
-                <Text style={css.perfilLabelEmail}>
+                <Icon name={'pin-outline'} size={18} color={'tomato'} />
+                <Text numberOfLines={1} style={css.perfilLabel}>
                   Rua: XV de novembro, 24
                 </Text>
               </View>
 
               <View style={css.text}>
-                <Icon name={'location-outline'} size={15} color={'tomato'} />
-                <Text style={css.perfilLabelEmail}>
+                <Icon name={'location-outline'} size={18} color={'tomato'} />
+                <Text numberOfLines={1} style={css.perfilLabel}>
                   Florianópolis, Santa Catarina
                 </Text>
               </View>
 
-              <View style={{marginBottom: 15}} />
+              <View style={{marginBottom: 25}} />
             </View>
             <TouchableOpacity
               style={css.button}
@@ -170,7 +176,7 @@ const Perfil = ({navigation}) => {
       );
     }
   }
-  return <>{Perfils('Banda')}</>;
+  return <>{Perfils('Estabelecimento')}</>;
 };
 
 const css = StyleSheet.create({
@@ -185,7 +191,7 @@ const css = StyleSheet.create({
     borderRadius: 12.5,
     width: '70%',
     elevation: 7.5,
-    paddingBottom: 15,
+    paddingBottom: 25,
     marginBottom: 25,
   },
   tittle: {
@@ -197,7 +203,7 @@ const css = StyleSheet.create({
   note: {
     color: '#CDCCCE',
     fontSize: 12,
-    fontFamily: 'Nunito-Black'
+    fontFamily: 'Nunito-Black',
   },
   starLine: {
     marginBottom: 5,
@@ -231,7 +237,18 @@ const css = StyleSheet.create({
     width: '90%',
     height: 40,
     padding: 10,
-    marginBottom: 7.5,
+    marginBottom: 4.5,
+    borderBottomWidth: 1,
+    borderBottomColor: '#CDCCCE',
+  },
+  textDescription: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignSelf: 'center',
+    backgroundColor: '#FFF',
+    width: '90%',
+    height: 80,
+    padding: 10,
     borderBottomWidth: 1,
     borderBottomColor: '#CDCCCE',
   },
@@ -245,11 +262,6 @@ const css = StyleSheet.create({
   },
   perfilLabel: {
     fontFamily: 'Nunito-Bold',
-    marginLeft: 5,
-  },
-  perfilLabelEmail: {
-    fontFamily: 'Nunito-Bold',
-    fontSize: 10.5,
     marginLeft: 5,
   },
 });

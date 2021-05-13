@@ -19,28 +19,48 @@ const EditarPerfil = ({navigation}) => {
             <TextInput
               style={css.input}
               placeholder="Nome"
-              autoCorrect={false}></TextInput>
+              autoCorrect={false}
+            />
             <TextInput
               style={css.input}
               placeholder="E-mail"
-              autoCorrect={false}></TextInput>
+              autoCorrect={false}
+            />
             <TextInput
               style={css.input}
               placeholder="Senha"
+              textContentType={'password'}
               secureTextEntry={true}
-              autoCorrect={false}></TextInput>
+              autoCorrect={false}
+            />
             <TextInput
               style={css.input}
-              placeholder="Senha"
+              placeholder="Confirmar senha"
+              textContentType={'password'}
               secureTextEntry={true}
-              autoCorrect={false}></TextInput>
+              autoCorrect={false}
+            />
             <TextInput
               style={css.input}
               placeholder="Telefone"
-              autoCorrect={false}></TextInput>
+              autoCorrect={false}
+            />
+            <TextInput
+              style={css.input}
+              placeholder="Estilo musical"
+              autoCorrect={false}
+            />
+            <TextInput
+              style={css.description}
+              placeholder="Descrição"
+              multiline={true}
+              numberOfLines={5}
+              autoCorrect={false}
+            />
+
             <TouchableOpacity
               style={css.button}
-              onPress={() => navigation.navigate('CadastroEstabelecimento')}>
+              onPress={() => navigation.navigate('Login')}>
               <Text style={css.buttonText}>Editar</Text>
             </TouchableOpacity>
           </View>
@@ -55,40 +75,51 @@ const EditarPerfil = ({navigation}) => {
             <TextInput
               style={css.input}
               placeholder="Nome"
-              autoCorrect={false}></TextInput>
+              autoCorrect={false}
+            />
             <TextInput
               style={css.input}
               placeholder="E-mail"
-              autoCorrect={false}></TextInput>
+              autoCorrect={false}
+            />
             <TextInput
               style={css.input}
               placeholder="Senha"
+              textContentType={'password'}
               secureTextEntry={true}
-              autoCorrect={false}></TextInput>
+              autoCorrect={false}
+            />
             <TextInput
               style={css.input}
-              placeholder="Senha"
+              placeholder="Confirmar senha"
+              textContentType={'password'}
               secureTextEntry={true}
-              autoCorrect={false}></TextInput>
+              autoCorrect={false}
+            />
             <TextInput
               style={css.input}
               placeholder="Telefone"
-              autoCorrect={false}></TextInput>
+              autoCorrect={false}
+            />
             <TextInput
               style={css.input}
               placeholder="Endereço"
-              autoCorrect={false}></TextInput>
+              autoCorrect={false}
+            />
             <TextInput
               style={css.input}
               placeholder="Cidade"
-              autoCorrect={false}></TextInput>
+              autoCorrect={false}
+            />
             <TextInput
               style={css.input}
               placeholder="Estado"
-              autoCorrect={false}></TextInput>
+              autoCorrect={false}
+            />
+
             <TouchableOpacity
               style={css.button}
-              onPress={() => navigation.navigate('CadastroEstabelecimento')}>
+              onPress={() => navigation.navigate('Login')}>
               <Text style={css.buttonText}>Editar</Text>
             </TouchableOpacity>
           </View>
@@ -97,15 +128,12 @@ const EditarPerfil = ({navigation}) => {
     } else {
       return (
         <View>
-          <Text
-            style={css.error}>
-            Error ao carregar
-          </Text>
+          <Text style={css.error}>Error ao carregar</Text>
         </View>
       );
     }
   }
-  return <>{Perfils('Banda')}</>;
+  return <>{Perfils('Estabelecimento')}</>;
 };
 
 const css = StyleSheet.create({
@@ -136,8 +164,24 @@ const css = StyleSheet.create({
   input: {
     alignSelf: 'center',
     backgroundColor: '#FFF',
+    color: 'black',
+    opacity: 0.95,
     width: '90%',
     height: 40,
+    borderRadius: 21,
+    borderColor: '#000',
+    padding: 10,
+    marginTop: 15,
+    fontSize: 15,
+    fontFamily: 'Nunito-Bold',
+  },
+  description: {
+    alignSelf: 'center',
+    backgroundColor: '#FFF',
+    color: 'black',
+    opacity: 0.95,
+    width: '90%',
+    height: 100,
     borderRadius: 21,
     borderColor: '#000',
     padding: 10,
@@ -150,8 +194,8 @@ const css = StyleSheet.create({
     marginTop: '90%',
     textAlign: 'center',
     fontFamily: 'Nunito-Black',
-    fontSize: 17
-  }
+    fontSize: 17,
+  },
 });
 
 export default EditarPerfil;
