@@ -8,6 +8,9 @@ A situação é desenvolver uma aplicação que una bares e artistas que realiza
 Desenvolvedores do projeto:
 
 Andrey Luiz Pereira - https://github.com/andreylpereira
+
 Marzeu Selau Junior - https://github.com/Marzeu
+
 Raphael Matsumoto - https://github.com/raphamatsu
+
 Renan Silva - https://github.com/renans04
