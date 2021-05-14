@@ -70,7 +70,7 @@ const Agendamento = ({navigation}) => {
 
 const css = StyleSheet.create({
   container: {
-    backgroundColor: '#131313',
+    // backgroundColor: '#131313',
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',

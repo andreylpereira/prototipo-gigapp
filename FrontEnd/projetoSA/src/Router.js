@@ -159,46 +159,121 @@ const Routes = () => {
 };
 
 const Tabs = () => {
-  return (
-    <Tab.Navigator
-      tabBarOptions={{
-        activeTintColor: 'tomato',
-        inactiveTintColor: '#CDCCCE',
-        showLabel: false,
-        style: {
-          borderTopWidth: 2,
-          borderBottomWidth: 2,
-          borderTopColor: '#CDCCCE',
-          borderBottomColor: '#131313',
-          backgroundColor: '#131313',
-        },
-      }}>
-      <Tab.Screen
-        name="Home"
-        component={Home}
-        options={{
-          tabBarLabel: 'HOME',
-          tabBarIcon: ({color, focused}) => (
-            <Icon name="home-outline" color={color} size={focused ? 32 : 28} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Agenda"
-        component={Agenda}
-        options={{
-          tabBarLabel: 'Agenda',
-          tabBarIcon: ({color, focused}) => (
-            <Icon
-              name="calendar-outline"
-              color={color}
-              size={focused ? 32 : 28}
-            />
-          ),
-        }}
-      />
-    </Tab.Navigator>
-  );
+  function Perfils(perfil) {
+    if (perfil == 'Banda') {
+      return (
+        <Tab.Navigator
+          tabBarOptions={{
+            activeTintColor: '#FFFFFF',
+            inactiveTintColor: '#CDCCCE',
+            showLabel: false,
+            style: {
+              borderTopWidth: 2,
+              borderBottomWidth: 2,
+              borderTopColor: '#CDCCCE',
+              borderBottomColor: '#131313',
+              backgroundColor: '#131313',
+            },
+          }}>
+          <Tab.Screen
+            name="Home"
+            component={Home}
+            options={{
+              tabBarLabel: 'HOME',
+              tabBarIcon: ({color, focused}) => (
+                <Icon
+                  name="home-outline"
+                  color={color}
+                  size={focused ? 32 : 25}
+                />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="Agenda"
+            component={Agenda}
+            options={{
+              tabBarLabel: 'Agenda',
+              tabBarIcon: ({color, focused}) => (
+                <Icon
+                  name="calendar-outline"
+                  color={color}
+                  size={focused ? 32 : 25}
+                />
+              ),
+            }}
+          />
+        </Tab.Navigator>
+      );
+    }
+    if (perfil == 'Estabelecimento') {
+      return (
+        <Tab.Navigator
+          tabBarOptions={{
+            activeTintColor: '#FFFFFF',
+            inactiveTintColor: '#CDCCCE',
+            showLabel: false,
+            style: {
+              borderTopWidth: 2,
+              borderBottomWidth: 2,
+              borderTopColor: '#CDCCCE',
+              borderBottomColor: '#131313',
+              backgroundColor: '#131313',
+            },
+          }}>
+          <Tab.Screen
+            name="Home"
+            component={Home}
+            options={{
+              tabBarLabel: 'HOME',
+              tabBarIcon: ({color, focused}) => (
+                <Icon
+                  name="home-outline"
+                  color={color}
+                  size={focused ? 32 : 25}
+                />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="Adicionar Evento"
+            component={Agendamento}
+            options={{
+              tabBarLabel: 'Adicionar Evento',
+              tabBarIcon: ({focused, size}) => (
+                <Icon
+                  name="add-circle-sharp"
+                  color={focused ? '#131313' : 'tomato'}
+                  size={45}
+                />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="Agenda"
+            component={Agenda}
+            options={{
+              tabBarLabel: 'Agenda',
+              tabBarIcon: ({color, focused}) => (
+                <Icon
+                  name="calendar-outline"
+                  color={color}
+                  size={focused ? 32 : 25}
+                />
+              ),
+            }}
+          />
+        </Tab.Navigator>
+      );
+    } else {
+      return (
+        <View>
+          <Text style={css.error}>Error ao carregar</Text>
+        </View>
+      );
+    }
+  }
+  return <>{Perfils('Estabelecimento')}</>;
 };
 
 const Content = ({...props}) => {
