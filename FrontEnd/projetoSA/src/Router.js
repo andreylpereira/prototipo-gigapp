@@ -184,7 +184,7 @@ const Tabs = () => {
                 <Icon
                   name="home-outline"
                   color={color}
-                  size={focused ? 32 : 25}
+                  size={focused ? 28 : 25}
                 />
               ),
             }}
@@ -198,7 +198,7 @@ const Tabs = () => {
                 <Icon
                   name="calendar-outline"
                   color={color}
-                  size={focused ? 32 : 25}
+                  size={focused ? 28 : 25}
                 />
               ),
             }}
@@ -230,7 +230,7 @@ const Tabs = () => {
                 <Icon
                   name="home-outline"
                   color={color}
-                  size={focused ? 32 : 25}
+                  size={focused ? 28 : 25}
                 />
               ),
             }}
@@ -242,8 +242,10 @@ const Tabs = () => {
               tabBarLabel: 'Adicionar Evento',
               tabBarIcon: ({focused, size}) => (
                 <Icon
+                  
+                  style={css.iconAdd}
                   name="add-circle-sharp"
-                  color={focused ? '#131313' : 'tomato'}
+                  color={focused ? '#131313' : '#FF633C'}
                   size={45}
                 />
               ),
@@ -258,7 +260,7 @@ const Tabs = () => {
                 <Icon
                   name="calendar-outline"
                   color={color}
-                  size={focused ? 32 : 25}
+                  size={focused ? 28 : 25}
                 />
               ),
             }}

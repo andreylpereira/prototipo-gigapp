@@ -21,6 +21,7 @@ const Agendamento = ({navigation}) => {
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
       <View style={css.container}>
+      <Text style={css.title}>Criar Evento</Text>
         <TextInput
           style={css.input}
           placeholder="Evento"
@@ -84,7 +85,8 @@ const css = StyleSheet.create({
     height: 45,
     backgroundColor: 'tomato',
     alignSelf: 'center',
-    marginTop: 20,
+    marginTop: 35,
+    elevation: 9.5,
   },
   buttonText: {
     textAlign: 'center',
@@ -106,6 +108,7 @@ const css = StyleSheet.create({
     marginTop: 15,
     fontSize: 15,
     fontFamily: 'Nunito-Bold',
+    elevation: 9.5,
   },
   description: {
     alignSelf: 'center',
@@ -120,6 +123,7 @@ const css = StyleSheet.create({
     marginTop: 15,
     fontSize: 15,
     fontFamily: 'Nunito-Bold',
+    elevation: 9.5,
   },
   dateComponente: {
     fontSize: 15,
@@ -133,6 +137,15 @@ const css = StyleSheet.create({
     marginTop: 15,
     fontSize: 15,
     backgroundColor: '#FFFFFF',
+    elevation: 9.5,
+  },
+  title: {
+    textAlign: 'center',
+    marginTop: 15,
+    marginBottom: 15,
+    fontFamily: 'Nunito-Bold',
+    fontSize: 21,
+    elevation: 10,
   },
 });
 
