@@ -301,9 +301,6 @@ const Home = ({navigation}) => {
           </Text>
           <Text/>
         </View> */}
-        <TouchableOpacity onPress={() => navigation.navigate('Agendamento')}>
-          <Text>Agendamento</Text>
-        </TouchableOpacity>
         <View style={css.containerMap}>
           <MapView
             provider={PROVIDER_GOOGLE}
@@ -369,7 +366,7 @@ const css = StyleSheet.create({
   },
   containerMap: {
     // height: 300,
-    height: '95%',
+    height: '85%',
     width: '95%',
     borderWidth: 5,
     elevation: 9.5,
