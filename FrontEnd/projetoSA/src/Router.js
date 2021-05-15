@@ -123,6 +123,21 @@ const Routes = () => {
             },
           }}
         />
+                <Stack.Screen
+          name="Perfil"
+          component={Perfil}
+          options={{
+            title: 'Perfil',
+            headerTitleStyle: {fontFamily: 'Nunito-Bold'},
+            headerTitleAlign: 'center',
+            headerTintColor: 'white',
+            headerStyle: {
+              backgroundColor: 'tomato',
+              borderBottomWidth: 1,
+              borderBottomColor: '#CDCCCE',
+            },
+          }}
+        />
         <Stack.Screen
           name="EditarPerfil"
           component={EditarPerfil}
@@ -372,10 +387,10 @@ const Drawers = () => {
         backgroundColor: '#131313',
       }}
       drawerContentOptions={{
-        activeTintColor: '#FFF',
+        activeTintColor: '#DDDDDD',
         inactiveTintColor: 'tomato',
         activeBackgroundColor: 'tomato',
-        inactiveBackgroundColor: '#CDCCCE',
+        inactiveBackgroundColor: '#DDDDDD',
         labelStyle: {fontSize: 15, fontFamily: 'Nunito-Black', marginLeft: -10},
       }}>
       <Drawer.Screen
@@ -388,21 +403,21 @@ const Drawers = () => {
             <Icon
               name="home-sharp"
               size={28}
-              color={focused ? '#FFF' : 'tomato'}
+              color={focused ? '#DDDDDD' : 'tomato'}
             />
           ),
         }}
       />
       <Drawer.Screen
-        name="Perfil"
-        component={Perfil}
+        name="Editar Perfil"
+        component={EditarPerfil}
         options={{
-          title: 'Perfil',
+          title: 'Editar Perfil',
           drawerIcon: ({focused, size}) => (
             <Icon
               name="person-sharp"
               size={28}
-              color={focused ? '#FFF' : 'tomato'}
+              color={focused ? '#DDDDDD' : 'tomato'}
             />
           ),
         }}
@@ -416,7 +431,7 @@ const Drawers = () => {
             <Icon
               name="information-circle"
               size={30}
-              color={focused ? '#FFF' : 'tomato'}
+              color={focused ? '#DDDDDD' : 'tomato'}
             />
           ),
         }}
@@ -431,7 +446,7 @@ const Drawers = () => {
             <Icon
               name="log-out"
               size={28}
-              color={focused ? '#FFF' : 'tomato'}
+              color={focused ? '#DDDDDD' : 'tomato'}
             />
           ),
         }}

@@ -1,12 +1,18 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
-import MapView, {PROVIDER_GOOGLE, Marker, Callout} from 'react-native-maps';
+import MapView, {
+  PROVIDER_GOOGLE,
+  Marker,
+  Callout,
+  CalloutSubview,
+} from 'react-native-maps';
 import {
   StatusBar,
   StyleSheet,
   Text,
   View,
   TouchableOpacity,
+  TouchableHighlight,
 } from 'react-native';
 
 const mapLightStyle = [
@@ -323,8 +329,46 @@ const Home = ({navigation}) => {
               <Callout tooltip>
                 <View>
                   <View style={css.bubble}>
-                    <Text style={css.mapText}>TESTE</Text>
-                    <Text style={css.mapText}>TESTE2</Text>
+                    <View style={css.gridColunm}>
+                      <View style={{alignSelf: 'center', marginBottom: 5}}>
+                        <View style={css.gridRow}>
+                          <Text style={css.mapTextTittle}>Chopp do Gus</Text>
+                          <Text style={css.note}>10,0</Text>
+                          <Icon
+                            name="star"
+                            color={'#FCC51C'}
+                            size={12.5}
+                            style={{
+                              opacity: 0.5,
+                              paddingTop: 3,
+                              paddingLeft: 1,
+                            }}
+                          />
+                        </View>
+                      </View>
+                      <View style={css.gridRow}>
+                        <View style={css.avatar}>
+                          <Text>Imagem</Text>
+                        </View>
+                        <View style={css.gridColunm}>
+                          <Text
+                            multimultiline={true}
+                            style={css.mapTextDescription}>
+                            Rua XV de Novembro, Nº14, Corrego Grande
+                          </Text>
+                          <Text multimultiline={true} style={css.mapTextPhone}>
+                            Tel: 99482-0120
+                          </Text>
+                        </View>
+                      </View>
+                      {/* <View style={(css.gridRow, {alignSelf: 'center'})}>
+                          <Text style={css.mapTextDetails} onPress={() => navigation.navigate('Perfil')}>Ver mais</Text>
+
+                                  <View style={(css.gridRow, {alignSelf: 'center'})}>
+
+
+                      </View> */}
+                    </View>
                   </View>
                   <View style={css.arrowBorder} />
                   <View style={css.arrow} />
@@ -342,8 +386,46 @@ const Home = ({navigation}) => {
               <Callout tooltip>
                 <View>
                   <View style={css.bubble}>
-                    <Text style={css.mapText}>TESTE</Text>
-                    <Text style={css.mapText}>TESTE2</Text>
+                    <View style={css.gridColunm}>
+                      <View style={{alignSelf: 'center', marginBottom: 5}}>
+                        <View style={css.gridRow}>
+                          <Text style={css.mapTextTittle}>Dazaranha</Text>
+                          <Text style={css.note}>10,0</Text>
+                          <Icon
+                            name="star"
+                            color={'#FCC51C'}
+                            size={12.5}
+                            style={{
+                              opacity: 0.5,
+                              paddingTop: 3,
+                              paddingLeft: 1,
+                            }}
+                          />
+                        </View>
+                      </View>
+                      <View style={css.gridRow}>
+                        <View style={css.avatar}>
+                          <Text>Imagem</Text>
+                        </View>
+                        <View style={css.gridColunm}>
+                          <Text
+                            multimultiline={true}
+                            style={css.mapTextDescription}>
+                            Banda Catarinense que é convidada pra todo santo show que fazem na cidade.
+                          </Text>
+                          <Text multimultiline={true} style={css.mapTextPhone}>
+                            Tel: 99482-0120
+                          </Text>
+                        </View>
+                      </View>
+                      {/* <View style={(css.gridRow, {alignSelf: 'center'})}>
+                          <Text style={css.mapTextDetails} onPress={() => navigation.navigate('Perfil')}>Ver mais</Text>
+
+                                  <View style={(css.gridRow, {alignSelf: 'center'})}>
+
+
+                      </View> */}
+                    </View>
                   </View>
                   <View style={css.arrowBorder} />
                   <View style={css.arrow} />
@@ -384,6 +466,16 @@ const css = StyleSheet.create({
     borderRadius: 7.5,
     textAlign: 'left',
   },
+  avatar: {
+    display: 'flex',
+    flexDirection: 'column',
+    borderWidth: 1,
+    borderRadius: 7.5,
+    borderColor: '#ccc',
+    width: 55,
+    height: 55,
+    alignSelf: 'center',
+  },
   text: {
     fontFamily: 'Nunito-Regular',
     fontSize: 15,
@@ -392,19 +484,47 @@ const css = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
   },
   bubble: {
-    // flexDirection: 'row',
-    // alignSelf: 'flex-start',
+    flexDirection: 'row',
+    alignSelf: 'flex-start',
     backgroundColor: '#fff',
     borderRadius: 6,
     borderColor: '#ccc',
     borderWidth: 0.5,
     padding: 15,
-    width: 150,
   },
-  mapText: {
-    fontSize: 16,
+  mapTextTittle: {
+    fontSize: 15,
+    fontFamily: 'Nunito-Bold',
+    textAlign: 'center',
+    paddingLeft: 5,
+  },
+  mapTextDescription: {
+    fontSize: 13,
+    width: 175,
     fontFamily: 'Nunito-Regular',
+    paddingLeft: 5,
+  },
+  mapTextPhone: {
+    fontSize: 13,
+    width: 175,
+    fontFamily: 'Nunito-Regular',
+    paddingLeft: 5,
     marginBottom: 5,
+  },
+  // mapTextDetails: {
+  //   fontSize: 12,
+  //   fontFamily: 'Nunito-Italic',
+  //   color: '#007a87',
+  //   textAlign: 'center',
+  //   paddingLeft: 7.5,
+  //   marginTop: 5,
+  // },
+  note: {
+    color: '#CDCCCE',
+    fontSize: 11,
+    fontFamily: 'Nunito-Regular',
+    paddingLeft: 5,
+    paddingTop: 4,
   },
   arrow: {
     backgroundColor: 'transparent',
@@ -421,6 +541,14 @@ const css = StyleSheet.create({
     borderWidth: 16,
     alignSelf: 'center',
     marginTop: -0.5,
+  },
+  gridColunm: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  gridRow: {
+    display: 'flex',
+    flexDirection: 'row',
   },
 });
 
