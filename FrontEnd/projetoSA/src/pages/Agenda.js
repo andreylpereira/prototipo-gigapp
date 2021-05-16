@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import {
   StatusBar,
@@ -13,15 +14,15 @@ import {
 const DATA = [
   {
     id: '1',
-    title: 'teste1',
+    tittle: 'teste1',
   },
   {
     id: '2',
-    title: 'teste2',
+    tittle: 'teste2',
   },
   {
     id: '3',
-    title: 'teste3',
+    tittle: 'teste3',
   },
 ];
 
@@ -33,7 +34,6 @@ const Agenda = ({navigation}) => {
           <StatusBar barStyle="dark-content" hidden={true} />
           <View style={css.container}>
             <Text style={css.title}>Agenda</Text>
-
             <View style={css.card}>
               {/* <FlatList
                 data={DATA}
@@ -44,7 +44,7 @@ const Agenda = ({navigation}) => {
                 <View style={css.rows}>
                   <Text style={css.label}>Evento: </Text>
                   <Text style={css.tittle}>
-                    Noite de Indie Rock Noite de Indie Rock Noite de Indie Rock
+                    Shows diversos Shows diversos Shows diversos
                   </Text>
                 </View>
                 <View style={css.rows}>
@@ -70,7 +70,7 @@ const Agenda = ({navigation}) => {
                     multimultiline={true}
                     numberOfLines={2}
                     style={css.description}>
-                    Dazaranha, John Bala Jones
+                    Dazaranha, Barrões da Pisadinha
                   </Text>
                 </View>
                 <View style={css.buttons}>
@@ -99,7 +99,14 @@ const Agenda = ({navigation}) => {
           <StatusBar barStyle="dark-content" hidden={true} />
           <View style={css.container}>
             <Text style={css.title}>Agenda</Text>
-
+            <View style={css.icons}>
+              <View style={css.iconEdit}>
+                <Icon name={'pencil-outline'}  size={16} color={'tomato'} onPress={() => navigation.navigate('EditarEvento')} />
+              </View>
+              <View style={css.iconDelete}>
+                <Icon name={'trash-bin'}  size={16} color={'tomato'} />
+              </View>
+            </View>
             <View style={css.card}>
               {/* <FlatList
                 data={DATA}
@@ -113,7 +120,7 @@ const Agenda = ({navigation}) => {
                     multimultiline={true}
                     numberOfLines={2}
                     style={css.tittle}>
-                    Noite de Indie Rock
+                    Shows diversos
                   </Text>
                 </View>
                 <View style={css.rows}>
@@ -139,15 +146,13 @@ const Agenda = ({navigation}) => {
                     multimultiline={true}
                     numberOfLines={2}
                     style={css.description}>
-                    Dazaranha, John Bala Jones
+                    Dazaranha, Barrões da Pisadinha
                   </Text>
                 </View>
                 <View style={css.buttons}>
                   <TouchableOpacity
                     style={css.button}
-                    onPress={() =>
-                      navigation.navigate('CadastroEstabelecimento')
-                    }>
+                    onPress={() => navigation.navigate('SelecaoBanda')}>
                     <Text style={css.buttonText}>Selecionar bandas</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
@@ -167,7 +172,7 @@ const Agenda = ({navigation}) => {
       </View>;
     }
   }
-  return <>{Perfils('Banda')}</>;
+  return <>{Perfils('Estabelecimento')}</>;
 };
 
 const css = StyleSheet.create({
@@ -225,6 +230,33 @@ const css = StyleSheet.create({
     display: 'flex',
     justifyContent: 'space-between',
     flexDirection: 'row',
+  },
+  icons: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignSelf:'flex-end',
+    marginBottom: 5,
+  },
+  iconEdit: {
+    borderWidth:1,
+    backgroundColor: '#fff',
+    borderColor: '#ccc',
+    borderRadius: 4.5,
+    padding: 2.5,
+    paddingLeft: 4,
+    elevation: 9.5,
+    marginRight: '1%'
+  },
+  iconDelete: {
+    borderWidth:1,
+    backgroundColor: '#fff',
+    borderColor: '#ccc',
+    borderRadius: 4.5,
+    padding: 2.5,
+    paddingLeft: 3,
+    paddingRight: 3,
+    elevation: 9.5,
+    marginRight: '5%'
   },
   rows: {
     display: 'flex',

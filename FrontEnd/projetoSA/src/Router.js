@@ -17,7 +17,9 @@ import Perfil from './pages/Perfil';
 import Evento from './pages/Evento';
 import Agenda from './pages/Agenda';
 import CadastroEvento from './pages/CadastroEvento';
+import EditarEvento from './pages/EditarEvento';
 import Avaliacao from './pages/Avalicao';
+import SelecaoBanda from './pages/SelecaoBanda';
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -189,7 +191,37 @@ const Routes = () => {
           name="CadastroEvento"
           component={CadastroEvento}
           options={{
-            title: 'CadastroEvento',
+            title: 'Cadastro de Evento',
+            headerTitleStyle: {fontFamily: 'Nunito-Bold'},
+            headerTitleAlign: 'center',
+            headerTintColor: 'white',
+            headerStyle: {
+              backgroundColor: 'tomato',
+              borderBottomWidth: 1,
+              borderBottomColor: '#CDCCCE',
+            },
+          }}
+        />
+        <Stack.Screen
+          name="EditarEvento"
+          component={EditarEvento}
+          options={{
+            title: 'Editar Evento',
+            headerTitleStyle: {fontFamily: 'Nunito-Bold'},
+            headerTitleAlign: 'center',
+            headerTintColor: 'white',
+            headerStyle: {
+              backgroundColor: 'tomato',
+              borderBottomWidth: 1,
+              borderBottomColor: '#CDCCCE',
+            },
+          }}
+        />
+        <Stack.Screen
+          name="SelecaoBanda"
+          component={SelecaoBanda}
+          options={{
+            title: 'Seleção de Bandas',
             headerTitleStyle: {fontFamily: 'Nunito-Bold'},
             headerTitleAlign: 'center',
             headerTintColor: 'white',
@@ -443,7 +475,7 @@ const Drawers = () => {
         name="Agenda"
         component={Agenda}
         options={{
-          title: 'Agenda',
+          title: 'Minha Agenda',
           drawerIcon: ({focused, size}) => (
             <Icon
               name="calendar"

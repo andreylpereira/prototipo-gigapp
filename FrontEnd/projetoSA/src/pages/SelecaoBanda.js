@@ -9,26 +9,44 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-const Avaliacao = ({navigation}) => {
-  const [notas] = useState(['10,00', '9,00', '8,00', '7,00', '6,00', '5,00', '4,00', '3,00', '2,00', '1,00', '0,00']);
-  const [notaSelecionada, setNotaSelecionada] = useState([]);
+const SelecaoBanda = ({navigation}) => {
+  const [bandas] = useState(['Barões da Pisadinha', 'Dazaranha', 'Tchê garotos']);
+  const [bandaSelecionada, setBandaSelecionada] = useState([]);
 
-function Perfils(perfil) {
-  if (perfil == 'Banda') {
-    return (
-      <>
+  return (
+    <>
       <StatusBar barStyle="dark-content" hidden={true} />
       <View style={css.container}>
 
-        <Text style={css.tittle}>Avalie o estabelecimento</Text>
+        <Text style={css.tittle}>Selecione a banda nº 1</Text>
         <View style={css.input}>
           <Picker
             style={{marginTop: -15, fontFamily: 'Nunito-Bold', fontSize: 15}}
-            selectedValue={notaSelecionada}
+            selectedValue={bandaSelecionada}
             onValueChange={(itemValue, itemIndex) =>
-              setNotaSelecionada(itemValue)
+              setBandaSelecionada(itemValue)
             }>
-            {notas.map((itemValue, itemIndex) => {
+            {bandas.map((itemValue, itemIndex) => {
+              return (
+                <Picker.Item
+                  label={itemValue}
+                  value={itemIndex}
+                  key={itemIndex}
+                />
+              );
+            })}
+          </Picker>
+        </View>
+        <Text></Text>
+        <Text style={css.tittle}>Selecione a banda nº 2</Text>
+        <View style={css.input}>
+          <Picker
+            style={{marginTop: -15, fontFamily: 'Nunito-Bold', fontSize: 15}}
+            selectedValue={bandaSelecionada}
+            onValueChange={(itemValue, itemIndex) =>
+              setBandaSelecionada(itemValue)
+            }>
+            {bandas.map((itemValue, itemIndex) => {
               return (
                 <Picker.Item
                   label={itemValue}
@@ -42,74 +60,11 @@ function Perfils(perfil) {
         <TouchableOpacity
           style={css.button}
           onPress={() => navigation.navigate('Login')}>
-          <Text style={css.buttonText}>Avaliar</Text>
+          <Text style={css.buttonText}>Selecionar</Text>
         </TouchableOpacity>
       </View>
     </>
-    );
-  }
-  if (perfil == 'Estabelecimento') {
-    return (
-      <>
-      <StatusBar barStyle="dark-content" hidden={true} />
-      <View style={css.container}>
-
-        <Text style={css.tittle}>Avalie a banda nº 1</Text>
-        <View style={css.input}>
-          <Picker
-            style={{marginTop: -15, fontFamily: 'Nunito-Bold', fontSize: 15}}
-            selectedValue={notaSelecionada}
-            onValueChange={(itemValue, itemIndex) =>
-              setNotaSelecionada(itemValue)
-            }>
-            {notas.map((itemValue, itemIndex) => {
-              return (
-                <Picker.Item
-                  label={itemValue}
-                  value={itemIndex}
-                  key={itemIndex}
-                />
-              );
-            })}
-          </Picker>
-        </View>
-
-        <Text style={css.tittle}>Avalie a banda nº 2</Text>
-        <View style={css.input}>
-          <Picker
-            style={{marginTop: -15, fontFamily: 'Nunito-Bold', fontSize: 15}}
-            selectedValue={notaSelecionada}
-            onValueChange={(itemValue, itemIndex) =>
-              setNotaSelecionada(itemValue)
-            }>
-            {notas.map((itemValue, itemIndex) => {
-              return (
-                <Picker.Item
-                  label={itemValue}
-                  value={itemIndex}
-                  key={itemIndex}
-                />
-              );
-            })}
-          </Picker>
-        </View>
-        <TouchableOpacity
-          style={css.button}
-          onPress={() => navigation.navigate('Login')}>
-          <Text style={css.buttonText}>Avaliar</Text>
-        </TouchableOpacity>
-      </View>
-    </>
-    );
-  } else {
-    return (
-      <View>
-        <Text style={css.error}>Error ao carregar</Text>
-      </View>
-    );
-  }
-}
-return <>{Perfils('Estabelecimento')}</>;
+  );
 };
 
 const css = StyleSheet.create({
@@ -159,4 +114,4 @@ const css = StyleSheet.create({
   }
 });
 
-export default Avaliacao;
+export default SelecaoBanda;
