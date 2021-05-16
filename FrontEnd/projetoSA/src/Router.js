@@ -170,8 +170,8 @@ const Routes = () => {
             },
           }}
         />
-                <Stack.Screen
-          name="Avaliação"
+        <Stack.Screen
+          name="Avaliacao"
           component={Avaliacao}
           options={{
             title: 'Avaliação',

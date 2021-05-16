@@ -30,7 +30,7 @@ const Avaliacao = ({navigation}) => {
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
       <View style={css.container}>
-        <Text style={css.title}>Agenda de eventos</Text>
+        <Text style={css.title}>Teste</Text>
 
         <View style={css.card}>
           {/* <FlatList

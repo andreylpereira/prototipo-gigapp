@@ -411,7 +411,8 @@ const Home = ({navigation}) => {
                           <Text
                             multimultiline={true}
                             style={css.mapTextDescription}>
-                            Banda Catarinense que é convidada pra todo santo show que fazem na cidade.
+                            Banda Catarinense que é convidada pra todo santo
+                            show que fazem na cidade.
                           </Text>
                           <Text multimultiline={true} style={css.mapTextPhone}>
                             Tel: 99482-0120
