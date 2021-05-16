@@ -13,7 +13,7 @@ import {
 
 import DatePicker from 'react-native-datepicker';
 
-const Agendamento = ({navigation}) => {
+const CadastroEvento = ({navigation}) => {
   const [startDate, setStartDate] = useState(new Date());
   const dataLista = startDate;
 
@@ -21,11 +21,8 @@ const Agendamento = ({navigation}) => {
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
       <View style={css.container}>
-      <Text style={css.title}>Criar Evento</Text>
-        <TextInput
-          style={css.input}
-          placeholder="Evento"
-          autoCorrect={false} />
+        <Text style={css.title}>Criar Evento</Text>
+        <TextInput style={css.input} placeholder="Evento" autoCorrect={false} />
         <DatePicker
           format="DD/MM/YYYY"
           style={css.dateComponente}
@@ -39,11 +36,9 @@ const Agendamento = ({navigation}) => {
             dateInput: {
               borderWidth: 0,
             },
-          }} />
-        <TextInput
-          style={css.input}
-          placeholder="Valor"
-          autoCorrect={false} />
+          }}
+        />
+        <TextInput style={css.input} placeholder="Valor" autoCorrect={false} />
         {/* <TextInput
           style={css.input}
           placeholder="Horário 1"
@@ -57,12 +52,13 @@ const Agendamento = ({navigation}) => {
           placeholder="Descrição"
           multiline={true}
           numberOfLines={5}
-          autoCorrect={false} />
+          autoCorrect={false}
+        />
 
         <TouchableOpacity
           style={css.button}
           onPress={() => navigation.navigate('Home')}>
-          <Text style={css.buttonText}>Agendar</Text>
+          <Text style={css.buttonText}>Criar</Text>
         </TouchableOpacity>
       </View>
     </>
@@ -149,4 +145,4 @@ const css = StyleSheet.create({
   },
 });
 
-export default Agendamento;
+export default CadastroEvento;

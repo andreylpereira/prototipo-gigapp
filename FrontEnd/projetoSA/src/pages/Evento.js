@@ -13,26 +13,26 @@ import {
 const DATA = [
   {
     id: '1',
-    title: 'teste1',
+    tittle: 'teste1',
   },
   {
     id: '2',
-    title: 'teste2',
+    tittle: 'teste2',
   },
   {
     id: '3',
-    title: 'teste3',
+    tittle: 'teste3',
   },
 ];
 
-const Agenda = ({navigation}) => {
+const Evento = ({navigation}) => {
   function Perfils(perfil) {
     if (perfil == 'Banda') {
       return (
         <>
           <StatusBar barStyle="dark-content" hidden={true} />
           <View style={css.container}>
-            <Text style={css.title}>Agenda</Text>
+            <Text style={css.title}>Eventos</Text>
 
             <View style={css.card}>
               {/* <FlatList
@@ -98,7 +98,7 @@ const Agenda = ({navigation}) => {
         <>
           <StatusBar barStyle="dark-content" hidden={true} />
           <View style={css.container}>
-            <Text style={css.title}>Agenda</Text>
+            <Text style={css.title}>Eventos</Text>
 
             <View style={css.card}>
               {/* <FlatList
@@ -232,4 +232,4 @@ const css = StyleSheet.create({
   },
 });
 
-export default Agenda;
+export default Evento;
