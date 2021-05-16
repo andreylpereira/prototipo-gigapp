@@ -14,8 +14,10 @@ import CadastroEstabelecimento from './pages/CadastroEstabelecimento';
 import Sobre from './pages/Sobre';
 import EditarPerfil from './pages/EditarPerfil';
 import Perfil from './pages/Perfil';
+import Evento from './pages/Evento';
 import Agenda from './pages/Agenda';
-import Agendamento from './pages/Agendamento';
+import CadastroEvento from './pages/CadastroEvento';
+import Avaliacao from './pages/Avalicao';
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -123,7 +125,7 @@ const Routes = () => {
             },
           }}
         />
-                <Stack.Screen
+        <Stack.Screen
           name="Perfil"
           component={Perfil}
           options={{
@@ -154,10 +156,40 @@ const Routes = () => {
           }}
         />
         <Stack.Screen
-          name="Agendamento"
-          component={Agendamento}
+          name="Agenda"
+          component={Agenda}
           options={{
-            title: 'Agendamento',
+            title: 'Agenda',
+            headerTitleStyle: {fontFamily: 'Nunito-Bold'},
+            headerTitleAlign: 'center',
+            headerTintColor: 'white',
+            headerStyle: {
+              backgroundColor: 'tomato',
+              borderBottomWidth: 1,
+              borderBottomColor: '#CDCCCE',
+            },
+          }}
+        />
+                <Stack.Screen
+          name="Avaliação"
+          component={Avaliacao}
+          options={{
+            title: 'Avaliação',
+            headerTitleStyle: {fontFamily: 'Nunito-Bold'},
+            headerTitleAlign: 'center',
+            headerTintColor: 'white',
+            headerStyle: {
+              backgroundColor: 'tomato',
+              borderBottomWidth: 1,
+              borderBottomColor: '#CDCCCE',
+            },
+          }}
+        />
+        <Stack.Screen
+          name="CadastroEvento"
+          component={CadastroEvento}
+          options={{
+            title: 'CadastroEvento',
             headerTitleStyle: {fontFamily: 'Nunito-Bold'},
             headerTitleAlign: 'center',
             headerTintColor: 'white',
@@ -205,10 +237,10 @@ const Tabs = () => {
             }}
           />
           <Tab.Screen
-            name="Agenda"
-            component={Agenda}
+            name="Evento"
+            component={Evento}
             options={{
-              tabBarLabel: 'Agenda',
+              tabBarLabel: 'Evento',
               tabBarIcon: ({color, focused}) => (
                 <Icon
                   name="calendar-outline"
@@ -252,12 +284,11 @@ const Tabs = () => {
           />
           <Tab.Screen
             name="Adicionar Evento"
-            component={Agendamento}
+            component={CadastroEvento}
             options={{
               tabBarLabel: 'Adicionar Evento',
               tabBarIcon: ({focused, size}) => (
                 <Icon
-                  
                   style={css.iconAdd}
                   name="add-circle-sharp"
                   color={focused ? '#131313' : '#FF633C'}
@@ -267,10 +298,10 @@ const Tabs = () => {
             }}
           />
           <Tab.Screen
-            name="Agenda"
-            component={Agenda}
+            name="Evento"
+            component={Evento}
             options={{
-              tabBarLabel: 'Agenda',
+              tabBarLabel: 'Evento',
               tabBarIcon: ({color, focused}) => (
                 <Icon
                   name="calendar-outline"
@@ -402,7 +433,21 @@ const Drawers = () => {
           drawerIcon: ({focused, size}) => (
             <Icon
               name="home-sharp"
-              size={28}
+              size={focused ? 32 : 28}
+              color={focused ? '#DDDDDD' : 'tomato'}
+            />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Agenda"
+        component={Agenda}
+        options={{
+          title: 'Agenda',
+          drawerIcon: ({focused, size}) => (
+            <Icon
+              name="calendar"
+              size={focused ? 32 : 28}
               color={focused ? '#DDDDDD' : 'tomato'}
             />
           ),
@@ -416,7 +461,7 @@ const Drawers = () => {
           drawerIcon: ({focused, size}) => (
             <Icon
               name="person-sharp"
-              size={28}
+              size={focused ? 32 : 28}
               color={focused ? '#DDDDDD' : 'tomato'}
             />
           ),
@@ -430,7 +475,7 @@ const Drawers = () => {
           drawerIcon: ({focused, size}) => (
             <Icon
               name="information-circle"
-              size={30}
+              size={focused ? 34 : 30}
               color={focused ? '#DDDDDD' : 'tomato'}
             />
           ),
@@ -445,7 +490,7 @@ const Drawers = () => {
           drawerIcon: ({focused, size}) => (
             <Icon
               name="log-out"
-              size={28}
+              size={focused ? 34 : 28}
               color={focused ? '#DDDDDD' : 'tomato'}
             />
           ),

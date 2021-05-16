@@ -25,7 +25,7 @@ const DATA = [
   },
 ];
 
-const Agenda = ({navigation}) => {
+const Avaliacao = ({navigation}) => {
   return (
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
@@ -68,4 +68,4 @@ const css = StyleSheet.create({
   },
 });
 
-export default Agenda;
+export default Avaliacao;

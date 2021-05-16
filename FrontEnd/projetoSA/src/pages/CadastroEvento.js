@@ -13,7 +13,7 @@ import {
 
 import DatePicker from 'react-native-datepicker';
 
-const Agendamento = ({navigation}) => {
+const CadastroEvento = ({navigation}) => {
   const [startDate, setStartDate] = useState(new Date());
   const dataLista = startDate;
 
@@ -62,7 +62,7 @@ const Agendamento = ({navigation}) => {
         <TouchableOpacity
           style={css.button}
           onPress={() => navigation.navigate('Home')}>
-          <Text style={css.buttonText}>Agendar</Text>
+          <Text style={css.buttonText}>Criar</Text>
         </TouchableOpacity>
       </View>
     </>
@@ -149,4 +149,4 @@ const css = StyleSheet.create({
   },
 });
 
-export default Agendamento;
+export default CadastroEvento;

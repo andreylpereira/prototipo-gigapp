@@ -25,12 +25,12 @@ const DATA = [
   },
 ];
 
-const Agenda = ({navigation}) => {
+const Evento = ({navigation}) => {
   return (
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
       <View style={css.container}>
-        <Text style={css.title}>Agenda de eventos</Text>
+        <Text style={css.title}>Eventos</Text>
 
         <View style={css.card}>
           {/* <FlatList
@@ -68,4 +68,4 @@ const css = StyleSheet.create({
   },
 });
 
-export default Agenda;
+export default Evento;
