@@ -18,10 +18,10 @@ const SelecaoBanda = ({navigation}) => {
       <StatusBar barStyle="dark-content" hidden={true} />
       <View style={css.container}>
 
-        <Text style={css.tittle}>Selecione banda nº 1</Text>
+        <Text style={css.tittle}>Selecione a banda nº 1</Text>
         <View style={css.input}>
           <Picker
-            style={{marginTop: -15}}
+            style={{marginTop: -15, fontFamily: 'Nunito-Bold', fontSize: 15}}
             selectedValue={bandaSelecionada}
             onValueChange={(itemValue, itemIndex) =>
               setBandaSelecionada(itemValue)
@@ -38,10 +38,10 @@ const SelecaoBanda = ({navigation}) => {
           </Picker>
         </View>
         <Text></Text>
-        <Text style={css.tittle}>Selecione banda nº 2</Text>
+        <Text style={css.tittle}>Selecione a banda nº 2</Text>
         <View style={css.input}>
           <Picker
-            style={{marginTop: -15}}
+            style={{marginTop: -15, fontFamily: 'Nunito-Bold', fontSize: 15}}
             selectedValue={bandaSelecionada}
             onValueChange={(itemValue, itemIndex) =>
               setBandaSelecionada(itemValue)
@@ -69,7 +69,7 @@ const SelecaoBanda = ({navigation}) => {
 
 const css = StyleSheet.create({
   container: {
-    backgroundColor: '#131313',
+    // backgroundColor: '#131313',
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
@@ -84,6 +84,7 @@ const css = StyleSheet.create({
     backgroundColor: 'tomato',
     alignSelf: 'center',
     marginTop: 30,
+    elevation: 9.5,
   },
   buttonText: {
     textAlign: 'center',
@@ -104,10 +105,10 @@ const css = StyleSheet.create({
     padding: 10,
     fontSize: 15,
     fontFamily: 'Nunito-Bold',
+    elevation: 9.5,
   },
   tittle: {
-    color: '#ccc',
-    fontFamily: 'Nunito-Bold',
+    fontFamily: 'Nunito-Black',
     fontSize: 18,
     marginBottom: 5
   }
