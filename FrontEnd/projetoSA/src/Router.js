@@ -18,6 +18,7 @@ import Evento from './pages/Evento';
 import Agenda from './pages/Agenda';
 import CadastroEvento from './pages/CadastroEvento';
 import Avaliacao from './pages/Avalicao';
+import SelecaoBanda from './pages/SelecaoBanda';
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -189,7 +190,22 @@ const Routes = () => {
           name="CadastroEvento"
           component={CadastroEvento}
           options={{
-            title: 'CadastroEvento',
+            title: 'Cadastro de Evento',
+            headerTitleStyle: {fontFamily: 'Nunito-Bold'},
+            headerTitleAlign: 'center',
+            headerTintColor: 'white',
+            headerStyle: {
+              backgroundColor: 'tomato',
+              borderBottomWidth: 1,
+              borderBottomColor: '#CDCCCE',
+            },
+          }}
+        />
+        <Stack.Screen
+          name="SelecaoBanda"
+          component={SelecaoBanda}
+          options={{
+            title: 'Seleção de Bandas',
             headerTitleStyle: {fontFamily: 'Nunito-Bold'},
             headerTitleAlign: 'center',
             headerTintColor: 'white',

@@ -146,7 +146,7 @@ const Agenda = ({navigation}) => {
                   <TouchableOpacity
                     style={css.button}
                     onPress={() =>
-                      navigation.navigate('CadastroEstabelecimento')
+                      navigation.navigate('SelecaoBanda')
                     }>
                     <Text style={css.buttonText}>Selecionar bandas</Text>
                   </TouchableOpacity>
@@ -167,7 +167,7 @@ const Agenda = ({navigation}) => {
       </View>;
     }
   }
-  return <>{Perfils('Banda')}</>;
+  return <>{Perfils('Estabelecimento')}</>;
 };
 
 const css = StyleSheet.create({
