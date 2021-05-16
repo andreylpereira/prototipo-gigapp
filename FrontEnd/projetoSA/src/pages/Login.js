@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import Icon from 'react-native-vector-icons/Ionicons';
+// import Icon from 'react-native-vector-icons/Ionicons';
 
 import {
   StatusBar,
@@ -48,11 +48,13 @@ const Login = ({navigation}) => {
       Animated.timing(logo.x, {
         toValue: 110,
         duration: 0.5,
+        useNativeDriver: false
       }),
       Animated.timing(logo.y, {
         toValue: 110,
         duration: 0.5,
-      }),
+        useNativeDriver: false
+      })
     ]).start();
   }
 
@@ -61,11 +63,13 @@ const Login = ({navigation}) => {
       Animated.timing(logo.x, {
         toValue: 220,
         duration: 0.5,
+        useNativeDriver: false
       }),
       Animated.timing(logo.y, {
         toValue: 220,
         duration: 0.5,
-      }),
+        useNativeDriver: false
+      })
     ]).start();
   }
 
