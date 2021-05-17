@@ -5,8 +5,9 @@
   "main": "nodemon.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "dev": "sucrase-node server.js"
+    "start": "nodemon server.js",
+    "dev": "sucrase-node server.js",
+    "server": "node ./server.js"    
   },
   "keywords": [],
   "author": "",
