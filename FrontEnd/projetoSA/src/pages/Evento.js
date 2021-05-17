@@ -100,10 +100,10 @@ const Evento = ({navigation}) => {
             <Text style={css.title}>Eventos</Text>
             <View style={css.icons}>
               <View style={css.iconEdit}>
-                <Icon name={'pencil-outline'}  size={16} color={'tomato'} onPress={() => navigation.navigate('EditarEvento')}/>
+                <Icon name={'pencil-outline'}  size={16} color={'#FF6400'} onPress={() => navigation.navigate('EditarEvento')}/>
               </View>
               <View style={css.iconDelete}>
-                <Icon name={'trash-bin'}  size={16} color={'tomato'} />
+                <Icon name={'trash-bin'}  size={16} color={'#FF6400'} />
               </View>
             </View>
             <View style={css.card}>
@@ -212,10 +212,10 @@ const css = StyleSheet.create({
     marginTop: 10,
     borderWidth: 2,
     borderRadius: 21,
-    borderColor: '#FF8069',
+    borderColor: '#FF7306',
     width: '48%',
     height: 25,
-    backgroundColor: 'tomato',
+    backgroundColor: '#FF6400',
     alignSelf: 'center',
   },
   buttonText: {

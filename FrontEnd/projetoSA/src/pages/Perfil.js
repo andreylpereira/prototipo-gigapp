@@ -19,13 +19,13 @@ const Perfil = ({navigation}) => {
             <View style={css.card}>
               <Icon
                 name="person-circle"
-                color={'tomato'}
+                color={'#FF6400'}
                 size={90}
                 style={css.logo}
               />
 
               {/* <View style={css.text}>
-                <Icon name={'headset-outline'} size={15} color={'tomato'} />
+                <Icon name={'headset-outline'} size={15} color={'#FF6400'} />
                 <Text style={css.perfilLabel}>Dazaranha</Text>
               </View> */}
               <View>
@@ -45,7 +45,7 @@ const Perfil = ({navigation}) => {
                 <Icon
                   name={'musical-notes-outline'}
                   size={18}
-                  color={'tomato'}
+                  color={'#FF6400'}
                 />
                 <Text numberOfLines={1} style={css.perfilLabel}>
                   Banda
@@ -53,26 +53,26 @@ const Perfil = ({navigation}) => {
               </View>
 
               <View style={css.text}>
-                <Icon name={'headset-outline'} size={18} color={'tomato'} />
+                <Icon name={'headset-outline'} size={18} color={'#FF6400'} />
                 <Text numberOfLines={1} style={css.perfilLabel}>
                   Rock
                 </Text>
               </View>
 
               <View style={css.text}>
-                <Icon name={'at'} size={18} color={'tomato'} />
+                <Icon name={'at'} size={18} color={'#FF6400'} />
                 <Text numberOfLines={1} style={css.perfilLabel}>
                   andrey_lpereira@estudante.senai.sc.br
                 </Text>
               </View>
 
               <View style={css.text}>
-                <Icon name={'call-outline'} size={18} color={'tomato'} />
+                <Icon name={'call-outline'} size={18} color={'#FF6400'} />
                 <Text style={css.perfilLabel}>48-9696-6969</Text>
               </View>
 
               <View style={css.textDescription}>
-                <Icon name={'reader-outline'} size={18} color={'tomato'} />
+                <Icon name={'reader-outline'} size={18} color={'#FF6400'} />
                 <Text numberOfLines={3} style={css.perfilLabel}>
                   Lorem Ipsum is simply dummy text of the printing
                   andtypesetting industry. Lorem Ipsum has been the industry's
@@ -100,7 +100,7 @@ const Perfil = ({navigation}) => {
             <View style={css.card}>
               <Icon
                 name="person-circle"
-                color={'tomato'}
+                color={'#FF6400'}
                 size={90}
                 style={css.logo}
               />
@@ -119,31 +119,31 @@ const Perfil = ({navigation}) => {
               </View>
 
               <View style={css.text}>
-                <Icon name={'business-outline'} size={18} color={'tomato'} />
+                <Icon name={'business-outline'} size={18} color={'#FF6400'} />
                 <Text style={css.perfilLabel}>Estabelecimento</Text>
               </View>
 
               <View style={css.text}>
-                <Icon name={'at'} size={18} color={'tomato'} />
+                <Icon name={'at'} size={18} color={'#FF6400'} />
                 <Text numberOfLines={1} style={css.perfilLabel}>
                   andrey_l_pereira@estudante.sc.senai.br
                 </Text>
               </View>
 
               <View style={css.text}>
-                <Icon name={'call-outline'} size={18} color={'tomato'} />
+                <Icon name={'call-outline'} size={18} color={'#FF6400'} />
                 <Text style={css.perfilLabel}>48-9696-6969</Text>
               </View>
 
               <View style={css.text}>
-                <Icon name={'pin-outline'} size={18} color={'tomato'} />
+                <Icon name={'pin-outline'} size={18} color={'#FF6400'} />
                 <Text numberOfLines={1} style={css.perfilLabel}>
                   Rua: XV de novembro, 24
                 </Text>
               </View>
 
               <View style={css.text}>
-                <Icon name={'location-outline'} size={18} color={'tomato'} />
+                <Icon name={'location-outline'} size={18} color={'#FF6400'} />
                 <Text numberOfLines={1} style={css.perfilLabel}>
                   Florianópolis, Santa Catarina
                 </Text>
@@ -214,10 +214,10 @@ const css = StyleSheet.create({
   button: {
     borderWidth: 2,
     borderRadius: 21,
-    borderColor: '#FF8069',
+    borderColor: '#FF7306',
     width: '70%',
     height: 45,
-    backgroundColor: 'tomato',
+    backgroundColor: '#FF6400',
     alignSelf: 'center',
     marginTop: 20,
     elevation: 7.5,
