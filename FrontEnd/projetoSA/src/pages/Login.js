@@ -136,10 +136,10 @@ const css = StyleSheet.create({
   button: {
     borderWidth: 2,
     borderRadius: 21,
-    borderColor: '#FF8069',
+    borderColor: '#FF7306',
     width: 250,
     height: 45,
-    backgroundColor: 'tomato',
+    backgroundColor: '#FF6400',
     alignSelf: 'center',
     marginTop: 20,
   },
@@ -176,7 +176,7 @@ const css = StyleSheet.create({
     borderWidth: 3,
     borderRadius: 180,
     borderColor: '#CDCCCE',
-    backgroundColor: 'tomato',
+    backgroundColor: '#FF6400',
   },
   subtitle: {
     marginBottom: 10,

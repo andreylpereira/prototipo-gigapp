@@ -125,10 +125,10 @@ const css = StyleSheet.create({
   button: {
     borderWidth: 2,
     borderRadius: 21,
-    borderColor: '#FF8069',
+    borderColor: '#FF7306',
     width: '70%',
     height: 45,
-    backgroundColor: 'tomato',
+    backgroundColor: '#FF6400',
     alignSelf: 'center',
     marginTop: 30,
     elevation: 9.5,

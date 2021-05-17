@@ -77,7 +77,7 @@ const Routes = () => {
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
-              backgroundColor: 'tomato',
+              backgroundColor: '#FF6400',
               borderBottomWidth: 1,
               borderBottomColor: '#CDCCCE',
             },
@@ -91,7 +91,7 @@ const Routes = () => {
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
-              backgroundColor: 'tomato',
+              backgroundColor: '#FF6400',
               borderBottomWidth: 1,
               borderBottomColor: '#CDCCCE',
             },
@@ -106,7 +106,7 @@ const Routes = () => {
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
-              backgroundColor: 'tomato',
+              backgroundColor: '#FF6400',
               borderBottomWidth: 1,
               borderBottomColor: '#CDCCCE',
             },
@@ -121,7 +121,7 @@ const Routes = () => {
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
-              backgroundColor: 'tomato',
+              backgroundColor: '#FF6400',
               borderBottomWidth: 1,
               borderBottomColor: '#CDCCCE',
             },
@@ -136,7 +136,7 @@ const Routes = () => {
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
-              backgroundColor: 'tomato',
+              backgroundColor: '#FF6400',
               borderBottomWidth: 1,
               borderBottomColor: '#CDCCCE',
             },
@@ -151,7 +151,7 @@ const Routes = () => {
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
-              backgroundColor: 'tomato',
+              backgroundColor: '#FF6400',
               borderBottomWidth: 1,
               borderBottomColor: '#CDCCCE',
             },
@@ -166,7 +166,7 @@ const Routes = () => {
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
-              backgroundColor: 'tomato',
+              backgroundColor: '#FF6400',
               borderBottomWidth: 1,
               borderBottomColor: '#CDCCCE',
             },
@@ -181,7 +181,7 @@ const Routes = () => {
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
-              backgroundColor: 'tomato',
+              backgroundColor: '#FF6400',
               borderBottomWidth: 1,
               borderBottomColor: '#CDCCCE',
             },
@@ -196,7 +196,7 @@ const Routes = () => {
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
-              backgroundColor: 'tomato',
+              backgroundColor: '#FF6400',
               borderBottomWidth: 1,
               borderBottomColor: '#CDCCCE',
             },
@@ -211,7 +211,7 @@ const Routes = () => {
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
-              backgroundColor: 'tomato',
+              backgroundColor: '#FF6400',
               borderBottomWidth: 1,
               borderBottomColor: '#CDCCCE',
             },
@@ -226,7 +226,7 @@ const Routes = () => {
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
-              backgroundColor: 'tomato',
+              backgroundColor: '#FF6400',
               borderBottomWidth: 1,
               borderBottomColor: '#CDCCCE',
             },
@@ -365,7 +365,7 @@ const Content = ({...props}) => {
             <View style={css.personLogo}>
               <Icon
                 name="person-circle"
-                color={'tomato'}
+                color={'#FF6400'}
                 size={75}
                 style={{marginLeft: 5}}
               />
@@ -401,7 +401,7 @@ const Content = ({...props}) => {
             <View style={css.personLogo}>
               <Icon
                 name="person-circle"
-                color={'tomato'}
+                color={'#FF6400'}
                 size={75}
                 style={{marginLeft: 5}}
               />
@@ -451,8 +451,8 @@ const Drawers = () => {
       }}
       drawerContentOptions={{
         activeTintColor: '#DDDDDD',
-        inactiveTintColor: 'tomato',
-        activeBackgroundColor: 'tomato',
+        inactiveTintColor: '#FF6400',
+        activeBackgroundColor: '#FF6400',
         inactiveBackgroundColor: '#DDDDDD',
         labelStyle: {fontSize: 15, fontFamily: 'Nunito-Black', marginLeft: -10},
       }}>
@@ -466,7 +466,7 @@ const Drawers = () => {
             <Icon
               name="home-sharp"
               size={focused ? 32 : 28}
-              color={focused ? '#DDDDDD' : 'tomato'}
+              color={focused ? '#DDDDDD' : '#FF6400'}
             />
           ),
         }}
@@ -480,7 +480,7 @@ const Drawers = () => {
             <Icon
               name="calendar"
               size={focused ? 32 : 28}
-              color={focused ? '#DDDDDD' : 'tomato'}
+              color={focused ? '#DDDDDD' : '#FF6400'}
             />
           ),
         }}
@@ -494,7 +494,7 @@ const Drawers = () => {
             <Icon
               name="person-sharp"
               size={focused ? 32 : 28}
-              color={focused ? '#DDDDDD' : 'tomato'}
+              color={focused ? '#DDDDDD' : '#FF6400'}
             />
           ),
         }}
@@ -508,7 +508,7 @@ const Drawers = () => {
             <Icon
               name="information-circle"
               size={focused ? 34 : 30}
-              color={focused ? '#DDDDDD' : 'tomato'}
+              color={focused ? '#DDDDDD' : '#FF6400'}
             />
           ),
         }}
@@ -523,7 +523,7 @@ const Drawers = () => {
             <Icon
               name="log-out"
               size={focused ? 34 : 28}
-              color={focused ? '#DDDDDD' : 'tomato'}
+              color={focused ? '#DDDDDD' : '#FF6400'}
             />
           ),
         }}
