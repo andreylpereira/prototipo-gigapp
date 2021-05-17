@@ -6,7 +6,6 @@ import {
   StyleSheet,
   Text,
   View,
-  SafeAreaView,
   FlatList,
   TouchableOpacity,
 } from 'react-native';
