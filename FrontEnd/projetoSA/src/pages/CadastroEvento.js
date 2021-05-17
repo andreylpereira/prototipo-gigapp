@@ -9,6 +9,7 @@ import {
   SafeAreaView,
   FlatList,
   TouchableOpacity,
+  KeyboardAvoidingView
 } from 'react-native';
 
 import DatePicker from 'react-native-datepicker';
@@ -20,7 +21,7 @@ const CadastroEvento = ({navigation}) => {
   return (
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
-      <View style={css.container}>
+      <KeyboardAvoidingView style={css.container}>
         <Text style={css.title}>Criar Evento</Text>
         <TextInput style={css.input} placeholder="Evento" autoCorrect={false} />
         <DatePicker
@@ -51,7 +52,6 @@ const CadastroEvento = ({navigation}) => {
           style={css.description}
           placeholder="Descrição"
           multiline={true}
-          numberOfLines={5}
           autoCorrect={false}
         />
 
@@ -60,7 +60,7 @@ const CadastroEvento = ({navigation}) => {
           onPress={() => navigation.navigate('Home')}>
           <Text style={css.buttonText}>Criar</Text>
         </TouchableOpacity>
-      </View>
+      </KeyboardAvoidingView>
     </>
   );
 };
@@ -81,7 +81,7 @@ const css = StyleSheet.create({
     height: 45,
     backgroundColor: 'tomato',
     alignSelf: 'center',
-    marginTop: 35,
+    marginTop: 15,
     elevation: 9.5,
   },
   buttonText: {
@@ -103,7 +103,7 @@ const css = StyleSheet.create({
     padding: 10,
     marginTop: 15,
     fontSize: 15,
-    fontFamily: 'Nunito-Bold',
+    fontFamily: 'Nunito-Regular',
     elevation: 9.5,
   },
   description: {
@@ -112,18 +112,18 @@ const css = StyleSheet.create({
     color: 'black',
     opacity: 0.95,
     width: '90%',
-    height: 100,
+    height: 70,
     borderRadius: 21,
     borderColor: '#000',
     padding: 10,
     marginTop: 15,
     fontSize: 15,
-    fontFamily: 'Nunito-Bold',
+    fontFamily: 'Nunito-Regular',
     elevation: 9.5,
   },
   dateComponente: {
     fontSize: 15,
-    fontFamily: 'Nunito-Bold',
+    fontFamily: 'Nunito-Regular',
     width: '90%',
     opacity: 0.95,
     height: 40,
@@ -137,8 +137,7 @@ const css = StyleSheet.create({
   },
   title: {
     textAlign: 'center',
-    marginTop: 15,
-    marginBottom: 15,
+    marginTop: 5,
     fontFamily: 'Nunito-Bold',
     fontSize: 21,
     elevation: 10,

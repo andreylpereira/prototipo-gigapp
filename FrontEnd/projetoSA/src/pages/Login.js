@@ -162,7 +162,7 @@ const css = StyleSheet.create({
     padding: 10,
     marginTop: 15,
     fontSize: 15,
-    fontFamily: 'Nunito-Bold',
+    fontFamily: 'Nunito-Regular',
   },
   cadastrar: {
     textAlign: 'center',
