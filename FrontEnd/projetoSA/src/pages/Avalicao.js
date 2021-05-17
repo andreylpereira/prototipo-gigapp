@@ -10,8 +10,10 @@ import {
 } from 'react-native';
 
 const Avaliacao = ({navigation}) => {
-  const [notas] = useState(['10,00', '9,00', '8,00', '7,00', '6,00', '5,00', '4,00', '3,00', '2,00', '1,00', '0,00']);
-  const [notaSelecionada, setNotaSelecionada] = useState([]);
+  const [notas1] = useState(['10,00', '9,00', '8,00', '7,00', '6,00', '5,00', '4,00', '3,00', '2,00', '1,00', '0,00']);
+  const [notaSelecionada1, setNotaSelecionada1] = useState([]);
+  const [notas2] = useState(['10,00', '9,00', '8,00', '7,00', '6,00', '5,00', '4,00', '3,00', '2,00', '1,00', '0,00']);
+  const [notaSelecionada2, setNotaSelecionada2] = useState([]);
 
 function Perfils(perfil) {
   if (perfil == 'Banda') {
@@ -24,11 +26,11 @@ function Perfils(perfil) {
         <View style={css.input}>
           <Picker
             style={{marginTop: -15, fontFamily: 'Nunito-Bold', fontSize: 15}}
-            selectedValue={notaSelecionada}
+            selectedValue={notaSelecionada1}
             onValueChange={(itemValue, itemIndex) =>
-              setNotaSelecionada(itemValue)
+              setNotaSelecionada1(itemValue)
             }>
-            {notas.map((itemValue, itemIndex) => {
+            {notas1.map((itemValue, itemIndex) => {
               return (
                 <Picker.Item
                   label={itemValue}
@@ -58,11 +60,11 @@ function Perfils(perfil) {
         <View style={css.input}>
           <Picker
             style={{marginTop: -15, fontFamily: 'Nunito-Bold', fontSize: 15}}
-            selectedValue={notaSelecionada}
+            selectedValue={notaSelecionada1}
             onValueChange={(itemValue, itemIndex) =>
-              setNotaSelecionada(itemValue)
+              setNotaSelecionada1(itemValue)
             }>
-            {notas.map((itemValue, itemIndex) => {
+            {notas1.map((itemValue, itemIndex) => {
               return (
                 <Picker.Item
                   label={itemValue}
@@ -78,11 +80,11 @@ function Perfils(perfil) {
         <View style={css.input}>
           <Picker
             style={{marginTop: -15, fontFamily: 'Nunito-Bold', fontSize: 15}}
-            selectedValue={notaSelecionada}
+            selectedValue={notaSelecionada2}
             onValueChange={(itemValue, itemIndex) =>
-              setNotaSelecionada(itemValue)
+              setNotaSelecionada2(itemValue)
             }>
-            {notas.map((itemValue, itemIndex) => {
+            {notas2.map((itemValue, itemIndex) => {
               return (
                 <Picker.Item
                   label={itemValue}
