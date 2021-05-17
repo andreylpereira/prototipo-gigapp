@@ -7,13 +7,14 @@ import {
   TextInput,
   View,
   TouchableOpacity,
+  KeyboardAvoidingView
 } from 'react-native';
 
 const CadastroEstabelecimento = ({navigation}) => {
   return (
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
-      <View style={css.container}>
+      <KeyboardAvoidingView style={css.container}>
         <TextInput style={css.input} placeholder="Nome" autoCorrect={false} />
         <TextInput style={css.input} placeholder="E-mail" autoCorrect={false} />
         <TextInput
@@ -48,7 +49,7 @@ const CadastroEstabelecimento = ({navigation}) => {
           onPress={() => navigation.navigate('Login')}>
           <Text style={css.buttonText}>Cadastrar</Text>
         </TouchableOpacity>
-      </View>
+      </KeyboardAvoidingView>
     </>
   );
 };
@@ -90,7 +91,7 @@ const css = StyleSheet.create({
     padding: 10,
     marginTop: 15,
     fontSize: 15,
-    fontFamily: 'Nunito-Bold',
+    fontFamily: 'Nunito-Regular',
   },
 });
 

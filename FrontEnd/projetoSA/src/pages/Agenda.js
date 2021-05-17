@@ -183,7 +183,6 @@ const css = StyleSheet.create({
   title: {
     textAlign: 'center',
     marginTop: 15,
-    marginBottom: 15,
     fontFamily: 'Nunito-Bold',
     fontSize: 21,
     elevation: 10,

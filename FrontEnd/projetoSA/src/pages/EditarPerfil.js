@@ -7,13 +7,14 @@ import {
   TextInput,
   View,
   TouchableOpacity,
+  KeyboardAvoidingView
 } from 'react-native';
 
 const EditarPerfil = ({navigation}) => {
   function Perfils(perfil) {
     if (perfil == 'Banda') {
       return (
-        <View>
+        <KeyboardAvoidingView>
           <StatusBar barStyle="dark-content" hidden={true} />
           <View style={css.container}>
             <TextInput
@@ -64,14 +65,14 @@ const EditarPerfil = ({navigation}) => {
               <Text style={css.buttonText}>Editar</Text>
             </TouchableOpacity>
           </View>
-        </View>
+        </KeyboardAvoidingView>
       );
     }
     if (perfil == 'Estabelecimento') {
       return (
         <View>
           <StatusBar barStyle="dark-content" hidden={true} />
-          <View style={css.container}>
+          <KeyboardAvoidingView style={css.container}>
             <TextInput
               style={css.input}
               placeholder="Nome"
@@ -122,7 +123,7 @@ const EditarPerfil = ({navigation}) => {
               onPress={() => navigation.navigate('Login')}>
               <Text style={css.buttonText}>Editar</Text>
             </TouchableOpacity>
-          </View>
+          </KeyboardAvoidingView>
         </View>
       );
     } else {
@@ -173,7 +174,7 @@ const css = StyleSheet.create({
     padding: 10,
     marginTop: 15,
     fontSize: 15,
-    fontFamily: 'Nunito-Bold',
+    fontFamily: 'Nunito-Regular',
   },
   description: {
     alignSelf: 'center',
@@ -187,7 +188,7 @@ const css = StyleSheet.create({
     padding: 10,
     marginTop: 15,
     fontSize: 15,
-    fontFamily: 'Nunito-Bold',
+    fontFamily: 'Nunito-Regular',
   },
   error: {
     color: '#fff',
