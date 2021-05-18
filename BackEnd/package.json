@@ -1,6 +1,6 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
+  "name": "gig-api-backend",
+  "version": "1.0.1",
   "description": "",
   "main": "nodemon.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "start": "nodemon server.js",
     "dev": "nodemon src/server",
     "dev:debug": "nodemon --inspect src/server",
-    "server": "node ./server.js"
+    "server": "node ./server.js",
+    "poststatus": "service postgresql status"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,9 @@
   "dependencies": {
     "express": "^4.17.1",
     "pg": "^8.6.0",
-    "sequelize": "^6.6.2"
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.6.2",
+    "sequelize-cli": "^6.2.0",
+    "yarn": "^1.22.10"
   }
 }
