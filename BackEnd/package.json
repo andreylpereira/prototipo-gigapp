@@ -3,13 +3,15 @@
   "version": "1.0.1",
   "description": "",
   "main": "nodemon.js",
+  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
     "dev": "nodemon src/server",
     "dev:debug": "nodemon --inspect src/server",
     "server": "node ./server.js",
-    "poststatus": "service postgresql status"
+    "poststatus": "service postgresql status",
+    "swagger-autogen": "node ./src/swagger.js"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +28,8 @@
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.6.2",
     "sequelize-cli": "^6.2.0",
+    "swagger-autogen": "^2.8.2",
+    "swagger-ui-express": "^4.1.6",
     "yarn": "^1.22.10"
   }
 }
