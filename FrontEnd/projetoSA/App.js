@@ -7,7 +7,7 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-import Routes from './src/Router';
+import Routes from './src/pages/Router';
 
 const App = () => {
   return (

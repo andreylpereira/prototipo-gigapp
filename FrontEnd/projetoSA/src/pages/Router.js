@@ -6,20 +6,20 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {StyleSheet, Text, View, TouchableOpacity,Image } from 'react-native';
 
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Cadastro from './pages/Cadastro';
-import CadastroBanda from './pages/CadastroBanda';
-import CadastroEstabelecimento from './pages/CadastroEstabelecimento';
-import Sobre from './pages/Sobre';
-import EditarPerfil from './pages/EditarPerfil';
-import Perfil from './pages/Perfil';
-import Evento from './pages/Evento';
-import Agenda from './pages/Agenda';
-import CadastroEvento from './pages/CadastroEvento';
-import EditarEvento from './pages/EditarEvento';
-import Avaliacao from './pages/Avalicao';
-import SelecaoBanda from './pages/SelecaoBanda';
+import Home from './Home';
+import Login from './Login';
+import Cadastro from './Cadastro';
+import CadastroBanda from './CadastroBanda';
+import CadastroEstabelecimento from './CadastroEstabelecimento';
+import Sobre from './Sobre';
+import EditarPerfil from './EditarPerfil';
+import Perfil from './Perfil';
+import Evento from './Evento';
+import Agenda from './Agenda';
+import CadastroEvento from './CadastroEvento';
+import EditarEvento from './EditarEvento';
+import Avaliacao from './Avalicao';
+import SelecaoBanda from './SelecaoBanda';
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -365,7 +365,7 @@ const Content = ({...props}) => {
             <View style={css.personLogo}>
               <Image
                 style={css.image}
-                source={require('./assets/fotos/dazaranha.jpg')}
+                source={require('../assets/fotos/dazaranha.jpg')}
               />
               <View style={css.personDescription}>
                 <Text  multimultiline={true} numberOfLines={1} style={css.personName}>
@@ -399,7 +399,7 @@ const Content = ({...props}) => {
             <View style={css.personLogo}>
             <Image
                 style={css.image}
-                source={require('./assets/fotos/chopp.jpg')}
+                source={require('../assets/fotos/chopp.jpg')}
               />
               {/* <Icon
                 name="person-circle"
@@ -439,7 +439,7 @@ const Content = ({...props}) => {
       );
     }
   }
-  return <>{Perfils('Banda')}</>;
+  return <>{Perfils('Estabelecimento')}</>;
 };
 
 const Drawers = () => {

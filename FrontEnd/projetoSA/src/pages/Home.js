@@ -299,15 +299,11 @@ const mapLightStyle = [
 ];
 
 const Home = ({navigation}) => {
+
   return (
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
       <View style={css.container}>
-        {/* <View style={css.card}>
-          <Text style={css.text}> App desenvolvido por alunos no curso de Análise e Desenvolvimento de Sistema do Senai/SC com o objetivo de por em pratica o conhecimento desenvolvido durante o semestre através de uma situação de aprendizagem.
-          </Text>
-          <Text/>
-        </View> */}
         <View style={css.containerMap}>
           <MapView
             provider={PROVIDER_GOOGLE}
