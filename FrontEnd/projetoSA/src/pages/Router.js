@@ -4,22 +4,22 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator, DrawerItemList} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity,Image } from 'react-native';
 
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Cadastro from './pages/Cadastro';
-import CadastroBanda from './pages/CadastroBanda';
-import CadastroEstabelecimento from './pages/CadastroEstabelecimento';
-import Sobre from './pages/Sobre';
-import EditarPerfil from './pages/EditarPerfil';
-import Perfil from './pages/Perfil';
-import Evento from './pages/Evento';
-import Agenda from './pages/Agenda';
-import CadastroEvento from './pages/CadastroEvento';
-import EditarEvento from './pages/EditarEvento';
-import Avaliacao from './pages/Avalicao';
-import SelecaoBanda from './pages/SelecaoBanda';
+import Home from './Home';
+import Login from './Login';
+import Cadastro from './Cadastro';
+import CadastroBanda from './CadastroBanda';
+import CadastroEstabelecimento from './CadastroEstabelecimento';
+import Sobre from './Sobre';
+import EditarPerfil from './EditarPerfil';
+import Perfil from './Perfil';
+import Evento from './Evento';
+import Agenda from './Agenda';
+import CadastroEvento from './CadastroEvento';
+import EditarEvento from './EditarEvento';
+import Avaliacao from './Avalicao';
+import SelecaoBanda from './SelecaoBanda';
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -77,7 +77,7 @@ const Routes = () => {
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
-              backgroundColor: '#FF6400',
+              backgroundColor: 'tomato',
               borderBottomWidth: 1,
               borderBottomColor: '#CDCCCE',
             },
@@ -91,7 +91,7 @@ const Routes = () => {
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
-              backgroundColor: '#FF6400',
+              backgroundColor: 'tomato',
               borderBottomWidth: 1,
               borderBottomColor: '#CDCCCE',
             },
@@ -106,7 +106,7 @@ const Routes = () => {
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
-              backgroundColor: '#FF6400',
+              backgroundColor: 'tomato',
               borderBottomWidth: 1,
               borderBottomColor: '#CDCCCE',
             },
@@ -121,7 +121,7 @@ const Routes = () => {
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
-              backgroundColor: '#FF6400',
+              backgroundColor: 'tomato',
               borderBottomWidth: 1,
               borderBottomColor: '#CDCCCE',
             },
@@ -136,7 +136,7 @@ const Routes = () => {
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
-              backgroundColor: '#FF6400',
+              backgroundColor: 'tomato',
               borderBottomWidth: 1,
               borderBottomColor: '#CDCCCE',
             },
@@ -151,7 +151,7 @@ const Routes = () => {
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
-              backgroundColor: '#FF6400',
+              backgroundColor: 'tomato',
               borderBottomWidth: 1,
               borderBottomColor: '#CDCCCE',
             },
@@ -166,7 +166,7 @@ const Routes = () => {
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
-              backgroundColor: '#FF6400',
+              backgroundColor: 'tomato',
               borderBottomWidth: 1,
               borderBottomColor: '#CDCCCE',
             },
@@ -181,7 +181,7 @@ const Routes = () => {
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
-              backgroundColor: '#FF6400',
+              backgroundColor: 'tomato',
               borderBottomWidth: 1,
               borderBottomColor: '#CDCCCE',
             },
@@ -196,7 +196,7 @@ const Routes = () => {
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
-              backgroundColor: '#FF6400',
+              backgroundColor: 'tomato',
               borderBottomWidth: 1,
               borderBottomColor: '#CDCCCE',
             },
@@ -211,7 +211,7 @@ const Routes = () => {
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
-              backgroundColor: '#FF6400',
+              backgroundColor: 'tomato',
               borderBottomWidth: 1,
               borderBottomColor: '#CDCCCE',
             },
@@ -226,7 +226,7 @@ const Routes = () => {
             headerTitleAlign: 'center',
             headerTintColor: 'white',
             headerStyle: {
-              backgroundColor: '#FF6400',
+              backgroundColor: 'tomato',
               borderBottomWidth: 1,
               borderBottomColor: '#CDCCCE',
             },
@@ -363,17 +363,15 @@ const Content = ({...props}) => {
         <View>
           <View>
             <View style={css.personLogo}>
-              <Icon
-                name="person-circle"
-                color={'#FF6400'}
-                size={75}
-                style={{marginLeft: 5}}
+              <Image
+                style={css.image}
+                source={require('../assets/fotos/dazaranha.jpg')}
               />
               <View style={css.personDescription}>
-                <Text numberOfLines={1} style={css.personName}>
+                <Text  multimultiline={true} numberOfLines={1} style={css.personName}>
                   Dazaranha
                 </Text>
-                <Text numberOfLines={1} style={css.personType}>
+                <Text multimultiline={true} numberOfLines={1} style={css.personType}>
                   Banda
                 </Text>
                 <View style={css.starLine}>
@@ -399,17 +397,21 @@ const Content = ({...props}) => {
         <View>
           <View>
             <View style={css.personLogo}>
-              <Icon
+            <Image
+                style={css.image}
+                source={require('../assets/fotos/chopp.jpg')}
+              />
+              {/* <Icon
                 name="person-circle"
-                color={'#FF6400'}
+                color={'tomato'}
                 size={75}
                 style={{marginLeft: 5}}
-              />
+              /> */}
               <View style={css.personDescription}>
-                <Text numberOfLines={1} style={css.personName}>
+                <Text multimultiline={true} numberOfLines={1} style={css.personName}>
                   Chopp do Gus
                 </Text>
-                <Text numberOfLines={1} style={css.personType}>
+                <Text multimultiline={true} numberOfLines={1} style={css.personType}>
                   Estabelecimento
                 </Text>
                 <View style={css.starLine}>
@@ -451,8 +453,8 @@ const Drawers = () => {
       }}
       drawerContentOptions={{
         activeTintColor: '#DDDDDD',
-        inactiveTintColor: '#FF6400',
-        activeBackgroundColor: '#FF6400',
+        inactiveTintColor: 'tomato',
+        activeBackgroundColor: 'tomato',
         inactiveBackgroundColor: '#DDDDDD',
         labelStyle: {fontSize: 15, fontFamily: 'Nunito-Black', marginLeft: -10},
       }}>
@@ -466,7 +468,7 @@ const Drawers = () => {
             <Icon
               name="home-sharp"
               size={focused ? 32 : 28}
-              color={focused ? '#DDDDDD' : '#FF6400'}
+              color={focused ? '#DDDDDD' : 'tomato'}
             />
           ),
         }}
@@ -480,7 +482,7 @@ const Drawers = () => {
             <Icon
               name="calendar"
               size={focused ? 32 : 28}
-              color={focused ? '#DDDDDD' : '#FF6400'}
+              color={focused ? '#DDDDDD' : 'tomato'}
             />
           ),
         }}
@@ -494,7 +496,7 @@ const Drawers = () => {
             <Icon
               name="person-sharp"
               size={focused ? 32 : 28}
-              color={focused ? '#DDDDDD' : '#FF6400'}
+              color={focused ? '#DDDDDD' : 'tomato'}
             />
           ),
         }}
@@ -508,7 +510,7 @@ const Drawers = () => {
             <Icon
               name="information-circle"
               size={focused ? 34 : 30}
-              color={focused ? '#DDDDDD' : '#FF6400'}
+              color={focused ? '#DDDDDD' : 'tomato'}
             />
           ),
         }}
@@ -523,7 +525,7 @@ const Drawers = () => {
             <Icon
               name="log-out"
               size={focused ? 34 : 28}
-              color={focused ? '#DDDDDD' : '#FF6400'}
+              color={focused ? '#DDDDDD' : 'tomato'}
             />
           ),
         }}
@@ -549,8 +551,8 @@ const css = StyleSheet.create({
     flexDirection: 'row',
   },
   personDescription: {
-    marginLeft: 5,
-    marginTop: 10,
+    marginLeft: 10,
+    marginTop: 8,
     color: '#fff',
   },
   personName: {
@@ -588,6 +590,14 @@ const css = StyleSheet.create({
     fontFamily: 'Nunito-Black',
     fontSize: 17,
   },
+  image: {
+    width: 55,
+    height: 55,
+    borderWidth:1,
+    borderRadius: 100,
+    marginLeft: 10,
+    marginTop: 10
+  }
 });
 
 export default Routes;
