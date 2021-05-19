@@ -4,7 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator, DrawerItemList} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity,Image } from 'react-native';
 
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -363,17 +363,15 @@ const Content = ({...props}) => {
         <View>
           <View>
             <View style={css.personLogo}>
-              <Icon
-                name="person-circle"
-                color={'tomato'}
-                size={75}
-                style={{marginLeft: 5}}
+              <Image
+                style={css.image}
+                source={require('./assets/fotos/dazaranha.jpg')}
               />
               <View style={css.personDescription}>
-                <Text numberOfLines={1} style={css.personName}>
+                <Text  multimultiline={true} numberOfLines={1} style={css.personName}>
                   Dazaranha
                 </Text>
-                <Text numberOfLines={1} style={css.personType}>
+                <Text multimultiline={true} numberOfLines={1} style={css.personType}>
                   Banda
                 </Text>
                 <View style={css.starLine}>
@@ -399,17 +397,21 @@ const Content = ({...props}) => {
         <View>
           <View>
             <View style={css.personLogo}>
-              <Icon
+            <Image
+                style={css.image}
+                source={require('./assets/fotos/chopp.jpg')}
+              />
+              {/* <Icon
                 name="person-circle"
                 color={'tomato'}
                 size={75}
                 style={{marginLeft: 5}}
-              />
+              /> */}
               <View style={css.personDescription}>
-                <Text numberOfLines={1} style={css.personName}>
+                <Text multimultiline={true} numberOfLines={1} style={css.personName}>
                   Chopp do Gus
                 </Text>
-                <Text numberOfLines={1} style={css.personType}>
+                <Text multimultiline={true} numberOfLines={1} style={css.personType}>
                   Estabelecimento
                 </Text>
                 <View style={css.starLine}>
@@ -437,7 +439,7 @@ const Content = ({...props}) => {
       );
     }
   }
-  return <>{Perfils('Estabelecimento')}</>;
+  return <>{Perfils('Banda')}</>;
 };
 
 const Drawers = () => {
@@ -549,8 +551,8 @@ const css = StyleSheet.create({
     flexDirection: 'row',
   },
   personDescription: {
-    marginLeft: 5,
-    marginTop: 10,
+    marginLeft: 10,
+    marginTop: 8,
     color: '#fff',
   },
   personName: {
@@ -588,6 +590,14 @@ const css = StyleSheet.create({
     fontFamily: 'Nunito-Black',
     fontSize: 17,
   },
+  image: {
+    width: 55,
+    height: 55,
+    borderWidth:1,
+    borderRadius: 100,
+    marginLeft: 10,
+    marginTop: 10
+  }
 });
 
 export default Routes;

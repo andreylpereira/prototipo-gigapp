@@ -11,6 +11,7 @@ import {
   StyleSheet,
   Text,
   View,
+  Image,
   TouchableOpacity,
   TouchableHighlight,
 } from 'react-native';
@@ -318,7 +319,7 @@ const Home = ({navigation}) => {
               latitudeDelta: 0.1922,
               longitudeDelta: 0.0421,
             }}>
-            <Marker
+            <MapView.Marker
               coordinate={{
                 latitude: -27.558764,
                 longitude: -48.493178,
@@ -326,7 +327,7 @@ const Home = ({navigation}) => {
               image={require('../assets/maps/drink.png')}
               title="teste"
               description="Teste">
-              <Callout tooltip>
+              <MapView.Callout tooltip>
                 <View>
                   <View style={css.bubble}>
                     <View style={css.gridColunm}>
@@ -347,9 +348,14 @@ const Home = ({navigation}) => {
                         </View>
                       </View>
                       <View style={css.gridRow}>
-                        <View style={css.avatar}>
-                          <Text>Imagem</Text>
-                        </View>
+                      <Text style={{height: 90, width:80, marginTop: -20, marginRight: -15, borderRadius: 15}}>
+                          <Image
+                            style={css.image}
+                            resizeMode="cover"
+                            source={require('../assets/fotos/chopp.jpg')}
+                          />
+                        </Text>
+
                         <View style={css.gridColunm}>
                           <Text
                             multimultiline={true}
@@ -365,17 +371,15 @@ const Home = ({navigation}) => {
                           <Text style={css.mapTextDetails} onPress={() => navigation.navigate('Perfil')}>Ver mais</Text>
 
                                   <View style={(css.gridRow, {alignSelf: 'center'})}>
-
-
                       </View> */}
                     </View>
                   </View>
                   <View style={css.arrowBorder} />
                   <View style={css.arrow} />
                 </View>
-              </Callout>
-            </Marker>
-            <Marker
+              </MapView.Callout>
+            </MapView.Marker>
+            <MapView.Marker
               coordinate={{
                 latitude: -27.601728,
                 longitude: -48.525906,
@@ -383,7 +387,7 @@ const Home = ({navigation}) => {
               image={require('../assets/maps/band.png')}
               title="teste"
               description="Teste">
-              <Callout tooltip>
+              <MapView.Callout tooltip>
                 <View>
                   <View style={css.bubble}>
                     <View style={css.gridColunm}>
@@ -404,9 +408,14 @@ const Home = ({navigation}) => {
                         </View>
                       </View>
                       <View style={css.gridRow}>
-                        <View style={css.avatar}>
-                          <Text>Imagem</Text>
-                        </View>
+                      <Text style={{height: 90, width:80, marginTop: -20, marginRight: -15, borderRadius: 15}}>
+                          <Image
+                            style={css.image}
+                            resizeMode="cover"
+                            source={require('../assets/fotos/dazaranha.jpg')}
+                          />
+                        </Text>
+
                         <View style={css.gridColunm}>
                           <Text
                             multimultiline={true}
@@ -423,16 +432,14 @@ const Home = ({navigation}) => {
                           <Text style={css.mapTextDetails} onPress={() => navigation.navigate('Perfil')}>Ver mais</Text>
 
                                   <View style={(css.gridRow, {alignSelf: 'center'})}>
-
-
                       </View> */}
                     </View>
                   </View>
                   <View style={css.arrowBorder} />
                   <View style={css.arrow} />
                 </View>
-              </Callout>
-            </Marker>
+              </MapView.Callout>
+            </MapView.Marker>
           </MapView>
         </View>
       </View>
@@ -473,9 +480,14 @@ const css = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 7.5,
     borderColor: '#ccc',
-    width: 55,
-    height: 55,
+    width: 70,
+    height: 70,
     alignSelf: 'center',
+    marginBottom: 50
+  },
+  image: {
+    width: 60,
+    height: 60,
   },
   text: {
     fontFamily: 'Nunito-Regular',
@@ -491,26 +503,25 @@ const css = StyleSheet.create({
     borderRadius: 6,
     borderColor: '#ccc',
     borderWidth: 0.5,
-    padding: 15,
+    padding: 10,
   },
   mapTextTittle: {
     fontSize: 15,
     fontFamily: 'Nunito-Bold',
     textAlign: 'center',
-    paddingLeft: 5,
+    paddingLeft: 5
   },
   mapTextDescription: {
     fontSize: 13,
     width: 175,
     fontFamily: 'Nunito-Regular',
-    paddingLeft: 5,
+    paddingLeft: 5
   },
   mapTextPhone: {
     fontSize: 13,
     width: 175,
     fontFamily: 'Nunito-Regular',
-    paddingLeft: 5,
-    marginBottom: 5,
+    paddingLeft: 5
   },
   // mapTextDetails: {
   //   fontSize: 12,
