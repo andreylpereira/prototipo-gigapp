@@ -299,7 +299,6 @@ const mapLightStyle = [
 ];
 
 const Home = ({navigation}) => {
-
   return (
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
@@ -311,14 +310,14 @@ const Home = ({navigation}) => {
             customMapStyle={mapLightStyle}
             region={{
               latitude: -27.601728,
-              longitude: -48.525906,
-              latitudeDelta: 0.1922,
-              longitudeDelta: 0.0421,
+              longitude: -48.560000,
+              latitudeDelta: 0.2100,
+              longitudeDelta: 0.0420,
             }}>
             <MapView.Marker
               coordinate={{
-                latitude: -27.558764,
-                longitude: -48.493178,
+                latitude: -27.600711,
+                longitude: -48.501234,
               }}
               image={require('../assets/maps/drink.png')}
               title="teste"
@@ -344,7 +343,14 @@ const Home = ({navigation}) => {
                         </View>
                       </View>
                       <View style={css.gridRow}>
-                      <Text style={{height: 90, width:80, marginTop: -20, marginRight: -15, borderRadius: 15}}>
+                        <Text
+                          style={{
+                            height: 90,
+                            width: 80,
+                            marginTop: -20,
+                            marginRight: -15,
+                            borderRadius: 15,
+                          }}>
                           <Image
                             style={css.image}
                             resizeMode="cover"
@@ -356,7 +362,7 @@ const Home = ({navigation}) => {
                           <Text
                             multimultiline={true}
                             style={css.mapTextDescription}>
-                            Rua XV de Novembro, Nº14, Corrego Grande
+                            R. Sérgio Rogerio Beims, 89 - Santa Monica, Florianópolis - SC, 88035-210
                           </Text>
                           <Text multimultiline={true} style={css.mapTextPhone}>
                             Tel: 99482-0120
@@ -404,7 +410,14 @@ const Home = ({navigation}) => {
                         </View>
                       </View>
                       <View style={css.gridRow}>
-                      <Text style={{height: 90, width:80, marginTop: -20, marginRight: -15, borderRadius: 15}}>
+                        <Text
+                          style={{
+                            height: 90,
+                            width: 80,
+                            marginTop: -20,
+                            marginRight: -15,
+                            borderRadius: 15,
+                          }}>
                           <Image
                             style={css.image}
                             resizeMode="cover"
@@ -479,7 +492,7 @@ const css = StyleSheet.create({
     width: 70,
     height: 70,
     alignSelf: 'center',
-    marginBottom: 50
+    marginBottom: 50,
   },
   image: {
     width: 60,
@@ -505,19 +518,19 @@ const css = StyleSheet.create({
     fontSize: 15,
     fontFamily: 'Nunito-Bold',
     textAlign: 'center',
-    paddingLeft: 5
+    paddingLeft: 5,
   },
   mapTextDescription: {
     fontSize: 13,
     width: 175,
     fontFamily: 'Nunito-Regular',
-    paddingLeft: 5
+    paddingLeft: 5,
   },
   mapTextPhone: {
     fontSize: 13,
     width: 175,
     fontFamily: 'Nunito-Regular',
-    paddingLeft: 5
+    paddingLeft: 5,
   },
   // mapTextDetails: {
   //   fontSize: 12,
