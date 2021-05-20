@@ -3,8 +3,7 @@ import swaggerUi from 'swagger-ui-express';
 import swaggerFile from '../swagger_output.json';
 import SessionController from './app/controllers/SessionController';
 import AuthMiddleware from './app/middlewares/auth';
-import UserController from './app/controllers/userController';
-
+import UserController from './app/controllers/UserController';
 
 const routes = new Router();
 
