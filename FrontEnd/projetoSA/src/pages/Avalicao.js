@@ -7,13 +7,58 @@ import {
   Text,
   View,
   TouchableOpacity,
+  Keyboard
 } from 'react-native';
 
 const Avaliacao = ({navigation}) => {
-  const [notas1] = useState(['10,00', '9,00', '8,00', '7,00', '6,00', '5,00', '4,00', '3,00', '2,00', '1,00', '0,00']);
-  const [notaSelecionada1, setNotaSelecionada1] = useState([]);
-  const [notas2] = useState(['10,00', '9,00', '8,00', '7,00', '6,00', '5,00', '4,00', '3,00', '2,00', '1,00', '0,00']);
-  const [notaSelecionada2, setNotaSelecionada2] = useState([]);
+  const [banda1] = useState(['0,00','1,00','2,00','3,00','4,00','5,00','6,00','7,00','8,00', '9,00','10,00']);
+  const [notaBanda1, setNotaBanda1] = useState([]);
+
+  const [banda2] = useState(['0,00','1,00','2,00','3,00','4,00','5,00','6,00','7,00','8,00', '9,00','10,00']);
+  const [notaBanda2, setNotaBanda2] = useState([]);
+
+  const [evento] = useState(['0,00','1,00','2,00','3,00','4,00','5,00','6,00','7,00','8,00', '9,00','10,00']);
+  const [notaEvento, setNotaEvento] = useState([]);
+
+
+  const avaliarBandas = async () => {
+    if (notaBanda1 && notaBanda2) {
+      try {
+        // const response = await api.post('/novasTarefas', { "nome": nomeLista, "descricao": descricaoLista, "data": dataLista });
+        // console.log(JSON.stringify(response.data));
+        
+        console.log('Nota Banda 1:' + ' ' + notaBanda1);
+        console.log('Nota Banda 2:' + ' ' + notaBanda2);
+
+      } catch (error) {
+        console.log('DEU RUIM' + error);
+      }
+    } else {
+      console.log('Vazio');
+    }
+    Keyboard.dismiss();
+    navigation.goBack();
+  };
+
+  const avaliarEvento = async () => {
+    if (notaEvento) {
+      try {
+        // const response = await api.post('/novasTarefas', { "nome": nomeLista, "descricao": descricaoLista, "data": dataLista });
+        // console.log(JSON.stringify(response.data));
+        console.log('Nota Evento:' + ' ' + notaEvento);
+
+      } catch (error) {
+        console.log('DEU RUIM' + error);
+      }
+    } else {
+      console.log('Vazio');
+    }
+    Keyboard.dismiss();
+    navigation.goBack();
+  };
+
+
+
 
 function Perfils(perfil) {
   if (perfil == 'Banda') {
@@ -26,11 +71,11 @@ function Perfils(perfil) {
         <View style={css.input}>
           <Picker
             style={{marginTop: -15, fontFamily: 'Nunito-Bold', fontSize: 15}}
-            selectedValue={notaSelecionada1}
+            selectedValue={notaEvento}
             onValueChange={(itemValue, itemIndex) =>
-              setNotaSelecionada1(itemValue)
+              setNotaEvento(itemValue)
             }>
-            {notas1.map((itemValue, itemIndex) => {
+            {evento.map((itemValue, itemIndex) => {
               return (
                 <Picker.Item
                   label={itemValue}
@@ -43,7 +88,7 @@ function Perfils(perfil) {
         </View>
         <TouchableOpacity
           style={css.button}
-          onPress={() => navigation.navigate('Login')}>
+          onPress={() => avaliarEvento()}>
           <Text style={css.buttonText}>Avaliar</Text>
         </TouchableOpacity>
       </View>
@@ -60,11 +105,11 @@ function Perfils(perfil) {
         <View style={css.input}>
           <Picker
             style={{marginTop: -15, fontFamily: 'Nunito-Bold', fontSize: 15}}
-            selectedValue={notaSelecionada1}
+            selectedValue={banda1}
             onValueChange={(itemValue, itemIndex) =>
-              setNotaSelecionada1(itemValue)
+              setNotaBanda1(itemValue)
             }>
-            {notas1.map((itemValue, itemIndex) => {
+            {banda1.map((itemValue, itemIndex) => {
               return (
                 <Picker.Item
                   label={itemValue}
@@ -80,11 +125,11 @@ function Perfils(perfil) {
         <View style={css.input}>
           <Picker
             style={{marginTop: -15, fontFamily: 'Nunito-Bold', fontSize: 15}}
-            selectedValue={notaSelecionada2}
+            selectedValue={notaBanda2}
             onValueChange={(itemValue, itemIndex) =>
-              setNotaSelecionada2(itemValue)
+              setNotaBanda2(itemValue)
             }>
-            {notas2.map((itemValue, itemIndex) => {
+            {banda2.map((itemValue, itemIndex) => {
               return (
                 <Picker.Item
                   label={itemValue}
@@ -97,7 +142,7 @@ function Perfils(perfil) {
         </View>
         <TouchableOpacity
           style={css.button}
-          onPress={() => navigation.navigate('Login')}>
+          onPress={() => avaliarBandas()}>
           <Text style={css.buttonText}>Avaliar</Text>
         </TouchableOpacity>
       </View>
