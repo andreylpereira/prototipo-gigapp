@@ -11,13 +11,13 @@ import {
 } from 'react-native';
 
 const Avaliacao = ({navigation}) => {
-  const [banda1] = useState(['0,00','1,00','2,00','3,00','4,00','5,00','6,00','7,00','8,00', '9,00','10,00']);
+  const [banda1] = useState(['10,00','9,00','8,00','7,00','6,00','5,00','4,00', '3,00','2,00','1,00','0,00']);
   const [notaBanda1, setNotaBanda1] = useState([]);
 
-  const [banda2] = useState(['0,00','1,00','2,00','3,00','4,00','5,00','6,00','7,00','8,00', '9,00','10,00']);
+  const [banda2] = useState(['10,00','9,00','8,00','7,00','6,00','5,00','4,00', '3,00','2,00','1,00','0,00']);
   const [notaBanda2, setNotaBanda2] = useState([]);
 
-  const [evento] = useState(['0,00','1,00','2,00','3,00','4,00','5,00','6,00','7,00','8,00', '9,00','10,00']);
+  const [evento] = useState(['10,00','9,00','8,00','7,00','6,00','5,00','4,00', '3,00','2,00','1,00','0,00']);
   const [notaEvento, setNotaEvento] = useState([]);
 
 
@@ -78,8 +78,8 @@ function Perfils(perfil) {
             {evento.map((itemValue, itemIndex) => {
               return (
                 <Picker.Item
-                  label={itemValue}
-                  value={itemIndex}
+                label={itemValue}
+                value={itemValue}
                   key={itemIndex}
                 />
               );
@@ -112,8 +112,8 @@ function Perfils(perfil) {
             {banda1.map((itemValue, itemIndex) => {
               return (
                 <Picker.Item
-                  label={itemValue}
-                  value={itemIndex}
+                label={itemValue}
+                value={itemValue}
                   key={itemIndex}
                 />
               );
@@ -132,8 +132,8 @@ function Perfils(perfil) {
             {banda2.map((itemValue, itemIndex) => {
               return (
                 <Picker.Item
-                  label={itemValue}
-                  value={itemIndex}
+                label={itemValue}
+                value={itemValue}
                   key={itemIndex}
                 />
               );

@@ -7,7 +7,7 @@ import {
   Text,
   View,
   TouchableOpacity,
-  Keyboard
+  Keyboard,
 } from 'react-native';
 
 const SelecaoBanda = ({navigation}) => {
@@ -25,7 +25,6 @@ const SelecaoBanda = ({navigation}) => {
         
         console.log('Banda 1:' + ' ' + bandaSelecionada1);
         console.log('Banda 2:' + ' ' + bandaSelecionada2);
-
       } catch (error) {
         console.log('DEU RUIM' + error);
       }
@@ -53,7 +52,7 @@ const SelecaoBanda = ({navigation}) => {
               return (
                 <Picker.Item
                   label={itemValue}
-                  value={itemIndex}
+                  value={itemValue}
                   key={itemIndex}
                 />
               );
@@ -72,8 +71,8 @@ const SelecaoBanda = ({navigation}) => {
             {bandas2.map((itemValue, itemIndex) => {
               return (
                 <Picker.Item
-                  label={itemValue}
-                  value={itemIndex}
+                label={itemValue}
+                value={itemValue}
                   key={itemIndex}
                 />
               );
