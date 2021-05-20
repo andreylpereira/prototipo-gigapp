@@ -6,29 +6,62 @@ import {
   Text,
   TextInput,
   View,
-  SafeAreaView,
-  FlatList,
   TouchableOpacity,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
+  Keyboard
 } from 'react-native';
 
 import DatePicker from 'react-native-datepicker';
 
 const CadastroEvento = ({navigation}) => {
-  const [startDate, setStartDate] = useState(new Date());
-  const dataLista = startDate;
+  const [nomeEvento, setNomeEvento] = useState('');
+  const [descricaoEvento, setDescricaoEvento] = useState('');
+  const [valorEvento, setValorEvento] = useState('');
+  const [dataInicial, setDataInicial] = useState(new Date());
+  const dataLista = dataInicial;
+
+
+  //fazer validações
+  const createEvento = async () => {
+    if (nomeEvento && descricaoEvento && valorEvento && dataLista) {
+      try {
+        // const response = await api.post('/novasTarefas', { "nome": nomeLista, "descricao": descricaoLista, "data": dataLista });
+        // console.log(JSON.stringify(response.data));
+        console.log(nomeEvento);
+        console.log(descricaoEvento);
+        console.log(valorEvento);
+        console.log(dataLista);
+        console.log(idExemplo);
+      } catch (error) {
+        console.log('DEU RUIM' + error);
+      }
+    } else {
+      console.log('Vazio');
+    }
+    Keyboard.dismiss();
+    navigation.goBack();
+  };
 
   return (
     <>
       <StatusBar barStyle="dark-content" hidden={true} />
       <KeyboardAvoidingView style={css.container}>
-        <Text style={css.title}>Criar Evento</Text>
-        <TextInput style={css.input} placeholder="Evento" autoCorrect={false} />
+        <Text style={css.tittle}>Criar Evento</Text>
+
+        <TextInput
+          style={css.input}
+          placeholder="Evento"
+          autoCorrect={false}
+          value={nomeEvento}
+          onChangeText={item => {
+            setNomeEvento(item);
+          }}
+        />
         <DatePicker
           format="DD/MM/YYYY"
           style={css.dateComponente}
-          date={startDate}
-          onDateChange={date => setStartDate(date)}
+          date={dataInicial}
+          onDateChange={date => setDataInicial(date)}
           confirmBtnText="Confirmar"
           cancelBtnText="Cancelar"
           mode="date"
@@ -39,25 +72,34 @@ const CadastroEvento = ({navigation}) => {
             },
           }}
         />
-        <TextInput style={css.input} placeholder="Valor" autoCorrect={false} />
-        {/* <TextInput
+        <TextInput
           style={css.input}
-          placeholder="Horário 1"
-          autoCorrect={false} />
-          <TextInput
-          style={css.input}
-          placeholder="Horário 2"
-          autoCorrect={false} /> */}
+          keyboardType = 'numeric'
+          placeholder="Valor"
+          autoCorrect={false}
+          value={valorEvento}
+          onChangeText={item => {
+            setValorEvento(item);
+          }}
+        />
+
         <TextInput
           style={css.description}
           placeholder="Descrição"
           multiline={true}
           autoCorrect={false}
+          value={descricaoEvento}
+          onChangeText={item => {
+            setDescricaoEvento(item);
+          }}
         />
 
         <TouchableOpacity
           style={css.button}
-          onPress={() => navigation.navigate('Home')}>
+          onPress={() => createEvento()}>
+                 {/* 
+          style={css.button}
+          onPress={() => navigation.goBack()}>   */}
           <Text style={css.buttonText}>Criar</Text>
         </TouchableOpacity>
       </KeyboardAvoidingView>
@@ -135,7 +177,7 @@ const css = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     elevation: 9.5,
   },
-  title: {
+  tittle: {
     textAlign: 'center',
     marginTop: 5,
     fontFamily: 'Nunito-Bold',

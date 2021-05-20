@@ -7,6 +7,7 @@ import {
   Text,
   View,
   TouchableOpacity,
+  Keyboard
 } from 'react-native';
 
 const SelecaoBanda = ({navigation}) => {
@@ -14,6 +15,26 @@ const SelecaoBanda = ({navigation}) => {
   const [bandaSelecionada1, setBandaSelecionada1] = useState([]);
   const [bandas2] = useState(['Barões da Pisadinha', 'Dazaranha', 'Tchê garotos']);
   const [bandaSelecionada2, setBandaSelecionada2] = useState([]);
+
+
+  const selecionarBandas = async () => {
+    if (bandaSelecionada1 && bandaSelecionada2) {
+      try {
+        // const response = await api.post('/novasTarefas', { "nome": nomeLista, "descricao": descricaoLista, "data": dataLista });
+        // console.log(JSON.stringify(response.data));
+        
+        console.log('Banda 1:' + ' ' + bandaSelecionada1);
+        console.log('Banda 2:' + ' ' + bandaSelecionada2);
+
+      } catch (error) {
+        console.log('DEU RUIM' + error);
+      }
+    } else {
+      console.log('Vazio');
+    }
+    Keyboard.dismiss();
+    navigation.goBack();
+  };
 
   return (
     <>
@@ -61,7 +82,7 @@ const SelecaoBanda = ({navigation}) => {
         </View>
         <TouchableOpacity
           style={css.button}
-          onPress={() => navigation.navigate('Login')}>
+          onPress={() => selecionarBandas()}>
           <Text style={css.buttonText}>Selecionar</Text>
         </TouchableOpacity>
       </View>
