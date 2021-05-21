@@ -22,9 +22,9 @@ class Band extends Model {
       }
     );
 
-    this.addHook('beforeSave', async user => {
-      if (user.password) {
-        user.password_hash = await bcrypt.hash(user.password, 8);
+    this.addHook('beforeSave', async band => {
+      if (band.password) {
+        band.password_hash = await bcrypt.hash(band.password, 8);
       }
     });
 

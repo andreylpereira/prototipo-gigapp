@@ -1,13 +1,13 @@
-import User from '../models/User';
+import Band from '../models/Band';
 
-class UserController {
+class BandController {
     async store(req, res) {
         try {
-            const userExists = await User.findOne({ where: { email: req.body.email } });
-            if (userExists) {
-                return res.status(400).json({ error: 'User already exists.' });
+            const bandExists = await Band.findOne({ where: { email: req.body.email } });
+            if (bandExists) {
+                return res.status(400).json({ error: 'Band already exists.' });
             }
-            const { id, name, email, provider } = await User.create(req.body);
+            const { id, name, email, provider } = await Band.create(req.body);
             return res.json({
                 id,
                 name,
@@ -24,24 +24,24 @@ class UserController {
 
         try {
             const { email, oldPassword } = req.body;
-            const user = await User.findByPk(req.userId);
-            if (email !== user.email) {
-                const userExists = await User.findOne({
+            const band = await Band.findByPk(req.bandId);
+            if (email !== band.email) {
+                const bandExists = await Band.findOne({
                     where: { email },
                 });
-                if (userExists) {
+                if (bandExists) {
                     return res.status(400).json({
-                        error: 'User already exists.'
+                        error: 'Band already exists.'
                     });
                 }
             }
-            if (oldPassword && !(await user.checkPassword(oldPassword))) {
+            if (oldPassword && !(await band.checkPassword(oldPassword))) {
                 return res.status(401).json({
                     error: 'Password does not match.'
                 });
             }
 
-            const { id, name, provider } = await user.update(req.body);
+            const { id, name, provider } = await band.update(req.body);
 
             return res.json({
                 id,
@@ -57,10 +57,9 @@ class UserController {
 
     // async index() { }
     async show(req, res) {
-        
         try {
-            const users = await User.findAll();
-            return res.json(users);
+            const bands = await Band.findAll();
+            return res.json(bands);
         } catch (error) {
             res.status(500).send({ message: 'An error occurred ' + error });
             console.log(error);
@@ -70,4 +69,4 @@ class UserController {
 
 }
 
-export default new UserController();
+export default new BandController();

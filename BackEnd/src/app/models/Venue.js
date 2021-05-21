@@ -1,7 +1,7 @@
 import Sequelize, { Model } from 'sequelize';
 import bcrypt from 'bcryptjs';
 
-class Band extends Model {
+class Venue extends Model {
   static init(sequelize) {
     super.init(
       {
@@ -40,4 +40,4 @@ class Band extends Model {
   }
 }
 
-export default Band;
+export default Venue;
