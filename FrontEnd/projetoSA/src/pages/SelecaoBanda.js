@@ -11,9 +11,9 @@ import {
 } from 'react-native';
 
 const SelecaoBanda = ({navigation}) => {
-  const [bandas1] = useState(['Barões da Pisadinha', 'Dazaranha', 'Tchê garotos']);
+  const [bandas1] = useState(['Selecione a banda 1','Barões da Pisadinha', 'Dazaranha', 'Tchê garotos']);
   const [bandaSelecionada1, setBandaSelecionada1] = useState([]);
-  const [bandas2] = useState(['Barões da Pisadinha', 'Dazaranha', 'Tchê garotos']);
+  const [bandas2] = useState(['Selecione a banda 2','Barões da Pisadinha', 'Dazaranha', 'Tchê garotos']);
   const [bandaSelecionada2, setBandaSelecionada2] = useState([]);
 
 
@@ -43,7 +43,7 @@ const SelecaoBanda = ({navigation}) => {
         <Text style={css.tittle}>Selecione a banda nº 1</Text>
         <View style={css.input}>
           <Picker
-            style={{marginTop: -15, fontFamily: 'Nunito-Bold', fontSize: 15}}
+            style={{marginTop: -15, fontSize: 15}}
             selectedValue={bandaSelecionada1}
             onValueChange={(itemValue, itemIndex) =>
               setBandaSelecionada1(itemValue)
@@ -63,7 +63,7 @@ const SelecaoBanda = ({navigation}) => {
         <Text style={css.tittle}>Selecione a banda nº 2</Text>
         <View style={css.input}>
           <Picker
-            style={{marginTop: -15, fontFamily: 'Nunito-Bold', fontSize: 15}}
+            style={{marginTop: -15, fontSize: 15}}
             selectedValue={bandaSelecionada2}
             onValueChange={(itemValue, itemIndex) =>
               setBandaSelecionada2(itemValue)

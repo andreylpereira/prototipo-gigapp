@@ -11,13 +11,14 @@ import {
 } from 'react-native';
 
 const Avaliacao = ({navigation}) => {
-  const [banda1] = useState(['10,00','9,00','8,00','7,00','6,00','5,00','4,00', '3,00','2,00','1,00','0,00']);
+
+  const [banda1] = useState(['selecione a nota','10,00','9,00','8,00','7,00','6,00','5,00','4,00', '3,00','2,00','1,00','0,00']);
   const [notaBanda1, setNotaBanda1] = useState([]);
 
-  const [banda2] = useState(['10,00','9,00','8,00','7,00','6,00','5,00','4,00', '3,00','2,00','1,00','0,00']);
+  const [banda2] = useState(['selecione a nota','10,00','9,00','8,00','7,00','6,00','5,00','4,00', '3,00','2,00','1,00','0,00']);
   const [notaBanda2, setNotaBanda2] = useState([]);
 
-  const [evento] = useState(['10,00','9,00','8,00','7,00','6,00','5,00','4,00', '3,00','2,00','1,00','0,00']);
+  const [evento] = useState(['selecione a nota','10,00','9,00','8,00','7,00','6,00','5,00','4,00', '3,00','2,00','1,00','0,00']);
   const [notaEvento, setNotaEvento] = useState([]);
 
 
@@ -29,6 +30,7 @@ const Avaliacao = ({navigation}) => {
         
         console.log('Nota Banda 1:' + ' ' + notaBanda1);
         console.log('Nota Banda 2:' + ' ' + notaBanda2);
+        
 
       } catch (error) {
         console.log('DEU RUIM' + error);
@@ -70,7 +72,7 @@ function Perfils(perfil) {
         <Text style={css.tittle}>Avalie o estabelecimento</Text>
         <View style={css.input}>
           <Picker
-            style={{marginTop: -15, fontFamily: 'Nunito-Bold', fontSize: 15}}
+            style={{marginTop: -15, fontSize: 15}}
             selectedValue={notaEvento}
             onValueChange={(itemValue, itemIndex) =>
               setNotaEvento(itemValue)
@@ -104,7 +106,7 @@ function Perfils(perfil) {
         <Text style={css.tittle}>Avalie a banda nº 1</Text>
         <View style={css.input}>
           <Picker
-            style={{marginTop: -15, fontFamily: 'Nunito-Bold', fontSize: 15}}
+            style={{marginTop: -15, fontSize: 15}}
             selectedValue={banda1}
             onValueChange={(itemValue, itemIndex) =>
               setNotaBanda1(itemValue)
@@ -124,7 +126,7 @@ function Perfils(perfil) {
         <Text style={css.tittle}>Avalie a banda nº 2</Text>
         <View style={css.input}>
           <Picker
-            style={{marginTop: -15, fontFamily: 'Nunito-Bold', fontSize: 15}}
+            style={{marginTop: -15, fontSize: 15}}
             selectedValue={notaBanda2}
             onValueChange={(itemValue, itemIndex) =>
               setNotaBanda2(itemValue)

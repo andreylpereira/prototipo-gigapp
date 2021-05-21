@@ -520,7 +520,6 @@ const Drawers = () => {
         component={Login}
         options={{
           title: 'Sair',
-          // headerShown: false,
           drawerIcon: ({focused, size}) => (
             <Icon
               name="log-out"
