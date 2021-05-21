@@ -4,6 +4,9 @@ import swaggerFile from '../swagger_output.json';
 import SessionController from './app/controllers/SessionController';
 import AuthMiddleware from './app/middlewares/auth';
 import UserController from './app/controllers/UserController';
+import BandController from './app/controllers/BandController';
+import VenueController from './app/controllers/VenueController';
+
 
 const routes = new Router();
 
@@ -21,6 +24,12 @@ routes.get('/api', (req, res) => {
 routes.get('/users', UserController.show);
 routes.post('/users', UserController.store);
 
+routes.get('/bands', BandController.show);
+routes.post('/bands', BandController.store);
+
+routes.get('/venues', VenueController.show);
+routes.post('/venues', VenueController.store);
+
 routes.post('/sessions', SessionController.store);
 // routes.post('/users', UserController.index);
 // routes.post('/users', UserController.show);
@@ -30,5 +39,7 @@ routes.post('/sessions', SessionController.store);
 
 //routes.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 routes.put('/users/:id', AuthMiddleware, UserController.update);
+routes.put('/bands/:id', AuthMiddleware, BandController.update);
+routes.put('/venues/:id', AuthMiddleware, VenueController.update);
 
 export default routes;
