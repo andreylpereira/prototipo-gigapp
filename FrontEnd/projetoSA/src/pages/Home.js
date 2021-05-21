@@ -2,9 +2,6 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import MapView, {
   PROVIDER_GOOGLE,
-  Marker,
-  Callout,
-  CalloutSubview,
 } from 'react-native-maps';
 import {
   StatusBar,
@@ -12,8 +9,6 @@ import {
   Text,
   View,
   Image,
-  TouchableOpacity,
-  TouchableHighlight,
 } from 'react-native';
 
 const mapLightStyle = [
@@ -354,7 +349,7 @@ const Home = ({navigation}) => {
                           <Image
                             style={css.image}
                             resizeMode="cover"
-                            source={require('../assets/fotos/chopp.jpg')}
+                            source={require('../assets/fotos/underdogs.jpg')}
                           />
                         </Text>
 
@@ -421,7 +416,7 @@ const Home = ({navigation}) => {
                           <Image
                             style={css.image}
                             resizeMode="cover"
-                            source={require('../assets/fotos/dazaranha.jpg')}
+                            source={require('../assets/fotos/redlights.jpg')}
                           />
                         </Text>
 

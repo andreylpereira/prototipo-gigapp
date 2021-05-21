@@ -279,6 +279,7 @@ const css = StyleSheet.create({
     alignSelf: 'center',
     margin: 10,
     marginTop: 2.5,
+    elevation: 5
   },
   buttonText: {
     textAlign: 'center',
