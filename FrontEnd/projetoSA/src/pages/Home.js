@@ -1,15 +1,7 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
-import MapView, {
-  PROVIDER_GOOGLE,
-} from 'react-native-maps';
-import {
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-} from 'react-native';
+import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
+import {StatusBar, StyleSheet, Text, View, Image} from 'react-native';
 
 const mapLightStyle = [
   {
@@ -305,9 +297,9 @@ const Home = ({navigation}) => {
             customMapStyle={mapLightStyle}
             region={{
               latitude: -27.601728,
-              longitude: -48.560000,
-              latitudeDelta: 0.2100,
-              longitudeDelta: 0.0420,
+              longitude: -48.56,
+              latitudeDelta: 0.21,
+              longitudeDelta: 0.042,
             }}>
             <MapView.Marker
               coordinate={{
@@ -357,7 +349,8 @@ const Home = ({navigation}) => {
                           <Text
                             multimultiline={true}
                             style={css.mapTextDescription}>
-                            R. Sérgio Rogerio Beims, 89 - Santa Monica, Florianópolis - SC, 88035-210
+                            R. Sérgio Rogerio Beims, 89 - Santa Monica,
+                            Florianópolis - SC, 88035-210
                           </Text>
                           <Text multimultiline={true} style={css.mapTextPhone}>
                             Tel: 99482-0120

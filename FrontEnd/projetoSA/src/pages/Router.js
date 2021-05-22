@@ -4,7 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator, DrawerItemList} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {StyleSheet, Text, View, TouchableOpacity,Image } from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 
 import Home from './Home';
 import Login from './Login';
@@ -24,6 +24,13 @@ import SelecaoBanda from './SelecaoBanda';
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
+
+
+//função para logout?
+// const Sair = () => {
+//   AsyncStorage.clear();
+//   navigation.navigate('Login');
+// };
 
 const Routes = () => {
   return (
@@ -368,10 +375,16 @@ const Content = ({...props}) => {
                 source={require('../assets/fotos/dazaranha.jpg')}
               />
               <View style={css.personDescription}>
-                <Text  multimultiline={true} numberOfLines={1} style={css.personName}>
+                <Text
+                  multimultiline={true}
+                  numberOfLines={1}
+                  style={css.personName}>
                   Dazaranha
                 </Text>
-                <Text multimultiline={true} numberOfLines={1} style={css.personType}>
+                <Text
+                  multimultiline={true}
+                  numberOfLines={1}
+                  style={css.personType}>
                   Banda
                 </Text>
                 <View style={css.starLine}>
@@ -389,6 +402,15 @@ const Content = ({...props}) => {
           <View style={{marginTop: 10}}>
             <DrawerItemList {...props} />
           </View>
+          <TouchableOpacity onPress={() => props.navigation.navigate('Login')}>
+            <View style={css.buttonSair}>
+              <Icon name={'log-out'} size={28} color={'#FF7306'} />
+              <Text
+                style={css.buttonText}>
+                Sair
+              </Text>
+            </View>
+          </TouchableOpacity>
         </View>
       );
     }
@@ -397,7 +419,7 @@ const Content = ({...props}) => {
         <View>
           <View>
             <View style={css.personLogo}>
-            <Image
+              <Image
                 style={css.image}
                 source={require('../assets/fotos/chopp.jpg')}
               />
@@ -408,10 +430,16 @@ const Content = ({...props}) => {
                 style={{marginLeft: 5}}
               /> */}
               <View style={css.personDescription}>
-                <Text multimultiline={true} numberOfLines={1} style={css.personName}>
+                <Text
+                  multimultiline={true}
+                  numberOfLines={1}
+                  style={css.personName}>
                   Chopp do Gus
                 </Text>
-                <Text multimultiline={true} numberOfLines={1} style={css.personType}>
+                <Text
+                  multimultiline={true}
+                  numberOfLines={1}
+                  style={css.personType}>
                   Estabelecimento
                 </Text>
                 <View style={css.starLine}>
@@ -429,6 +457,15 @@ const Content = ({...props}) => {
           <View style={{marginTop: 10}}>
             <DrawerItemList {...props} />
           </View>
+          <TouchableOpacity onPress={() => props.navigation.navigate('Login')}>
+            <View style={css.buttonSair}>
+              <Icon name={'log-out'} size={28} color={'#FF7306'} />
+              <Text
+                style={css.buttonText}>
+                Sair
+              </Text>
+            </View>
+          </TouchableOpacity>
         </View>
       );
     } else {
@@ -515,7 +552,7 @@ const Drawers = () => {
           ),
         }}
       />
-      <Drawer.Screen
+      {/* <Drawer.Screen
         name="Sair"
         component={Login}
         options={{
@@ -527,8 +564,7 @@ const Drawers = () => {
               color={focused ? '#DDDDDD' : '#FF7306'}
             />
           ),
-        }}
-      />
+        }}/> */}
     </Drawer.Navigator>
   );
 };
@@ -592,10 +628,27 @@ const css = StyleSheet.create({
   image: {
     width: 55,
     height: 55,
-    borderWidth:1,
+    borderWidth: 1,
     borderRadius: 100,
     marginLeft: 10,
-    marginTop: 10
+    marginTop: 10,
+  },
+  buttonSair: {
+    display: 'flex',
+    flexDirection: 'row',
+    backgroundColor: '#DDDDDD',
+    width: '92.5%',
+    marginLeft: '4%',
+    padding: 10,
+    borderRadius: 5,
+    marginTop: 4.0,
+  },
+  buttonText: {
+    fontSize: 15,
+    fontFamily: 'Nunito-Black',
+    marginLeft: 20,
+    marginTop: 3.5,
+    color: '#FF7306'
   }
 });
 
