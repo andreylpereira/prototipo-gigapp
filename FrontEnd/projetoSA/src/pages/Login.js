@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 // import Icon from 'react-native-vector-icons/Ionicons';
-
+import { signIn } from '../services/auth'
 import {
   StatusBar,
   StyleSheet,
@@ -17,6 +17,14 @@ const Login = ({navigation}) => {
   const [offset] = useState(new Animated.ValueXY({x: 0, y: 80}));
   const [opacity] = useState(new Animated.Value(0));
   const [logo] = useState(new Animated.ValueXY({x: 220, y: 220}));
+
+
+  async function handlerSignIn() {
+    const response = await signIn();
+    console.log(response);
+    navigation.navigate('Home')
+  }
+
 
   useEffect(() => {
     keyboardDidShowListener = Keyboard.addListener(
@@ -116,7 +124,7 @@ const Login = ({navigation}) => {
 
           <TouchableOpacity
             style={css.button}
-            onPress={() => navigation.navigate('Home')}>
+            onPress={handlerSignIn}>
             <Text style={css.buttonText}>Entrar</Text>
           </TouchableOpacity>
         </Animated.View>
