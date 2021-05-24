@@ -4,14 +4,14 @@ import * as auth from '../services/auth';
 interface AuthContextData {
   signed: Boolean;
   token: String; //retiravel
-  usuario: object | null;
+  usuario: object;
   signIn(): Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
 export const AuthProvider = ({children}) => {
-    const [usuario, setUsuario] = useState<object | null>(null);
+    const [usuario, setUsuario] = useState<object>({});
 
     async function signIn() {
     const response = await auth.signIn();  

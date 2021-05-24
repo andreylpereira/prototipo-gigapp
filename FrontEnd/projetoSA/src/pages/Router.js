@@ -4,7 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator, DrawerItemList} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, Image, ActivityIndicator} from 'react-native';
 import AuthContext from '../context/auth';
 import { AuthProvider } from './src/context/auth';
 import Home from './Home';
@@ -352,8 +352,8 @@ function Tabs() {
     } else {
       return (
         <View>
-          <Text style={css.error}>Error ao carregar</Text>
-        </View>
+        <View style={css.error}><ActivityIndicator size="large" color="#FF7306" /></View>
+      </View>
       );
     }
   }
@@ -467,7 +467,7 @@ function Tabs() {
     } else {
       return (
         <View>
-          <Text style={css.error}>Error ao carregar</Text>
+          <View style={css.error}><ActivityIndicator size="large" color="#FF7306" /></View>
         </View>
       );
     }
@@ -615,11 +615,8 @@ const css = StyleSheet.create({
     opacity: 0.5,
   },
   error: {
-    color: '#fff',
-    marginTop: '90%',
+    marginTop: '80%',
     textAlign: 'center',
-    fontFamily: 'Nunito-Black',
-    fontSize: 17,
   },
   image: {
     width: 55,
