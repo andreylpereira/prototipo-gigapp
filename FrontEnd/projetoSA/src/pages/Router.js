@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {NavigationContainer, DrawerActions} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator, DrawerItemList} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
-
+import {StyleSheet, Text, View, TouchableOpacity, Image, ActivityIndicator} from 'react-native';
+import AuthContext from '../context/auth';
+import { AuthProvider } from './src/context/auth';
 import Home from './Home';
 import Login from './Login';
 import Cadastro from './Cadastro';
@@ -26,13 +27,10 @@ const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 
-//função para logout?
-// const Sair = () => {
-//   AsyncStorage.clear();
-//   navigation.navigate('Login');
-// };
-
 const Routes = () => {
+
+  const { usuario } = useContext(AuthContext);
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName={Login}>
@@ -242,11 +240,10 @@ const Routes = () => {
       </Stack.Navigator>
     </NavigationContainer>
   );
-};
 
-const Tabs = () => {
-  function Perfils(perfil) {
-    if (perfil == 'Banda') {
+
+function Tabs() {
+    if (usuario.perfil == 'banda') {
       return (
         <Tab.Navigator
           tabBarOptions={{
@@ -292,7 +289,7 @@ const Tabs = () => {
         </Tab.Navigator>
       );
     }
-    if (perfil == 'Estabelecimento') {
+    if (usuario.perfil == 'estabelecimento') {
       return (
         <Tab.Navigator
           tabBarOptions={{
@@ -355,17 +352,15 @@ const Tabs = () => {
     } else {
       return (
         <View>
-          <Text style={css.error}>Error ao carregar</Text>
-        </View>
+        <View style={css.error}><ActivityIndicator size="large" color="#FF7306" /></View>
+      </View>
       );
     }
   }
-  return <>{Perfils('Estabelecimento')}</>;
-};
 
-const Content = ({...props}) => {
-  function Perfils(perfil) {
-    if (perfil == 'Banda') {
+  function Content({...props}) {
+   
+    if (usuario.perfil == 'banda') {
       return (
         <View>
           <View>
@@ -414,7 +409,7 @@ const Content = ({...props}) => {
         </View>
       );
     }
-    if (perfil == 'Estabelecimento') {
+    if (usuario.perfil == 'estabelecimento') {
       return (
         <View>
           <View>
@@ -471,15 +466,13 @@ const Content = ({...props}) => {
     } else {
       return (
         <View>
-          <Text style={css.error}>Error ao carregar</Text>
+          <View style={css.error}><ActivityIndicator size="large" color="#FF7306" /></View>
         </View>
       );
     }
   }
-  return <>{Perfils('Estabelecimento')}</>;
-};
 
-const Drawers = () => {
+function Drawers() {
   return (
     <Drawer.Navigator
       drawerContent={Content}
@@ -568,6 +561,7 @@ const Drawers = () => {
     </Drawer.Navigator>
   );
 };
+};
 
 const css = StyleSheet.create({
   imageLogo: {
@@ -619,11 +613,8 @@ const css = StyleSheet.create({
     opacity: 0.5,
   },
   error: {
-    color: '#fff',
-    marginTop: '90%',
+    marginTop: '70%',
     textAlign: 'center',
-    fontFamily: 'Nunito-Black',
-    fontSize: 17,
   },
   image: {
     width: 55,

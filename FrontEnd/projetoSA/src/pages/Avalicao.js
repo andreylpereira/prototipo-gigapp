@@ -205,7 +205,11 @@ const css = StyleSheet.create({
     fontFamily: 'Nunito-Black',
     fontSize: 18,
     marginBottom: 5
-  }
+  },
+  error: {
+    marginTop: '70%',
+    textAlign: 'center',
+  },
 });
 
 export default Avaliacao;

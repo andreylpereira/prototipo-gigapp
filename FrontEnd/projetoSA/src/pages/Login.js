@@ -1,5 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 // import Icon from 'react-native-vector-icons/Ionicons';
+import { signIn } from '../services/auth'
+import AuthContext from '../context/auth';
 
 import {
   StatusBar,
@@ -17,6 +19,19 @@ const Login = ({navigation}) => {
   const [offset] = useState(new Animated.ValueXY({x: 0, y: 80}));
   const [opacity] = useState(new Animated.Value(0));
   const [logo] = useState(new Animated.ValueXY({x: 220, y: 220}));
+
+  const { signed, usuario, signIn } = useContext(AuthContext);
+  console.log('Login status: '+ signed)
+  //console.log(usuario)
+
+  
+
+  function handlerSignIn() {
+    signIn();
+    //console.log(signed)
+    navigation.navigate('Home')
+  }
+
 
   useEffect(() => {
     keyboardDidShowListener = Keyboard.addListener(
@@ -116,7 +131,7 @@ const Login = ({navigation}) => {
 
           <TouchableOpacity
             style={css.button}
-            onPress={() => navigation.navigate('Home')}>
+            onPress={handlerSignIn}>
             <Text style={css.buttonText}>Entrar</Text>
           </TouchableOpacity>
         </Animated.View>
@@ -137,7 +152,7 @@ const css = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 21,
     borderColor: '#FF7306',
-    width: 250,
+    width: 270,
     height: 45,
     backgroundColor: '#FF6400',
     alignSelf: 'center',
