@@ -258,7 +258,7 @@ const css = StyleSheet.create({
     marginLeft: 5,
   },
   error: {
-    marginTop: '80%',
+    marginTop: '70%',
     textAlign: 'center',
   },
 });

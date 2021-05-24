@@ -192,7 +192,7 @@ const css = StyleSheet.create({
   },
   error: {
     color: '#fff',
-    marginTop: '90%',
+    marginTop: '70%',
     textAlign: 'center',
     fontFamily: 'Nunito-Black',
     fontSize: 17,

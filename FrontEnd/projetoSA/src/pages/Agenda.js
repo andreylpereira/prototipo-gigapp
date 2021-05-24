@@ -347,7 +347,7 @@ const css = StyleSheet.create({
     width: '100%',
   },
   error: {
-    marginTop: '80%',
+    marginTop: '70%',
     textAlign: 'center',
   },
 });

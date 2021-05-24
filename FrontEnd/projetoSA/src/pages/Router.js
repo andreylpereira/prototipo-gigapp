@@ -613,7 +613,7 @@ const css = StyleSheet.create({
     opacity: 0.5,
   },
   error: {
-    marginTop: '80%',
+    marginTop: '70%',
     textAlign: 'center',
   },
   image: {
