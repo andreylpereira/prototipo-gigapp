@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import AuthContext from '../context/auth';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 import {
@@ -7,11 +8,14 @@ import {
   Text,
   View,
   TouchableOpacity,
+  ActivityIndicator
 } from 'react-native';
 
 const Perfil = ({navigation}) => {
-  function Perfils(perfil) {
-    if (perfil == 'Banda') {
+
+    const { usuario } = useContext(AuthContext);
+
+    if (usuario.perfil == 'banda') {
       return (
         <View>
           <StatusBar barStyle="dark-content" hidden={true} />
@@ -92,7 +96,7 @@ const Perfil = ({navigation}) => {
         </View>
       );
     }
-    if (perfil == 'Estabelecimento') {
+    if (usuario.perfil == 'estabelecimento') {
       return (
         <View>
           <StatusBar barStyle="dark-content" hidden={true} />
@@ -162,21 +166,10 @@ const Perfil = ({navigation}) => {
     } else {
       return (
         <View>
-          <Text
-            style={{
-              color: '#fff',
-              marginTop: '90%',
-              textAlign: 'center',
-              fontFamily: 'Nunito-Black',
-              fontSize: 17,
-            }}>
-            Error ao carregar
-          </Text>
+          <View style={css.error}><ActivityIndicator size="large" color="#FF7306" /></View>
         </View>
       );
     }
-  }
-  return <>{Perfils('Estabelecimento')}</>;
 };
 
 const css = StyleSheet.create({
@@ -263,6 +256,10 @@ const css = StyleSheet.create({
   perfilLabel: {
     fontFamily: 'Nunito-Bold',
     marginLeft: 5,
+  },
+  error: {
+    marginTop: '80%',
+    textAlign: 'center',
   },
 });
 

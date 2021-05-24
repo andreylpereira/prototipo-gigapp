@@ -1,13 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {FlatList} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import AuthContext from '../context/auth';
 
 import {
-  StatusBar,
   StyleSheet,
   Text,
   View,
   TouchableOpacity,
+  ActivityIndicator,
 } from 'react-native';
 
 const Evento = ({navigation}) => {
@@ -51,13 +52,13 @@ const Evento = ({navigation}) => {
   ];
 
   const [eventos, setEventos] = useState(eventos_mock);
+  const {usuario} = useContext(AuthContext);
 
-  function Perfils(perfil) {
-    if (perfil == 'Banda') {
-      const EventoBanda = ({item}) => {
-        return (
-          <View>
-            {/* <View style={css.icons}>
+  if (usuario.perfil == 'banda') {
+    const EventoBanda = ({item}) => {
+      return (
+        <View>
+          {/* <View style={css.icons}>
               <View style={css.iconEdit}>
                 <Icon
                   name={'pencil-outline'}
@@ -70,164 +71,165 @@ const Evento = ({navigation}) => {
                 <Icon name={'trash-bin'} size={16} color={'#FF6400'} />
               </View>
             </View> */}
-            <View style={css.card}>
-              <View style={css.content}>
-                <View style={css.rows}>
-                  <Text style={css.label}>Evento: </Text>
-                  <Text style={css.tittle}>{item.titulo}</Text>
-                </View>
-                <View style={css.rows}>
-                  <Text style={css.label}>Estabelecimento: </Text>
-                  <Text
-                    multimultiline={true}
-                    numberOfLines={2}
-                    style={css.tittle}>
-                    {item.estabelecimento}
-                  </Text>
-                </View>
-                <View style={css.rows}>
-                  <Text style={css.label}>Data: </Text>
-                  <Text style={css.description}>{item.data}</Text>
-                </View>
-                <View style={css.rows}>
-                  <Text style={css.label}>Descrição: </Text>
-                  <Text
-                    style={css.description}
-                    multimultiline={true}
-                    numberOfLines={2}>
-                    {item.descricao}
-                  </Text>
-                </View>
-                <View style={css.rows}>
-                  <Text style={css.label}>Bandas: </Text>
-                  <Text
-                    multimultiline={true}
-                    numberOfLines={2}
-                    style={css.description}>
-                    {item.banda1}, {item.banda2}
-                  </Text>
-                </View>
+          <View style={css.card}>
+            <View style={css.content}>
+              <View style={css.rows}>
+                <Text style={css.label}>Evento: </Text>
+                <Text style={css.tittle}>{item.titulo}</Text>
               </View>
-              <View style={css.buttons}>
-                <TouchableOpacity
-                  style={css.button}
-                  onPress={() =>
-                    navigation.navigate('CadastroEstabelecimento')
-                  }>
-                  <Text style={css.buttonText}>Candidatar-se</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={css.button}
-                  onPress={() => navigation.navigate('Avaliacao')}>
-                  <Text style={css.buttonText}>Avaliar</Text>
-                </TouchableOpacity>
+              <View style={css.rows}>
+                <Text style={css.label}>Estabelecimento: </Text>
+                <Text
+                  multimultiline={true}
+                  numberOfLines={2}
+                  style={css.tittle}>
+                  {item.estabelecimento}
+                </Text>
+              </View>
+              <View style={css.rows}>
+                <Text style={css.label}>Data: </Text>
+                <Text style={css.description}>{item.data}</Text>
+              </View>
+              <View style={css.rows}>
+                <Text style={css.label}>Descrição: </Text>
+                <Text
+                  style={css.description}
+                  multimultiline={true}
+                  numberOfLines={2}>
+                  {item.descricao}
+                </Text>
+              </View>
+              <View style={css.rows}>
+                <Text style={css.label}>Bandas: </Text>
+                <Text
+                  multimultiline={true}
+                  numberOfLines={2}
+                  style={css.description}>
+                  {item.banda1}, {item.banda2}
+                </Text>
               </View>
             </View>
-          </View>
-        );
-      };
-      return (
-        <View style={css.containerList}>
-          <View style={css.scroll}>
-            <FlatList
-              removeClippedSubviews={false}
-              data={eventos_mock}
-              renderItem={EventoBanda}
-              keyExtractor={item => item.id}></FlatList>
+            <View style={css.buttons}>
+              <TouchableOpacity
+                style={css.button}
+                onPress={() => navigation.navigate('CadastroEstabelecimento')}>
+                <Text style={css.buttonText}>Candidatar-se</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={css.button}
+                onPress={() => navigation.navigate('Avaliacao')}>
+                <Text style={css.buttonText}>Avaliar</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       );
-    }
-    if (perfil == 'Estabelecimento') {
-      const EventoEstabelecimento = ({item}) => {
-        return (
-          <View>
-            <View style={css.icons}>
-              <View style={css.iconEdit}>
-                <Icon
-                  name={'pencil-outline'}
-                  size={16}
-                  color={'#FF6400'}
-                  onPress={() => navigation.navigate('EditarEvento')}
-                />
-              </View>
-              <View style={css.iconDelete}>
-                <Icon name={'trash-bin'} size={16} color={'#FF6400'} />
-              </View>
-            </View>
-            <View style={css.card}>
-              <View style={css.content}>
-                <View style={css.rows}>
-                  <Text style={css.label}>Evento: </Text>
-                  <Text style={css.tittle}>{item.titulo}</Text>
-                </View>
-                <View style={css.rows}>
-                  <Text style={css.label}>Estabelecimento: </Text>
-                  <Text
-                    multimultiline={true}
-                    numberOfLines={2}
-                    style={css.tittle}>
-                    {item.estabelecimento}
-                  </Text>
-                </View>
-                <View style={css.rows}>
-                  <Text style={css.label}>Data: </Text>
-                  <Text style={css.description}>{item.data}</Text>
-                </View>
-                <View style={css.rows}>
-                  <Text style={css.label}>Descrição: </Text>
-                  <Text
-                    style={css.description}
-                    multimultiline={true}
-                    numberOfLines={2}>
-                    {item.descricao}
-                  </Text>
-                </View>
-                <View style={css.rows}>
-                  <Text style={css.label}>Bandas: </Text>
-                  <Text
-                    multimultiline={true}
-                    numberOfLines={2}
-                    style={css.description}>
-                    {item.banda1}, {item.banda2}
-                  </Text>
-                </View>
-              </View>
-              <View style={css.buttons}>
-                <TouchableOpacity
-                  style={css.button}
-                  onPress={() => navigation.navigate('SelecaoBanda')}>
-                  <Text style={css.buttonText}>Selecionar bandas</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={css.button}
-                  onPress={() => navigation.navigate('Avaliacao')}>
-                  <Text style={css.buttonText}>Avaliar bandas</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
-        );
-      };
-      return (
-        <View style={css.containerList}>
-          <View style={css.scroll}>
-            <FlatList
-              removeClippedSubviews={false}
-              data={eventos_mock}
-              renderItem={EventoEstabelecimento}
-              keyExtractor={item => item.id}></FlatList>
-          </View>
+    };
+    return (
+      <View style={css.containerList}>
+        <Text style={css.title}>Eventos</Text>
+        <View style={css.scroll}>
+          <FlatList
+            removeClippedSubviews={false}
+            data={eventos_mock}
+            renderItem={EventoBanda}
+            keyExtractor={item => item.id}></FlatList>
         </View>
-      );
-    }
+      </View>
+    );
   }
-  return (
-    <>
-      <Text style={css.title}>Eventos</Text>
-      {Perfils('Estabelecimento')}
-    </>
-  );
+  if (usuario.perfil == 'estabelecimento') {
+    const EventoEstabelecimento = ({item}) => {
+      return (
+        <View>
+          <View style={css.icons}>
+            <View style={css.iconEdit}>
+              <Icon
+                name={'pencil-outline'}
+                size={16}
+                color={'#FF6400'}
+                onPress={() => navigation.navigate('EditarEvento')}
+              />
+            </View>
+            <View style={css.iconDelete}>
+              <Icon name={'trash-bin'} size={16} color={'#FF6400'} />
+            </View>
+          </View>
+          <View style={css.card}>
+            <View style={css.content}>
+              <View style={css.rows}>
+                <Text style={css.label}>Evento: </Text>
+                <Text style={css.tittle}>{item.titulo}</Text>
+              </View>
+              <View style={css.rows}>
+                <Text style={css.label}>Estabelecimento: </Text>
+                <Text
+                  multimultiline={true}
+                  numberOfLines={2}
+                  style={css.tittle}>
+                  {item.estabelecimento}
+                </Text>
+              </View>
+              <View style={css.rows}>
+                <Text style={css.label}>Data: </Text>
+                <Text style={css.description}>{item.data}</Text>
+              </View>
+              <View style={css.rows}>
+                <Text style={css.label}>Descrição: </Text>
+                <Text
+                  style={css.description}
+                  multimultiline={true}
+                  numberOfLines={2}>
+                  {item.descricao}
+                </Text>
+              </View>
+              <View style={css.rows}>
+                <Text style={css.label}>Bandas: </Text>
+                <Text
+                  multimultiline={true}
+                  numberOfLines={2}
+                  style={css.description}>
+                  {item.banda1}, {item.banda2}
+                </Text>
+              </View>
+            </View>
+            <View style={css.buttons}>
+              <TouchableOpacity
+                style={css.button}
+                onPress={() => navigation.navigate('SelecaoBanda')}>
+                <Text style={css.buttonText}>Selecionar bandas</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={css.button}
+                onPress={() => navigation.navigate('Avaliacao')}>
+                <Text style={css.buttonText}>Avaliar bandas</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      );
+    };
+    return (
+      <View style={css.containerList}>
+        <Text style={css.title}>Eventos</Text>
+        <View style={css.scroll}>
+          <FlatList
+            removeClippedSubviews={false}
+            data={eventos_mock}
+            renderItem={EventoEstabelecimento}
+            keyExtractor={item => item.id}></FlatList>
+        </View>
+      </View>
+    );
+  } else {
+    return (
+      <View>
+        <View style={css.error}>
+          <ActivityIndicator size="large" color="#FF7306" />
+        </View>
+      </View>
+    );
+  }
 };
 
 const css = StyleSheet.create({
@@ -279,7 +281,7 @@ const css = StyleSheet.create({
     alignSelf: 'center',
     margin: 10,
     marginTop: 2.5,
-    elevation: 5
+    elevation: 5,
   },
   buttonText: {
     textAlign: 'center',
@@ -343,6 +345,10 @@ const css = StyleSheet.create({
   scroll: {
     height: '90%',
     width: '100%',
+  },
+  error: {
+    marginTop: '80%',
+    textAlign: 'center',
   },
 });
 

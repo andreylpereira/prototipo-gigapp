@@ -358,7 +358,6 @@ function Tabs() {
     }
   }
 
-
   function Content({...props}) {
    
     if (usuario.perfil == 'banda') {
@@ -472,7 +471,6 @@ function Tabs() {
       );
     }
   }
-
 
 function Drawers() {
   return (
