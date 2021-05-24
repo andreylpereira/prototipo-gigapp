@@ -1,13 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {NavigationContainer, DrawerActions} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator, DrawerItemList} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
-import * as auth from '../services/auth';
-
 import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
-
+import AuthContext from '../context/auth';
+import { AuthProvider } from './src/context/auth';
 import Home from './Home';
 import Login from './Login';
 import Cadastro from './Cadastro';
@@ -29,6 +28,8 @@ const Stack = createStackNavigator();
 
 
 const Routes = () => {
+
+  const { usuario } = useContext(AuthContext);
 
   return (
     <NavigationContainer>
@@ -239,11 +240,10 @@ const Routes = () => {
       </Stack.Navigator>
     </NavigationContainer>
   );
-};
 
-const Tabs = () => {
-  function Perfils(perfil) {
-    if (perfil == 'Banda') {
+
+function Tabs() {
+    if (usuario.perfil == 'banda') {
       return (
         <Tab.Navigator
           tabBarOptions={{
@@ -289,7 +289,7 @@ const Tabs = () => {
         </Tab.Navigator>
       );
     }
-    if (perfil == 'Estabelecimento') {
+    if (usuario.perfil == 'estabelecimento') {
       return (
         <Tab.Navigator
           tabBarOptions={{
@@ -357,12 +357,11 @@ const Tabs = () => {
       );
     }
   }
-  return <>{Perfils('Estabelecimento')}</>;
-};
 
-const Content = ({...props}) => {
-  function Perfils(perfil) {
-    if (perfil == 'Banda') {
+
+  function Content({...props}) {
+   
+    if (usuario.perfil == 'banda') {
       return (
         <View>
           <View>
@@ -411,7 +410,7 @@ const Content = ({...props}) => {
         </View>
       );
     }
-    if (perfil == 'Estabelecimento') {
+    if (usuario.perfil == 'estabelecimento') {
       return (
         <View>
           <View>
@@ -473,10 +472,9 @@ const Content = ({...props}) => {
       );
     }
   }
-  return <>{Perfils('Estabelecimento')}</>;
-};
 
-const Drawers = () => {
+
+function Drawers() {
   return (
     <Drawer.Navigator
       drawerContent={Content}
@@ -564,6 +562,7 @@ const Drawers = () => {
         }}/> */}
     </Drawer.Navigator>
   );
+};
 };
 
 const css = StyleSheet.create({
