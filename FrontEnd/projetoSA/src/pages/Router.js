@@ -4,6 +4,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator, DrawerItemList} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
+import * as auth from '../services/auth';
+
 import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 
 import Home from './Home';
@@ -26,13 +28,8 @@ const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 
-//função para logout?
-// const Sair = () => {
-//   AsyncStorage.clear();
-//   navigation.navigate('Login');
-// };
-
 const Routes = () => {
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName={Login}>

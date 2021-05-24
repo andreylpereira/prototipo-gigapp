@@ -196,7 +196,7 @@ return (
               <View style={css.buttons}>
                   <TouchableOpacity
                     style={css.button}
-                    onPress={() => navigation.navigate('SelecaoBanda')}>
+                    onPress={() => gation.navigate('SelecaoBanda')}>
                     <Text style={css.buttonText}>Selecionar bandas</Text>
                   </TouchableOpacity>
                   <TouchableOpacity

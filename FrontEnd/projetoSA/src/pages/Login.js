@@ -1,6 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 // import Icon from 'react-native-vector-icons/Ionicons';
 import { signIn } from '../services/auth'
+import AuthContext from '../context/auth';
+
 import {
   StatusBar,
   StyleSheet,
@@ -18,10 +20,15 @@ const Login = ({navigation}) => {
   const [opacity] = useState(new Animated.Value(0));
   const [logo] = useState(new Animated.ValueXY({x: 220, y: 220}));
 
+  const { signed, usuario, signIn } = useContext(AuthContext);
+  console.log('Login status: '+ signed)
+  //console.log(usuario)
 
-  async function handlerSignIn() {
-    const response = await signIn();
-    console.log(response);
+  
+
+  function handlerSignIn() {
+    signIn();
+    //console.log(signed)
     navigation.navigate('Home')
   }
 
