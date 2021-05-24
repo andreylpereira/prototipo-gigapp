@@ -21,14 +21,12 @@ const Login = ({navigation}) => {
   const [logo] = useState(new Animated.ValueXY({x: 220, y: 220}));
 
   const { signed, usuario, signIn } = useContext(AuthContext);
-  console.log('Login status: '+ signed)
-  //console.log(usuario)
 
-  
+ 
 
   function handlerSignIn() {
     signIn();
-    //console.log(signed)
+    console.log(signed)
     navigation.navigate('Home')
   }
 
