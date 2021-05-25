@@ -3,6 +3,9 @@ import {FlatList} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import AuthContext from '../context/auth';
 
+// importei api axios
+import api from '../services/axios';
+
 import {
   StyleSheet,
   Text,
@@ -53,6 +56,68 @@ const Evento = ({navigation}) => {
 
   const [eventos, setEventos] = useState(eventos_mock);
   const {usuario} = useContext(AuthContext);
+  
+  // falta puxar as funções
+  
+  // Constantes que pegam os campos
+  const [idEvento, setIdEvento] = useState("");
+  const [tituloEvento, setTituloEvento] = useState("");
+  const [estabelecimentoEvento, setEstabelecimentoEvento] = useState("");
+  const [dataEvento, setDataEvento] = useState("");
+  const [descricaoEvento, setDescricaoEvento] = useState("");
+  const [banda1Evento, setBanda1Evento] = useState("");
+  const [banda2Evento, setBanda2Evento] = useState("");
+  
+  // Post
+  const criarEvento = async () => {
+    if(idEvento && tituloEvento && estabelecimentoEvento && dataEvento && descricaoEvento && banda1Evento && banda2Evento){
+      try{ //falta vincular rota com backend e 
+        const response = await api.post('/rota', { "tituloEvento": tituloEvento, "estabelecimentoEvento": estabelecimentoEvento, "dataEvento": dataEvento, "descricaoEvento": descricaoEvento, "banda1Evento": banda1Evento, "banda2Evento": banda2Evento })
+        console.log(JSON.stringify(response.data))
+      } catch(error){
+        console.log("DEU ERRO" + error)
+      }
+    }
+  }
+
+  // Get
+  const [lista, setLista] = useState();
+
+  const listarEvento = async () => {
+    try { //Falta rota
+      const response = await api.get('/rota');
+      console.log(JSON.stringify(response.data));
+      setListas(response.data);
+
+    } catch (error) {
+      console.log('DEU RUIM' + error);
+    }
+  }
+
+  // Put
+  const id = route.params._id; // puxar esse id quando criarmos o botão
+  const editarEvento = async (id) => {
+    try { // ajustar rota 
+      const response = await api.put(`/rota/${id}`, { "tituloEvento": tituloEvento, "estabelecimentoEvento": estabelecimentoEvento, "dataEvento": dataEvento, "descricaoEvento": descricaoEvento, "banda1Evento": banda1Evento, "banda2Evento": banda2Evento });
+      console.log(JSON.stringify(response.data));
+      setListas(response.data)
+
+    } catch (error) {
+      console.log('DEU RUIM' + error);
+    }
+  }
+
+// Delete
+const deletarEvento = async (id) => {
+  try { // ajustar rota
+    const response = await api.delete(`/rota/${id}`)
+    console.log(JSON.stringify(response.data));
+
+  } catch (error) {
+    console.log('DEU RUIM' + error);
+  }
+  listarEvento();
+};
 
   if (usuario.perfil == 'banda') {
     const EventoBanda = ({item}) => {
