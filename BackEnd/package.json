@@ -3,7 +3,6 @@
   "version": "1.0.1",
   "description": "",
   "main": "nodemon.js",
-  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
@@ -30,6 +29,7 @@
     "sequelize-cli": "^6.2.0",
     "swagger-autogen": "^2.8.2",
     "swagger-ui-express": "^4.1.6",
-    "yarn": "^1.22.10"
+    "yarn": "^1.22.10",
+    "yup": "^0.32.9"
   }
 }
